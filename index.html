@@ -1,5 +1,808 @@
 <!DOCTYPE html>
-<html>
-<head><title>The Tectus</title></head>
-<body><h1>Coming soon</h1></body>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Tectus — Software House</title>
+<meta name="description" content="The Tectus constrói software que resolve problemas operacionais reais para empresas em Africa e além.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0F1E;--ink-2:#3D4460;--ink-3:#8A8FA8;
+  --surface:#FFFFFF;--surface-2:#F4F5F8;--surface-3:#ECEDF2;
+  --accent:#1847C8;--accent-2:#0F2F8A;--glow:#4A7CFF;
+  --radius:10px;--radius-lg:18px;--max:1160px;--nav-h:68px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--surface);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);background:rgba(10,15,30,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.25rem,5vw,3rem);transition:background .4s}
+nav.light{background:rgba(255,255,255,0.92);border-bottom:1px solid var(--surface-3)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:-.02em;color:white;display:flex;align-items:center;gap:8px;transition:color .4s}
+nav.light .nav-logo{color:var(--ink)}
+.nav-logo .dot{width:8px;height:8px;border-radius:50%;background:var(--glow);display:inline-block}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.65);transition:color .15s}
+nav.light .nav-links a{color:var(--ink-2)}
+.nav-links a:hover{color:white}
+nav.light .nav-links a:hover{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:1rem;position:relative}
+
+/* Language dropdown */
+.lang-selector{position:relative}
+.lang-trigger{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:.82rem;font-weight:500;color:white;transition:background .15s;white-space:nowrap}
+nav.light .lang-trigger{background:var(--surface-2);border-color:var(--surface-3);color:var(--ink)}
+.lang-trigger:hover{background:rgba(255,255,255,.14)}
+nav.light .lang-trigger:hover{background:var(--surface-3)}
+.lang-trigger svg{width:12px;height:12px;transition:transform .2s;opacity:.6}
+.lang-trigger.open svg{transform:rotate(180deg)}
+.lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:white;border:1px solid var(--surface-3);border-radius:var(--radius-lg);box-shadow:0 12px 40px rgba(0,0,0,.15);min-width:160px;overflow:hidden;display:none;z-index:300}
+.lang-dropdown.open{display:block;animation:dropIn .18s ease}
+@keyframes dropIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.lang-option{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;font-size:.85rem;font-weight:500;color:var(--ink);transition:background .12s}
+.lang-option:hover{background:var(--surface-2)}
+.lang-option.active{background:var(--surface-2);color:var(--accent)}
+.lang-flag{font-size:1.15rem;line-height:1}
+.lang-name{flex:1}
+.lang-check{width:14px;height:14px;stroke:var(--accent);display:none}
+.lang-option.active .lang-check{display:block}
+
+.nav-cta{background:var(--accent);color:white;padding:8px 18px;border-radius:8px;font-size:.85rem;font-weight:600;transition:background .15s,transform .15s;border:none;cursor:pointer;white-space:nowrap}
+.nav-cta:hover{background:var(--glow);transform:translateY(-1px)}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:calc(var(--nav-h) + 4rem) clamp(1.25rem,5vw,3rem) 5rem;position:relative;overflow:hidden;background:var(--ink)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:var(--max);margin:0 auto;width:100%}
+.hero-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--glow);margin-bottom:1.25rem;opacity:0;animation:fadeUp .7s .2s forwards}
+.hero-title{font-family:'Syne',sans-serif;font-size:clamp(2.1rem,4.2vw,3.6rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:white;margin-bottom:1.5rem;min-height:3.5em}
+.hero-title .aw{color:var(--glow)}
+.hero-body{font-size:1rem;color:rgba(255,255,255,.58);max-width:44ch;margin-bottom:2.5rem;opacity:0;animation:fadeUp .7s .5s forwards}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .7s .7s forwards}
+.btn-primary{background:var(--accent);color:white;padding:13px 26px;border-radius:var(--radius);font-size:.9rem;font-weight:600;transition:background .15s,transform .2s,box-shadow .2s;display:inline-block}
+.btn-primary:hover{background:var(--glow);transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,124,255,.35)}
+.btn-outline{background:transparent;color:white;padding:13px 26px;border-radius:var(--radius);font-size:.9rem;font-weight:500;border:1px solid rgba(255,255,255,.2);transition:all .2s;display:inline-block}
+.btn-outline:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.07)}
+.hero-visual{display:flex;flex-direction:column;gap:12px;opacity:0;animation:fadeLeft .8s .4s forwards}
+.hero-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius-lg);padding:1.25rem 1.5rem}
+.hcard-label{font-size:.7rem;color:rgba(255,255,255,.35);margin-bottom:.5rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.hcard-value{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:700;color:white}
+.hcard-sub{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:2px}
+.hcard-row{display:flex;align-items:center;justify-content:space-between}
+.hcard-bar{height:3px;background:rgba(255,255,255,.08);border-radius:2px;margin-top:.75rem;overflow:hidden}
+.hcard-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--glow));animation:barGrow 1.5s 1s ease forwards;width:0}
+@keyframes barGrow{to{width:73%}}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-bg-orb{position:absolute;border-radius:50%;filter:blur(80px)}
+.orb1{width:500px;height:500px;background:rgba(24,71,200,.25);right:-80px;top:10%}
+.orb2{width:300px;height:300px;background:rgba(74,124,255,.15);left:30%;bottom:5%}
+
+/* ── TYPEWRITER ── */
+.typewriter-wrap{min-height:3.2em;margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .35s forwards}
+.typewriter{display:inline}
+.cursor{display:inline-block;width:3px;height:.9em;background:var(--glow);margin-left:3px;vertical-align:middle;animation:blink .85s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ── SCROLL ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:none}}
+@keyframes fadeRight{from{opacity:0;transform:translateX(-32px)}to{opacity:1;transform:none}}
+@keyframes zoomIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+
+.anim-up    {opacity:0;transition:opacity .65s ease,transform .65s ease;transform:translateY(36px)}
+.anim-left  {opacity:0;transition:opacity .65s ease,transform .65s ease;transform:translateX(40px)}
+.anim-right {opacity:0;transition:opacity .65s ease,transform .65s ease;transform:translateX(-40px)}
+.anim-zoom  {opacity:0;transition:opacity .65s ease,transform .65s ease;transform:scale(.93)}
+.anim-flip  {opacity:0;transition:opacity .7s ease,transform .7s ease;transform:perspective(600px) rotateX(12deg) translateY(20px)}
+.anim-up.in,.anim-left.in,.anim-right.in,.anim-zoom.in,.anim-flip.in{opacity:1;transform:none}
+
+/* stagger children */
+.stagger > * {opacity:0;transform:translateY(28px);transition:opacity .5s ease,transform .5s ease}
+.stagger.in > *:nth-child(1){transition-delay:.05s}
+.stagger.in > *:nth-child(2){transition-delay:.15s}
+.stagger.in > *:nth-child(3){transition-delay:.25s}
+.stagger.in > *:nth-child(4){transition-delay:.35s}
+.stagger.in > *:nth-child(5){transition-delay:.45s}
+.stagger.in > *:nth-child(6){transition-delay:.55s}
+.stagger.in > *{opacity:1;transform:none}
+
+/* ── SECTIONS ── */
+section{padding:7rem clamp(1.25rem,5vw,3rem)}
+.section-inner{max-width:var(--max);margin:0 auto}
+.section-label{font-size:.73rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3.2vw,2.6rem);font-weight:700;line-height:1.14;letter-spacing:-.025em;color:var(--ink);margin-bottom:1.25rem}
+.section-body{font-size:1rem;color:var(--ink-2);max-width:56ch;margin-bottom:3rem;line-height:1.75}
+
+/* ── ABOUT ── */
+#about{background:var(--surface-2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+.stat-box{background:var(--surface);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--surface-3);transition:transform .3s,box-shadow .3s}
+.stat-box:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.08)}
+.stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);margin-bottom:.25rem}
+.stat-desc{font-size:.85rem;color:var(--ink-2)}
+.about-block{background:var(--ink);border-radius:var(--radius-lg);padding:2.5rem;display:flex;flex-direction:column;gap:1.15rem}
+.about-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);padding:9px 15px;border-radius:50px;font-size:.82rem;color:white;font-weight:500;width:fit-content;transition:background .2s}
+.about-pill:hover{background:rgba(255,255,255,.12)}
+.g{width:6px;height:6px;border-radius:50%;background:#4ADE80;flex-shrink:0}
+
+/* ── SERVICES ── */
+#services{background:var(--surface)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service-card{border:1px solid var(--surface-3);border-radius:var(--radius-lg);padding:2rem;transition:border-color .25s,box-shadow .25s,transform .25s;background:var(--surface);position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(24,71,200,.04),transparent);opacity:0;transition:opacity .3s}
+.service-card:hover{border-color:var(--accent);box-shadow:0 12px 40px rgba(24,71,200,.1);transform:translateY(-4px)}
+.service-card:hover::before{opacity:1}
+.service-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--surface-2),var(--surface-3));display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:transform .25s}
+.service-card:hover .service-icon{transform:scale(1.08)}
+.service-icon svg{width:22px;height:22px}
+.service-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.75rem}
+.service-desc{font-size:.87rem;color:var(--ink-2);line-height:1.65}
+
+/* ── PRODUCT ── */
+#product{background:var(--ink);padding:7rem clamp(1.25rem,5vw,3rem)}
+.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:var(--max);margin:0 auto}
+.product-label{font-size:.73rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--glow);margin-bottom:1rem}
+.product-title{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;color:white;line-height:1.14;letter-spacing:-.025em;margin-bottom:1.25rem}
+.product-body{font-size:.95rem;color:rgba(255,255,255,.55);margin-bottom:2rem;line-height:1.75}
+.feature-list{display:flex;flex-direction:column;gap:.875rem;margin-bottom:2.5rem}
+.feature-item{display:flex;align-items:flex-start;gap:.875rem}
+.feature-check{width:20px;height:20px;border-radius:50%;background:rgba(74,124,255,.18);border:1px solid rgba(74,124,255,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.feature-check svg{width:10px;height:10px;stroke:var(--glow)}
+.feature-text{font-size:.87rem;color:rgba(255,255,255,.65)}
+.product-visual{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius-lg);padding:1.75rem}
+.pv-header{display:flex;align-items:center;gap:8px;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:1.25rem}
+.pv-dot{width:10px;height:10px;border-radius:50%}
+.pv-title{font-size:.75rem;color:rgba(255,255,255,.3);margin-left:auto;font-family:monospace}
+.pv-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1.25rem}
+.pv-kpi{background:rgba(255,255,255,.05);border-radius:8px;padding:.875rem 1rem}
+.pv-kpi-val{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:700;color:white}
+.pv-kpi-lab{font-size:.68rem;color:rgba(255,255,255,.35);margin-top:2px}
+.pv-row{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.82rem}
+.pv-row:last-child{border-bottom:none}
+.pv-label{color:rgba(255,255,255,.4);font-family:monospace;font-size:.73rem}
+.pv-value{color:white;font-weight:500}
+.pv-badge{font-size:.67rem;padding:2px 8px;border-radius:10px;font-weight:600}
+.pv-ok{background:rgba(74,222,128,.15);color:#4ADE80}
+.pv-warn{background:rgba(251,191,36,.15);color:#FBBF24}
+
+/* ── PROCESS ── */
+#process{background:var(--surface-2)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:20px;left:56px;right:56px;height:1px;background:linear-gradient(90deg,var(--accent),var(--glow),var(--accent));opacity:.2}
+.process-step{position:relative;z-index:1}
+.step-num{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--glow));color:white;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;margin-bottom:1.25rem;box-shadow:0 4px 16px rgba(24,71,200,.3)}
+.step-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.625rem}
+.step-desc{font-size:.855rem;color:var(--ink-2);line-height:1.65}
+
+/* ── CONTACT ── */
+#contact{background:var(--surface)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem;margin-top:1rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem}
+.contact-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--surface-2),var(--surface-3));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-icon svg{width:18px;height:18px;stroke:var(--accent)}
+.contact-label{font-size:.72rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.contact-value{font-size:.9rem;color:var(--ink);font-weight:500}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-field{display:flex;flex-direction:column;gap:.4rem}
+.form-field label{font-size:.78rem;font-weight:500;color:var(--ink-2)}
+.form-field input,.form-field textarea,.form-field select{padding:11px 14px;border:1px solid var(--surface-3);border-radius:var(--radius);font-size:.875rem;color:var(--ink);background:var(--surface);font-family:'Inter',sans-serif;transition:border-color .15s,box-shadow .15s;outline:none;width:100%}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(24,71,200,.1)}
+.form-field textarea{resize:vertical;min-height:120px}
+.form-submit{background:linear-gradient(135deg,var(--accent),var(--glow));color:white;padding:13px 28px;border-radius:var(--radius);font-size:.9rem;font-weight:600;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .2s,box-shadow .2s;align-self:flex-start}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(24,71,200,.3)}
+.form-note{font-size:.78rem;color:var(--ink-3)}
+.form-success{background:#ECFDF5;border:1px solid #6EE7B7;border-radius:var(--radius);padding:1rem 1.25rem;color:#065F46;font-size:.875rem;font-weight:500;display:none}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:white}
+.footer-copy{font-size:.77rem;color:rgba(255,255,255,.3)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:.77rem;color:rgba(255,255,255,.35);transition:color .15s}
+.footer-links a:hover{color:white}
+
+/* ── PORTFOLIO ── */
+#portfolio{background:var(--ink);padding:7rem clamp(1.25rem,5vw,3rem)}
+.portfolio-header{max-width:var(--max);margin:0 auto 3.5rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.portfolio-title-block{}
+.portfolio-link{font-size:.85rem;font-weight:500;color:var(--glow);display:flex;align-items:center;gap:6px;transition:gap .2s;white-space:nowrap}
+.portfolio-link:hover{gap:10px}
+.portfolio-link svg{width:14px;height:14px}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:var(--max);margin:0 auto}
+.pf-card{border-radius:var(--radius-lg);overflow:hidden;position:relative;transition:transform .3s,box-shadow .3s;cursor:pointer;display:block;text-decoration:none}
+.pf-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.pf-card-inner{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius-lg);overflow:hidden;height:100%}
+.pf-card.live .pf-card-inner{border-color:rgba(74,124,255,.3)}
+.pf-thumb{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.pf-thumb-live{background:linear-gradient(135deg,rgba(24,71,200,.4),rgba(74,124,255,.2));border-bottom:1px solid rgba(74,124,255,.2)}
+.pf-thumb-dev{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(255,255,255,.06));border-bottom:1px solid rgba(255,255,255,.07)}
+.pf-mock{display:flex;flex-direction:column;gap:6px;padding:1rem;width:100%}
+.pf-mock-bar{height:6px;border-radius:3px;background:rgba(255,255,255,.12)}
+.pf-mock-row{display:flex;gap:6px}
+.pf-mock-cell{height:32px;border-radius:6px;background:rgba(255,255,255,.06);flex:1}
+.pf-mock-kpi{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px}
+.pf-mock-kpi-item{height:40px;border-radius:8px;background:rgba(255,255,255,.07)}
+.pf-dev-icon{width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center}
+.pf-dev-icon svg{width:26px;height:26px}
+.pf-body{padding:1.25rem 1.5rem 1.5rem}
+.pf-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.875rem}
+.pf-tag{font-size:.68rem;font-weight:600;padding:2px 8px;border-radius:10px;letter-spacing:.04em;text-transform:uppercase}
+.tag-live{background:rgba(74,222,128,.15);color:#4ADE80}
+.tag-dev{background:rgba(255,255,255,.08);color:rgba(255,255,255,.4)}
+.tag-sector{background:rgba(74,124,255,.15);color:var(--glow)}
+.pf-name{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:white;margin-bottom:.5rem}
+.pf-desc{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1.25rem}
+.pf-footer{display:flex;align-items:center;justify-content:space-between}
+.pf-stack{font-size:.75rem;color:rgba(255,255,255,.3)}
+.pf-arrow{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+.pf-card:hover .pf-arrow{background:var(--accent);border-color:var(--accent)}
+.pf-arrow svg{width:12px;height:12px;stroke:rgba(255,255,255,.5);transition:stroke .2s}
+.pf-card:hover .pf-arrow svg{stroke:white}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){.hero-grid,.about-grid,.product-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}.services-grid{grid-template-columns:1fr 1fr}.process-steps{grid-template-columns:1fr 1fr}.process-steps::before{display:none}.nav-links{display:none}}
+@media(max-width:580px){.services-grid,.process-steps,.form-row{grid-template-columns:1fr}.about-stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo"><span class="dot"></span>The Tectus</a>
+  <div class="nav-links">
+    <a href="#about"    data-pt="Sobre nós"   data-en="About"      data-fr="À propos">Sobre nós</a>
+    <a href="#services" data-pt="Serviços"    data-en="Services"   data-fr="Services">Serviços</a>
+    <a href="#product"  data-pt="FieldTrack"  data-en="FieldTrack" data-fr="FieldTrack">FieldTrack</a>
+    <a href="#portfolio" data-pt="Portfólio"  data-en="Portfolio"  data-fr="Portfolio">Portfólio</a>
+    <a href="#contact"  data-pt="Contacto"    data-en="Contact"    data-fr="Contact">Contacto</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-selector" id="lang-selector">
+      <div class="lang-trigger" id="lang-trigger" onclick="toggleLangMenu()">
+        <span id="current-flag">🇦🇴</span>
+        <span id="current-lang-label">PT</span>
+        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
+      </div>
+      <div class="lang-dropdown" id="lang-dropdown">
+        <div class="lang-option active" onclick="setLang('pt','🇦🇴','PT',this)">
+          <span class="lang-flag">🇦🇴</span><span class="lang-name">Português</span>
+          <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+        </div>
+        <div class="lang-option" onclick="setLang('en','🇬🇧','EN',this)">
+          <span class="lang-flag">🇬🇧</span><span class="lang-name">English</span>
+          <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+        </div>
+        <div class="lang-option" onclick="setLang('fr','🇫🇷','FR',this)">
+          <span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span>
+          <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+        </div>
+      </div>
+    </div>
+    <a href="#contact" class="nav-cta" data-pt="Falar connosco" data-en="Get in touch" data-fr="Nous contacter">Falar connosco</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-orb orb1"></div>
+    <div class="hero-bg-orb orb2"></div>
+  </div>
+  <div class="hero-grid">
+    <div>
+      <p class="hero-eyebrow" data-pt="Software House · Angola" data-en="Software House · Angola" data-fr="Éditeur de logiciels · Angola">Software House · Angola</p>
+      <div class="typewriter-wrap">
+        <h1 class="hero-title" id="typewriter-el" aria-live="polite"></h1>
+      </div>
+      <p class="hero-body"
+         data-pt="Desenvolvemos soluções digitais sob medida e produtos SaaS próprios para empresas que precisam de mais do que uma folha de cálculo."
+         data-en="We build custom digital solutions and our own SaaS products for companies that need more than a spreadsheet."
+         data-fr="Nous développons des solutions numériques sur mesure et des produits SaaS pour les entreprises qui ont besoin de plus qu'un tableur.">
+        Desenvolvemos soluções digitais sob medida e produtos SaaS próprios para empresas que precisam de mais do que uma folha de cálculo.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary" data-pt="Ver serviços"         data-en="Our services"       data-fr="Nos services">Ver serviços</a>
+        <a href="#product"  class="btn-outline" data-pt="Conhecer o FieldTrack" data-en="Discover FieldTrack" data-fr="Découvrir FieldTrack">Conhecer o FieldTrack</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hcard-row">
+          <div>
+            <div class="hcard-label" data-pt="Valor de inventário" data-en="Inventory value" data-fr="Valeur du stock">Valor de inventário</div>
+            <div class="hcard-value">$2,847,320</div>
+            <div class="hcard-sub" data-pt="8 países · 24 localizações" data-en="8 countries · 24 locations" data-fr="8 pays · 24 sites">8 países · 24 localizações</div>
+          </div>
+          <div style="width:42px;height:42px;border-radius:50%;background:rgba(74,124,255,.15);display:flex;align-items:center;justify-content:center">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--glow)" stroke-width="1.5"><rect x="2" y="3" width="16" height="13" rx="2"/><path d="M2 8h16"/></svg>
+          </div>
+        </div>
+        <div class="hcard-bar"><div class="hcard-fill"></div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="hero-card">
+          <div class="hcard-label" data-pt="Alertas de stock" data-en="Stock alerts" data-fr="Alertes stock">Alertas de stock</div>
+          <div class="hcard-value" style="color:#FBBF24">3</div>
+          <div class="hcard-sub" data-pt="Abaixo do mínimo" data-en="Below minimum" data-fr="Sous le minimum">Abaixo do mínimo</div>
+        </div>
+        <div class="hero-card">
+          <div class="hcard-label" data-pt="Transferências" data-en="Transfers" data-fr="Transferts">Transferências</div>
+          <div class="hcard-value" style="color:#4ADE80">12</div>
+          <div class="hcard-sub" data-pt="Este mês" data-en="This month" data-fr="Ce mois">Este mês</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hcard-label" data-pt="Último movimento" data-en="Last movement" data-fr="Dernier mouvement">Último movimento</div>
+        <div style="font-size:.875rem;color:rgba(255,255,255,.65)" data-pt="Transferência · SN-2024-047 · Angola → Nigeria" data-en="Transfer · SN-2024-047 · Angola → Nigeria" data-fr="Transfert · SN-2024-047 · Angola → Nigeria">Transferência · SN-2024-047 · Angola → Nigeria</div>
+        <div class="hcard-sub" style="margin-top:4px" data-pt="Há 2 horas" data-en="2 hours ago" data-fr="Il y a 2 heures">Há 2 horas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="anim-right">
+        <p class="section-label" data-pt="Quem somos" data-en="Who we are" data-fr="Qui sommes-nous">Quem somos</p>
+        <h2 class="section-title" data-pt="Construídos em Angola, pensados para o mundo." data-en="Built in Angola, designed for the world." data-fr="Construits en Angola, pensés pour le monde.">Construídos em Angola, pensados para o mundo.</h2>
+        <p class="section-body" data-pt="A The Tectus é uma software house angolana que desenvolve software sob medida e produtos próprios para empresas com operações complexas. Nascemos da necessidade de resolver um problema real — e ficámos para resolver muitos mais." data-en="The Tectus is an Angolan software house that builds custom software and its own products for companies with complex operations. We were born out of the need to solve a real problem — and we stayed to solve many more." data-fr="The Tectus est une entreprise de logiciels angolaise qui développe des solutions sur mesure pour les entreprises aux opérations complexes. Nous sommes nés d'un besoin réel — et nous sommes restés pour en résoudre beaucoup d'autres.">A The Tectus é uma software house angolana que desenvolve software sob medida e produtos próprios para empresas com operações complexas.</p>
+        <div class="about-stats stagger">
+          <div class="stat-box"><div class="stat-num">8</div><div class="stat-desc" data-pt="Países com clientes activos" data-en="Countries with active clients" data-fr="Pays avec clients actifs">Países com clientes activos</div></div>
+          <div class="stat-box"><div class="stat-num">100%</div><div class="stat-desc" data-pt="SaaS multi-tenant" data-en="Multi-tenant SaaS" data-fr="SaaS multi-locataire">SaaS multi-tenant</div></div>
+          <div class="stat-box"><div class="stat-num">3</div><div class="stat-desc" data-pt="Idiomas suportados" data-en="Supported languages" data-fr="Langues supportées">Idiomas suportados</div></div>
+          <div class="stat-box"><div class="stat-num">O&amp;G</div><div class="stat-desc" data-pt="Especialização de origem" data-en="Core specialisation" data-fr="Spécialisation principale">Especialização de origem</div></div>
+        </div>
+      </div>
+      <div class="about-block anim-left">
+        <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:white;margin-bottom:.5rem" data-pt="O nosso compromisso" data-en="Our commitment" data-fr="Notre engagement">O nosso compromisso</div>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem" data-pt="Não fornecemos software genérico. Estudamos o negócio do cliente, identificamos o problema e construímos a solução adequada." data-en="We don't provide generic software. We study our client's business, identify the problem, and build the right solution." data-fr="Nous ne fournissons pas de logiciels génériques. Nous étudions le métier du client, identifions le problème et construisons la solution adéquate.">Não fornecemos software genérico. Estudamos o negócio do cliente, identificamos o problema e construímos a solução adequada.</p>
+        <div class="about-pill"><span class="g"></span><span data-pt="Desenvolvimento ágil e transparente" data-en="Agile and transparent development" data-fr="Développement agile et transparent">Desenvolvimento ágil e transparente</span></div>
+        <div class="about-pill"><span class="g"></span><span data-pt="Produtos próprios em crescimento" data-en="Proprietary products in growth" data-fr="Produits propriétaires en croissance">Produtos próprios em crescimento</span></div>
+        <div class="about-pill"><span class="g"></span><span data-pt="Suporte contínuo pós-entrega" data-en="Continuous post-delivery support" data-fr="Support continu après livraison">Suporte contínuo pós-entrega</span></div>
+        <div class="about-pill"><span class="g"></span><span data-pt="Isolamento total de dados por empresa" data-en="Full data isolation per company" data-fr="Isolation totale des données par entreprise">Isolamento total de dados por empresa</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="anim-up">
+      <p class="section-label" data-pt="O que fazemos" data-en="What we do" data-fr="Ce que nous faisons">O que fazemos</p>
+      <h2 class="section-title" data-pt="Soluções para problemas que a folha de cálculo já não consegue resolver." data-en="Solutions for problems that spreadsheets can no longer solve." data-fr="Des solutions aux problèmes que les tableurs ne peuvent plus résoudre.">Soluções para problemas que a folha de cálculo já não consegue resolver.</h2>
+    </div>
+    <div class="services-grid stagger">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="2" y="3" width="18" height="15" rx="2"/><path d="M7 8h8M7 12h5"/></svg></div>
+        <h3 class="service-title" data-pt="Software sob medida" data-en="Custom software" data-fr="Logiciel sur mesure">Software sob medida</h3>
+        <p class="service-desc" data-pt="Desenvolvimento de sistemas adaptados aos processos específicos de cada empresa, desde plataformas de gestão interna a soluções orientadas ao cliente." data-en="Development of systems tailored to each company's specific processes, from internal management platforms to client-facing solutions." data-fr="Développement de systèmes adaptés aux processus spécifiques de chaque entreprise, des plateformes de gestion interne aux solutions clients.">Desenvolvimento de sistemas adaptados aos processos específicos de cada empresa, desde plataformas de gestão interna a soluções orientadas ao cliente.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M11 7v4l3 3"/></svg></div>
+        <h3 class="service-title" data-pt="Automatização de processos" data-en="Process automation" data-fr="Automatisation des processus">Automatização de processos</h3>
+        <p class="service-desc" data-pt="Identificação e substituição de tarefas repetitivas por fluxos automáticos que reduzem erros e libertam a equipa para o que realmente importa." data-en="Identification and replacement of repetitive tasks with automated workflows that reduce errors and free teams for what truly matters." data-fr="Identification et remplacement des tâches répétitives par des flux automatisés qui réduisent les erreurs et libèrent les équipes pour l'essentiel.">Identificação e substituição de tarefas repetitivas por fluxos automáticos que reduzem erros e libertam a equipa para o que realmente importa.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 3h16v6H3zM3 13h8v6H3zM15 13h4v6h-4z"/></svg></div>
+        <h3 class="service-title" data-pt="Dashboards e relatórios" data-en="Dashboards & reports" data-fr="Tableaux de bord et rapports">Dashboards e relatórios</h3>
+        <p class="service-desc" data-pt="Transformação de dados dispersos em painéis de gestão claros e accionáveis, disponíveis em tempo real sem depender de relatórios manuais." data-en="Transformation of scattered data into clear, actionable management dashboards, available in real time without relying on manual reports." data-fr="Transformation de données dispersées en tableaux de bord clairs et actionnables, disponibles en temps réel sans dépendre de rapports manuels.">Transformação de dados dispersos em painéis de gestão claros e accionáveis, disponíveis em tempo real.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="12" y="3" width="7" height="7" rx="1"/><rect x="3" y="12" width="7" height="7" rx="1"/><rect x="12" y="12" width="7" height="7" rx="1"/></svg></div>
+        <h3 class="service-title" data-pt="Produtos SaaS" data-en="SaaS Products" data-fr="Produits SaaS">Produtos SaaS</h3>
+        <p class="service-desc" data-pt="Para além dos projectos sob medida, a The Tectus desenvolve produtos próprios prontos a utilizar. O FieldTrack é o primeiro — mais estão em desenvolvimento." data-en="Beyond bespoke projects, The Tectus develops its own ready-to-use products. FieldTrack is the first — more are in development." data-fr="Au-delà des projets sur mesure, The Tectus développe ses propres produits prêts à l'emploi. FieldTrack est le premier — d'autres sont en développement.">Para além dos projectos sob medida, a The Tectus desenvolve produtos próprios prontos a utilizar.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M11 2L2 7l9 5 9-5-9-5zM2 17l9 5 9-5M2 12l9 5 9-5"/></svg></div>
+        <h3 class="service-title" data-pt="Integrações e APIs" data-en="Integrations & APIs" data-fr="Intégrations et APIs">Integrações e APIs</h3>
+        <p class="service-desc" data-pt="Ligação dos sistemas existentes — SAP, ERPs, Excel — à nova solução, sem forçar uma migração total que paralisa a operação." data-en="Connection of existing systems — SAP, ERPs, Excel — to the new solution, without forcing a total migration that disrupts operations." data-fr="Connexion des systèmes existants — SAP, ERP, Excel — à la nouvelle solution, sans migration totale qui perturbe les opérations.">Ligação dos sistemas existentes à nova solução, sem disrupção operacional.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <h3 class="service-title" data-pt="Suporte e manutenção" data-en="Support & maintenance" data-fr="Support et maintenance">Suporte e manutenção</h3>
+        <p class="service-desc" data-pt="Contratos de manutenção, actualizações e suporte técnico contínuo após a entrega. A parceria não termina na data de lançamento." data-en="Maintenance contracts, updates, and continuous technical support after delivery. The partnership does not end on launch day." data-fr="Contrats de maintenance, mises à jour et support technique continu après livraison. Le partenariat ne se termine pas le jour du lancement.">Manutenção, actualizações e suporte técnico contínuo. A parceria não termina na data de lançamento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section id="product">
+  <div class="product-grid">
+    <div class="anim-right">
+      <p class="product-label" data-pt="Produto próprio" data-en="Proprietary product" data-fr="Produit propriétaire">Produto próprio</p>
+      <h2 class="product-title" data-pt="FieldTrack — controlo de inventário para operações distribuídas." data-en="FieldTrack — inventory control for distributed operations." data-fr="FieldTrack — contrôle des stocks pour les opérations distribuées.">FieldTrack — controlo de inventário para operações distribuídas.</h2>
+      <p class="product-body" data-pt="Desenvolvido para o sector petrolífero, o FieldTrack resolve um problema que o SAP não consegue — rastrear inventário quando sai do armazém para workshops offshore e bases operacionais em múltiplos países." data-en="Built for the oil sector, FieldTrack solves a problem SAP cannot — tracking inventory as it leaves the warehouse for offshore workshops and operational bases across multiple countries." data-fr="Conçu pour le secteur pétrolier, FieldTrack résout un problème que SAP ne peut résoudre — suivre les stocks quand ils quittent l'entrepôt pour les ateliers offshore dans plusieurs pays.">Desenvolvido para o sector petrolífero, o FieldTrack resolve um problema que o SAP não consegue — rastrear inventário quando sai do armazém para workshops offshore e bases em múltiplos países.</p>
+      <div class="feature-list">
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Multi-país e multi-localização em tempo real" data-en="Multi-country and multi-location in real time" data-fr="Multi-pays et multi-site en temps réel">Multi-país e multi-localização em tempo real</span></div>
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Upload em Excel por supervisores no campo" data-en="Excel upload by field supervisors" data-fr="Upload Excel par les superviseurs terrain">Upload em Excel por supervisores no campo</span></div>
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Aprovação de transferências com notificação" data-en="Transfer approval with notification" data-fr="Approbation de transferts avec notification">Aprovação de transferências com notificação</span></div>
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Relatórios PDF e Excel com filtros avançados" data-en="PDF and Excel reports with advanced filters" data-fr="Rapports PDF et Excel avec filtres avancés">Relatórios PDF e Excel com filtros avançados</span></div>
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Isolamento total de dados por empresa" data-en="Full data isolation per company" data-fr="Isolation totale des données par entreprise">Isolamento total de dados por empresa</span></div>
+      </div>
+      <a href="https://myinventorytracker.vercel.app" target="_blank" class="btn-primary" data-pt="Experimentar o FieldTrack" data-en="Try FieldTrack" data-fr="Essayer FieldTrack">Experimentar o FieldTrack</a>
+    </div>
+    <div class="product-visual anim-zoom">
+      <div class="pv-header">
+        <div class="pv-dot" style="background:#FF5F57"></div>
+        <div class="pv-dot" style="background:#FEBC2E"></div>
+        <div class="pv-dot" style="background:#28C840"></div>
+        <div class="pv-title">FieldTrack · Dashboard</div>
+      </div>
+      <div class="pv-kpis">
+        <div class="pv-kpi"><div class="pv-kpi-val">$2.8M</div><div class="pv-kpi-lab" data-pt="Valor total de inventário" data-en="Total inventory value" data-fr="Valeur totale du stock">Valor total de inventário</div></div>
+        <div class="pv-kpi"><div class="pv-kpi-val" style="color:#FBBF24">3</div><div class="pv-kpi-lab" data-pt="Alertas de stock mínimo" data-en="Low stock alerts" data-fr="Alertes stock minimum">Alertas de stock mínimo</div></div>
+        <div class="pv-kpi"><div class="pv-kpi-val">147</div><div class="pv-kpi-lab" data-pt="Itens rastreados" data-en="Items tracked" data-fr="Articles suivis">Itens rastreados</div></div>
+        <div class="pv-kpi"><div class="pv-kpi-val">8</div><div class="pv-kpi-lab" data-pt="Países activos" data-en="Active countries" data-fr="Pays actifs">Países activos</div></div>
+      </div>
+      <div class="pv-row"><span class="pv-label">SN-2024-047</span><span class="pv-value">Válvula hidráulica</span><span class="pv-badge pv-ok">OK</span></div>
+      <div class="pv-row"><span class="pv-label">SN-2024-031</span><span class="pv-value">Kit de vedantes</span><span class="pv-badge pv-warn">Low</span></div>
+      <div class="pv-row"><span class="pv-label">SN-2024-019</span><span class="pv-value">Bomba hidráulica</span><span class="pv-badge pv-ok">OK</span></div>
+      <div class="pv-row"><span class="pv-label">SN-2024-008</span><span class="pv-value">Manómetro digital</span><span class="pv-badge pv-warn">Low</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="portfolio-header">
+    <div class="portfolio-title-block anim-up">
+      <p class="section-label" style="color:rgba(74,124,255,.8)" data-pt="Os nossos produtos" data-en="Our products" data-fr="Nos produits">Os nossos produtos</p>
+      <h2 class="section-title" style="color:white" data-pt="Aquilo que construímos." data-en="What we build." data-fr="Ce que nous construisons.">Aquilo que construímos.</h2>
+    </div>
+    <a href="portfolio.html" class="portfolio-link anim-up">
+      <span data-pt="Ver portfólio completo" data-en="View full portfolio" data-fr="Voir le portfolio complet">Ver portfólio completo</span>
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
+    </a>
+  </div>
+  <div class="portfolio-grid stagger">
+
+    <!-- FieldTrack — LIVE -->
+    <a href="portfolio.html#fieldtrack" class="pf-card live">
+      <div class="pf-card-inner">
+        <div class="pf-thumb pf-thumb-live">
+          <div class="pf-mock">
+            <div class="pf-mock-kpi">
+              <div class="pf-mock-kpi-item"></div>
+              <div class="pf-mock-kpi-item"></div>
+            </div>
+            <div class="pf-mock-bar" style="width:100%"></div>
+            <div class="pf-mock-row">
+              <div class="pf-mock-cell" style="flex:0.4"></div>
+              <div class="pf-mock-cell" style="flex:0.8"></div>
+              <div class="pf-mock-cell" style="flex:0.3"></div>
+            </div>
+            <div class="pf-mock-row">
+              <div class="pf-mock-cell" style="flex:0.4"></div>
+              <div class="pf-mock-cell" style="flex:0.6"></div>
+              <div class="pf-mock-cell" style="flex:0.3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="pf-body">
+          <div class="pf-tags">
+            <span class="pf-tag tag-live" data-pt="Em produção" data-en="Live" data-fr="En production">Em produção</span>
+            <span class="pf-tag tag-sector" data-pt="Oil & Gas" data-en="Oil & Gas" data-fr="Pétrole & Gaz">Oil &amp; Gas</span>
+            <span class="pf-tag tag-sector">SaaS</span>
+          </div>
+          <div class="pf-name">FieldTrack</div>
+          <p class="pf-desc" data-pt="Plataforma de gestão de inventário multi-localização para operações petrolíferas distribuídas em múltiplos países." data-en="Multi-location inventory management platform for oil operations distributed across multiple countries." data-fr="Plateforme de gestion des stocks multi-sites pour les opérations pétrolières réparties dans plusieurs pays.">Plataforma de gestão de inventário multi-localização para operações petrolíferas distribuídas em múltiplos países.</p>
+          <div class="pf-footer">
+            <span class="pf-stack">Supabase · Vercel · JavaScript</span>
+            <div class="pf-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- FleetTrack — EM DESENVOLVIMENTO -->
+    <a href="portfolio.html#fleettrack" class="pf-card">
+      <div class="pf-card-inner">
+        <div class="pf-thumb pf-thumb-dev" style="flex-direction:column;gap:.75rem">
+          <div class="pf-dev-icon">
+            <svg viewBox="0 0 26 26" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"><rect x="2" y="8" width="22" height="12" rx="2"/><path d="M5 8V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v2"/><circle cx="7" cy="20" r="2"/><circle cx="19" cy="20" r="2"/></svg>
+          </div>
+          <span style="font-size:.72rem;color:rgba(255,255,255,.2);letter-spacing:.08em;text-transform:uppercase" data-pt="Em desenvolvimento" data-en="In development" data-fr="En développement">Em desenvolvimento</span>
+        </div>
+        <div class="pf-body">
+          <div class="pf-tags">
+            <span class="pf-tag tag-dev" data-pt="Em breve" data-en="Coming soon" data-fr="Bientôt">Em breve</span>
+            <span class="pf-tag tag-sector" data-pt="Logística" data-en="Logistics" data-fr="Logistique">Logística</span>
+          </div>
+          <div class="pf-name">FleetTrack</div>
+          <p class="pf-desc" data-pt="Gestão de frota e manutenção preventiva para empresas de logística e transporte com activos distribuídos." data-en="Fleet and preventive maintenance management for logistics and transport companies with distributed assets." data-fr="Gestion de flotte et maintenance préventive pour les entreprises de logistique avec des actifs distribués.">Gestão de frota e manutenção preventiva para empresas de logística e transporte com activos distribuídos.</p>
+          <div class="pf-footer">
+            <span class="pf-stack" data-pt="Próximo produto" data-en="Next product" data-fr="Prochain produit">Próximo produto</span>
+            <div class="pf-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <!-- AssetTrack — EM DESENVOLVIMENTO -->
+    <a href="portfolio.html#assettrack" class="pf-card">
+      <div class="pf-card-inner">
+        <div class="pf-thumb pf-thumb-dev" style="flex-direction:column;gap:.75rem">
+          <div class="pf-dev-icon">
+            <svg viewBox="0 0 26 26" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"><rect x="3" y="3" width="9" height="9" rx="1.5"/><rect x="14" y="3" width="9" height="9" rx="1.5"/><rect x="3" y="14" width="9" height="9" rx="1.5"/><rect x="14" y="14" width="9" height="9" rx="1.5"/></svg>
+          </div>
+          <span style="font-size:.72rem;color:rgba(255,255,255,.2);letter-spacing:.08em;text-transform:uppercase" data-pt="Em desenvolvimento" data-en="In development" data-fr="En développement">Em desenvolvimento</span>
+        </div>
+        <div class="pf-body">
+          <div class="pf-tags">
+            <span class="pf-tag tag-dev" data-pt="Em breve" data-en="Coming soon" data-fr="Bientôt">Em breve</span>
+            <span class="pf-tag tag-sector" data-pt="Construção" data-en="Construction" data-fr="Construction">Construção</span>
+          </div>
+          <div class="pf-name">AssetTrack</div>
+          <p class="pf-desc" data-pt="Controlo de activos fixos e equipamento pesado para empresas de construção e engenharia com múltiplos estaleiros." data-en="Fixed asset and heavy equipment control for construction and engineering companies with multiple sites." data-fr="Contrôle des actifs fixes et équipements lourds pour les entreprises de construction avec plusieurs chantiers.">Controlo de activos fixos e equipamento pesado para empresas de construção e engenharia com múltiplos estaleiros.</p>
+          <div class="pf-footer">
+            <span class="pf-stack" data-pt="Em planeamento" data-en="In planning" data-fr="En planification">Em planeamento</span>
+            <div class="pf-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <div class="anim-up">
+      <p class="section-label" data-pt="Como trabalhamos" data-en="How we work" data-fr="Comment nous travaillons">Como trabalhamos</p>
+      <h2 class="section-title" data-pt="Sem surpresas. Sem entregas que não resolvem nada." data-en="No surprises. No deliveries that solve nothing." data-fr="Sans surprises. Sans livraisons qui ne résolvent rien.">Sem surpresas. Sem entregas que não resolvem nada.</h2>
+    </div>
+    <div class="process-steps stagger">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <h4 class="step-title" data-pt="Diagnóstico" data-en="Discovery" data-fr="Diagnostic">Diagnóstico</h4>
+        <p class="step-desc" data-pt="Ouvimos primeiro. O problema real é mapeado antes de qualquer proposta de solução." data-en="We listen first. The real problem is mapped before any solution is proposed." data-fr="Nous écoutons d'abord. Le vrai problème est cartographié avant toute proposition de solution.">Ouvimos primeiro. O problema real é mapeado antes de qualquer proposta de solução.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h4 class="step-title" data-pt="Proposta clara" data-en="Clear proposal" data-fr="Proposition claire">Proposta clara</h4>
+        <p class="step-desc" data-pt="Âmbito, prazo e preço fixos desde o início. Sem alterações não comunicadas." data-en="Fixed scope, timeline, and price from the start. No uncommunicated changes." data-fr="Périmètre, délai et prix fixes dès le début. Aucune modification non communiquée.">Âmbito, prazo e preço fixos desde o início. Sem alterações não comunicadas.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h4 class="step-title" data-pt="Desenvolvimento iterativo" data-en="Iterative build" data-fr="Développement itératif">Desenvolvimento iterativo</h4>
+        <p class="step-desc" data-pt="Entregas parciais frequentes para validação contínua pelo cliente antes da versão final." data-en="Frequent partial deliveries for continuous client validation before the final version." data-fr="Livraisons partielles fréquentes pour validation continue par le client avant la version finale.">Entregas parciais frequentes para validação contínua pelo cliente antes da versão final.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h4 class="step-title" data-pt="Entrega e suporte" data-en="Delivery & support" data-fr="Livraison et support">Entrega e suporte</h4>
+        <p class="step-desc" data-pt="Formação da equipa, documentação e suporte técnico pós-entrega incluídos em todos os projectos." data-en="Team training, documentation, and post-delivery technical support included in all projects." data-fr="Formation d'équipe, documentation et support technique post-livraison inclus dans tous les projets.">Formação da equipa, documentação e suporte técnico pós-entrega incluídos em todos os projectos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="anim-right">
+        <p class="section-label" data-pt="Fale connosco" data-en="Get in touch" data-fr="Contactez-nous">Fale connosco</p>
+        <h2 class="section-title" data-pt="A empresa tem um problema que o software ainda não resolveu?" data-en="Does your company have a problem that software hasn't solved yet?" data-fr="Votre entreprise a un problème que le logiciel n'a pas encore résolu ?">A empresa tem um problema que o software ainda não resolveu?</h2>
+        <p class="section-body" data-pt="Descreva o desafio. Sem compromisso — a primeira conversa é sempre gratuita." data-en="Describe the challenge. No commitment — the first conversation is always free." data-fr="Décrivez le défi. Sans engagement — la première conversation est toujours gratuite.">Descreva o desafio. Sem compromisso — a primeira conversa é sempre gratuita.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 18 18" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 4h12a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><polyline points="2,4 9,10 16,4"/></svg></div>
+            <div><div class="contact-label">Email</div><div class="contact-value">support@thetectus.com</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 18 18" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="9" cy="9" r="7"/><path d="M9 2a4.5 7 0 0 0 0 14A4.5 7 0 0 0 9 2z"/><path d="M2 9h14"/></svg></div>
+            <div><div class="contact-label">Website</div><div class="contact-value">thetectus.com</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 18 18" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M9 2C5.7 2 3 4.7 3 8c0 4.4 6 10 6 10s6-5.6 6-10c0-3.3-2.7-6-6-6z"/><circle cx="9" cy="8" r="2"/></svg></div>
+            <div><div class="contact-label" data-pt="Localização" data-en="Location" data-fr="Localisation">Localização</div><div class="contact-value">Luanda, Angola</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="anim-left">
+        <form class="contact-form" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-field"><label data-pt="Nome" data-en="Name" data-fr="Nom">Nome</label><input type="text" required placeholder="Nome completo"></div>
+            <div class="form-field"><label data-pt="Empresa" data-en="Company" data-fr="Entreprise">Empresa</label><input type="text" placeholder="Nome da empresa"></div>
+          </div>
+          <div class="form-field"><label>Email</label><input type="email" required placeholder="email@empresa.com"></div>
+          <div class="form-field">
+            <label data-pt="Assunto" data-en="Subject" data-fr="Sujet">Assunto</label>
+            <select>
+              <option data-pt="Projecto sob medida" data-en="Custom project"  data-fr="Projet sur mesure">Projecto sob medida</option>
+              <option data-pt="FieldTrack"           data-en="FieldTrack"      data-fr="FieldTrack">FieldTrack</option>
+              <option data-pt="Parceria"             data-en="Partnership"     data-fr="Partenariat">Parceria</option>
+              <option data-pt="Outro"                data-en="Other"           data-fr="Autre">Outro</option>
+            </select>
+          </div>
+          <div class="form-field"><label data-pt="Mensagem" data-en="Message" data-fr="Message">Mensagem</label><textarea required placeholder="Descreva o problema ou ideia..."></textarea></div>
+          <button type="submit" class="form-submit" data-pt="Enviar mensagem" data-en="Send message" data-fr="Envoyer le message">Enviar mensagem</button>
+          <p class="form-note" data-pt="Respondemos em menos de 24 horas em dias úteis." data-en="We reply within 24 hours on business days." data-fr="Nous répondons en moins de 24 heures les jours ouvrables.">Respondemos em menos de 24 horas em dias úteis.</p>
+          <div class="form-success" id="form-success" data-pt="Mensagem enviada com sucesso. Entraremos em contacto em breve." data-en="Message sent successfully. We will be in touch shortly." data-fr="Message envoyé avec succès. Nous vous contacterons bientôt.">Mensagem enviada com sucesso. Entraremos em contacto em breve.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">The Tectus</div>
+  <div class="footer-links">
+    <a href="#services" data-pt="Serviços"  data-en="Services" data-fr="Services">Serviços</a>
+    <a href="#product">FieldTrack</a>
+    <a href="#contact" data-pt="Contacto"  data-en="Contact"  data-fr="Contact">Contacto</a>
+    <a href="mailto:support@thetectus.com">support@thetectus.com</a>
+  </div>
+  <p class="footer-copy">© 2026 The Tectus. <span data-pt="Todos os direitos reservados." data-en="All rights reserved." data-fr="Tous droits réservés.">Todos os direitos reservados.</span></p>
+</footer>
+
+<script>
+// ── LANGUAGE ─────────────────────────────────────────────────
+let currentLang = 'pt';
+
+const SLOGANS = {
+  pt: ['Software que <span class="aw">resolve</span> problemas reais.', 'Inovação que <span class="aw">transforma</span> operações.', 'Tecnologia feita para <span class="aw">durar</span>.'],
+  en: ['Software that <span class="aw">solves</span> real problems.', 'Innovation that <span class="aw">transforms</span> operations.', 'Technology built to <span class="aw">last</span>.'],
+  fr: ['Des logiciels qui <span class="aw">résolvent</span> de vrais problèmes.', 'Une innovation qui <span class="aw">transforme</span> les opérations.', 'Une technologie faite pour <span class="aw">durer</span>.'],
+};
+
+let sloganIdx = 0;
+let typeInterval = null;
+let eraseInterval = null;
+let isTyping = false;
+
+function typeText(text, el, onDone) {
+  const plain = text.replace(/<[^>]+>/g,'');
+  const parts = [];
+  let buf = '', i = 0;
+  const srcText = text;
+  // Build char-by-char with HTML awareness
+  el.innerHTML = '<span class="cursor"></span>';
+  let typed = '';
+  let ci = 0;
+  clearInterval(typeInterval);
+  typeInterval = setInterval(() => {
+    if (ci >= srcText.length) {
+      clearInterval(typeInterval);
+      if (onDone) setTimeout(onDone, 2200);
+      return;
+    }
+    if (srcText[ci] === '<') {
+      const end = srcText.indexOf('>',ci);
+      typed += srcText.slice(ci, end+1);
+      ci = end+1;
+    } else {
+      typed += srcText[ci++];
+    }
+    el.innerHTML = typed + '<span class="cursor"></span>';
+  }, 38);
+}
+
+function eraseText(el, onDone) {
+  clearInterval(eraseInterval);
+  let text = el.innerText;
+  eraseInterval = setInterval(() => {
+    if (text.length === 0) {
+      clearInterval(eraseInterval);
+      el.innerHTML = '<span class="cursor"></span>';
+      if (onDone) onDone();
+      return;
+    }
+    text = text.slice(0,-1);
+    el.innerHTML = text + '<span class="cursor"></span>';
+  }, 22);
+}
+
+function cycleSlogan() {
+  const el = document.getElementById('typewriter-el');
+  if (!el) return;
+  const slogans = SLOGANS[currentLang];
+  eraseText(el, () => {
+    sloganIdx = (sloganIdx + 1) % slogans.length;
+    setTimeout(() => typeText(slogans[sloganIdx], el, cycleSlogan), 300);
+  });
+}
+
+function startTypewriter() {
+  const el = document.getElementById('typewriter-el');
+  if (!el) return;
+  sloganIdx = 0;
+  typeText(SLOGANS[currentLang][0], el, cycleSlogan);
+}
+
+function setLang(lang, flag, label, optEl) {
+  currentLang = lang;
+  document.getElementById('current-flag').textContent = flag;
+  document.getElementById('current-lang-label').textContent = label;
+  document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('active'));
+  if (optEl) optEl.classList.add('active');
+  closeLangMenu();
+
+  // Update all static text
+  document.querySelectorAll('[data-pt]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (!val) return;
+    if (el.id === 'typewriter-el') return; // handled separately
+    if (val.includes('<')) el.innerHTML = val;
+    else el.textContent = val;
+  });
+  document.querySelectorAll('select option[data-pt]').forEach(o => {
+    const v = o.getAttribute('data-' + lang);
+    if (v) o.textContent = v;
+  });
+  document.documentElement.lang = lang;
+
+  // Restart typewriter in new language
+  sloganIdx = 0;
+  clearInterval(typeInterval);
+  clearInterval(eraseInterval);
+  const el = document.getElementById('typewriter-el');
+  if (el) {
+    eraseText(el, () => {
+      setTimeout(() => typeText(SLOGANS[lang][0], el, cycleSlogan), 200);
+    });
+  }
+}
+
+function toggleLangMenu() {
+  const trigger = document.getElementById('lang-trigger');
+  const dropdown = document.getElementById('lang-dropdown');
+  trigger.classList.toggle('open');
+  dropdown.classList.toggle('open');
+}
+
+function closeLangMenu() {
+  document.getElementById('lang-trigger').classList.remove('open');
+  document.getElementById('lang-dropdown').classList.remove('open');
+}
+
+document.addEventListener('click', e => {
+  if (!document.getElementById('lang-selector').contains(e.target)) closeLangMenu();
+});
+
+// ── NAV SCROLL ───────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('main-nav');
+  nav.classList.toggle('light', window.scrollY > 80);
+});
+
+// ── SCROLL ANIMATIONS ────────────────────────────────────────
+const animObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      animObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.anim-up,.anim-left,.anim-right,.anim-zoom,.anim-flip,.stagger')
+  .forEach(el => animObs.observe(el));
+
+// ── FORM ─────────────────────────────────────────────────────
+function submitForm(e) {
+  e.preventDefault();
+  const s = document.getElementById('form-success');
+  s.style.display = 'block';
+  e.target.reset();
+  setTimeout(() => { s.style.display = 'none'; }, 5000);
+}
+
+// ── INIT ─────────────────────────────────────────────────────
+startTypewriter();
+</script>
+</body>
 </html>
