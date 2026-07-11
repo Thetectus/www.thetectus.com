@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página não encontrada — The Tectus</title>
+<meta name="description" content="A página que procura não existe ou foi movida.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0F1E;--ink-2:#3D4460;--ink-3:#8A8FA8;
+  --surface:#FFFFFF;--surface-2:#F4F5F8;--surface-3:#ECEDF2;
+  --accent:#1847C8;--accent-2:#0F2F8A;--glow:#4A7CFF;
+  --radius:10px;--radius-lg:18px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',sans-serif;background:var(--ink);color:white;
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:2rem;position:relative;overflow:hidden;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none}
+.bg-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.orb1{width:480px;height:480px;background:rgba(24,71,200,.25);right:-100px;top:-120px}
+.orb2{width:320px;height:320px;background:rgba(74,124,255,.15);left:-80px;bottom:-100px}
+.logo{display:flex;align-items:center;gap:8px;font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:white;margin-bottom:3.5rem;position:relative;z-index:1}
+.logo .dot{width:8px;height:8px;border-radius:50%;background:var(--glow)}
+.code{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(4rem,14vw,7rem);line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(135deg,var(--accent),var(--glow));-webkit-background-clip:text;background-clip:text;color:transparent;
+  position:relative;z-index:1;margin-bottom:1rem;
+}
+h1{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:.9rem;position:relative;z-index:1}
+p{color:rgba(255,255,255,.55);max-width:42ch;margin-bottom:2.25rem;font-size:.95rem;position:relative;z-index:1}
+.actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+.btn-primary{background:var(--accent);color:white;padding:13px 26px;border-radius:var(--radius);font-size:.9rem;font-weight:600;transition:background .15s,transform .2s,box-shadow .2s}
+.btn-primary:hover{background:var(--glow);transform:translateY(-2px);box-shadow:0 8px 24px rgba(74,124,255,.35)}
+.btn-outline{background:transparent;color:white;padding:13px 26px;border-radius:var(--radius);font-size:.9rem;font-weight:500;border:1px solid rgba(255,255,255,.2);transition:all .2s}
+.btn-outline:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.07)}
+</style>
+</head>
+<body>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+
+  <a href="/" class="logo"><span class="dot"></span>The Tectus</a>
+
+  <div class="code">404</div>
+  <h1>Esta página não existe.</h1>
+  <p>O link pode estar errado ou a página foi movida. Volte à página inicial ou explore o nosso portfólio.</p>
+
+  <div class="actions">
+    <a href="/" class="btn-primary">Voltar à página inicial</a>
+    <a href="/portfolio.html" class="btn-outline">Ver portfólio</a>
+  </div>
+</body>
+</html>
