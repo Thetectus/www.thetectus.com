@@ -1,0 +1,42 @@
+{
+  "404.html": {
+    "mtime": 1784115571.891478,
+    "ast_hash": "e95fce824e885d77372c2f59d3923fd6",
+    "semantic_hash": "e95fce824e885d77372c2f59d3923fd6"
+  },
+  "index.html": {
+    "mtime": 1784143660.6238062,
+    "ast_hash": "852d99ee0bb0d12def124b1252fffe08",
+    "semantic_hash": "852d99ee0bb0d12def124b1252fffe08"
+  },
+  "portfolio.html": {
+    "mtime": 1784115571.895478,
+    "ast_hash": "d69b2d1fe00e5b21e28eb2db7db50c42",
+    "semantic_hash": "d69b2d1fe00e5b21e28eb2db7db50c42"
+  },
+  "apple-touch-icon.png": {
+    "mtime": 1784115571.891478,
+    "ast_hash": "eb615ac3af6dbb4495c35b9f974fb84f",
+    "semantic_hash": "eb615ac3af6dbb4495c35b9f974fb84f"
+  },
+  "favicon-16.png": {
+    "mtime": 1784115571.891478,
+    "ast_hash": "ae874cd65ba42edc89205e829785fdbc",
+    "semantic_hash": "ae874cd65ba42edc89205e829785fdbc"
+  },
+  "favicon-32.png": {
+    "mtime": 1784115571.891478,
+    "ast_hash": "de55f1d4f095bf7bb67480d0beaa723b",
+    "semantic_hash": "de55f1d4f095bf7bb67480d0beaa723b"
+  },
+  "favicon.svg": {
+    "mtime": 1784115571.895478,
+    "ast_hash": "27009d430533214ca0e7c12ca6a8a115",
+    "semantic_hash": "27009d430533214ca0e7c12ca6a8a115"
+  },
+  "og-image.png": {
+    "mtime": 1784115571.895478,
+    "ast_hash": "558f503b99fdea0deed2004dc58f348f",
+    "semantic_hash": "558f503b99fdea0deed2004dc58f348f"
+  }
+}
