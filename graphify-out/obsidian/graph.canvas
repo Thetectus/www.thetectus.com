@@ -1,0 +1,821 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "Homepage Brand Story",
+      "x": 0,
+      "y": 0,
+      "width": 660,
+      "height": 420,
+      "color": "1"
+    },
+    {
+      "id": "n_404_page",
+      "type": "file",
+      "file": "404 Not Found Page.md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_about_section",
+      "type": "file",
+      "file": "About Section (Quem Somos).md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_fieldtrack",
+      "type": "file",
+      "file": "FieldTrack Product (Homepage description).md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_hero_section",
+      "type": "file",
+      "file": "Hero Section.md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_product_section",
+      "type": "file",
+      "file": "Product Section (FieldTrack).md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_saas_products_service",
+      "type": "file",
+      "file": "SaaS Products Service.md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_thetectus",
+      "type": "file",
+      "file": "The Tectus (Company).md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_404_thetectus_brand",
+      "type": "file",
+      "file": "The Tectus BrandLogo (404 page).md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_page",
+      "type": "file",
+      "file": "The Tectus Homepage.md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Portfolio Product Family",
+      "x": 740,
+      "y": 0,
+      "width": 660,
+      "height": 420,
+      "color": "2"
+    },
+    {
+      "id": "n_portfolio_assettrack",
+      "type": "file",
+      "file": "AssetTrack Product (in development).md",
+      "x": 760,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_docflow",
+      "type": "file",
+      "file": "DocFlow Product (in development).md",
+      "x": 960,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_fieldtrack",
+      "type": "file",
+      "file": "FieldTrack Product (Portfolio featured card).md",
+      "x": 1160,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_tech_stack",
+      "type": "file",
+      "file": "FieldTrack Tech Stack (JavaScript, Supabase, PostgreSQL, Vercel, RLS).md",
+      "x": 760,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_fleettrack",
+      "type": "file",
+      "file": "FleetTrack Product (in development).md",
+      "x": 960,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_language_selector",
+      "type": "file",
+      "file": "Multi-language Selector (PTENFR, Homepage).md",
+      "x": 1160,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_language_selector",
+      "type": "file",
+      "file": "Multi-language Selector (PTENFR, Portfolio).md",
+      "x": 760,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_page",
+      "type": "file",
+      "file": "Portfolio Page.md",
+      "x": 960,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_portfolio_filter_bar",
+      "type": "file",
+      "file": "Project Filter Bar (AllLiveDevSaaSOil&GasLogistics).md",
+      "x": 1160,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Service Offerings",
+      "x": 1480,
+      "y": 0,
+      "width": 660,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_index_custom_software_service",
+      "type": "file",
+      "file": "Custom Software Service.md",
+      "x": 1500,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_dashboards_reports_service",
+      "type": "file",
+      "file": "Dashboards & Reports Service.md",
+      "x": 1700,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_integrations_apis_service",
+      "type": "file",
+      "file": "Integrations & APIs Service.md",
+      "x": 1900,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_process_automation_service",
+      "type": "file",
+      "file": "Process Automation Service.md",
+      "x": 1500,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_services_section",
+      "type": "file",
+      "file": "Services Section.md",
+      "x": 1700,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_index_support_maintenance_service",
+      "type": "file",
+      "file": "Support & Maintenance Service.md",
+      "x": 1900,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "Social Share Image",
+      "x": 0,
+      "y": 500,
+      "width": 660,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_og_image_headline_software_problemas_reais",
+      "type": "file",
+      "file": "Headline 'Software que resolve problemas reais.'.md",
+      "x": 20,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_og_image_subheadline_software_house_angolana",
+      "type": "file",
+      "file": "Subheadline 'Software house angolana \u2014 solu\u00e7\u00f5es sob medida e produtos SaaS pr\u00f3prios para \u00c1frica e al\u00e9m.'.md",
+      "x": 220,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_og_image_tectus_company",
+      "type": "file",
+      "file": "Tectus (software house, Angola).md",
+      "x": 420,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_og_image_og_image",
+      "type": "file",
+      "file": "Tectus Open Graph Preview Image.md",
+      "x": 20,
+      "y": 660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_og_image_the_tectus_brand",
+      "type": "file",
+      "file": "The Tectus (brand mark).md",
+      "x": 220,
+      "y": 660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_og_image_domain_thetectus_com",
+      "type": "file",
+      "file": "thetectus.com (domain).md",
+      "x": 420,
+      "y": 660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "Favicon SVG Mark",
+      "x": 740,
+      "y": 500,
+      "width": 660,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_favicon_blue_circle_symbol",
+      "type": "file",
+      "file": "Blue Filled Circle Symbol.md",
+      "x": 760,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_favicon_rounded_square_background",
+      "type": "file",
+      "file": "Dark Navy Rounded-Square Background_1.md",
+      "x": 960,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_favicon_circle_ring_outline",
+      "type": "file",
+      "file": "Darker Blue Ring Outline on Circle.md",
+      "x": 1160,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_favicon_favicon_icon",
+      "type": "file",
+      "file": "Tectus Favicon Icon (favicon.svg).md",
+      "x": 760,
+      "y": 660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_favicon_tectus_brand",
+      "type": "file",
+      "file": "Tectus Website Brand_1.md",
+      "x": 960,
+      "y": 660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "Favicon 32px Mark",
+      "x": 1480,
+      "y": 500,
+      "width": 600,
+      "height": 400,
+      "color": "6"
+    },
+    {
+      "id": "n_favicon_32_blue_dot_symbol",
+      "type": "file",
+      "file": "Blue Dot  Circle Symbol.md",
+      "x": 1500,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_favicon_32_dark_background",
+      "type": "file",
+      "file": "Dark Rounded-Square Background.md",
+      "x": 1700,
+      "y": 580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_favicon_32_favicon",
+      "type": "file",
+      "file": "Tectus Favicon (32x32).md",
+      "x": 1500,
+      "y": 660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_favicon_32_tectus_brand",
+      "type": "file",
+      "file": "Tectus Website Brand.md",
+      "x": 1700,
+      "y": 660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "Apple Touch Icon",
+      "x": 0,
+      "y": 980,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_apple_touch_icon_apple_touch_icon",
+      "type": "file",
+      "file": "Apple Touch Icon (Tectus Brand Mark).md",
+      "x": 20,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apple_touch_icon_dot_symbol",
+      "type": "file",
+      "file": "Blue Dot Symbol.md",
+      "x": 220,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_apple_touch_icon_dark_navy_background",
+      "type": "file",
+      "file": "Dark Navy Rounded-Square Background.md",
+      "x": 20,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "Favicon 16px Mark",
+      "x": 740,
+      "y": 980,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_favicon_16_logomark",
+      "type": "file",
+      "file": "Circular Dark Logomark with Light Dot Accent.md",
+      "x": 760,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_favicon_16_tectus_brand",
+      "type": "file",
+      "file": "Tectus Brand Identity.md",
+      "x": 960,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_favicon_16_favicon",
+      "type": "file",
+      "file": "Tectus Favicon (16x16).md",
+      "x": 760,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_404_page_404_thetectus_brand",
+      "fromNode": "n_404_page",
+      "toNode": "n_404_thetectus_brand",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_404_page_index_page",
+      "fromNode": "n_404_page",
+      "toNode": "n_index_page",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_404_page_portfolio_page",
+      "fromNode": "n_404_page",
+      "toNode": "n_portfolio_page",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_404_thetectus_brand_index_thetectus",
+      "fromNode": "n_404_thetectus_brand",
+      "toNode": "n_index_thetectus",
+      "label": "references [INFERRED]"
+    },
+    {
+      "id": "e_index_page_index_about_section",
+      "fromNode": "n_index_page",
+      "toNode": "n_index_about_section",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_page_index_hero_section",
+      "fromNode": "n_index_page",
+      "toNode": "n_index_hero_section",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_page_index_language_selector",
+      "fromNode": "n_index_page",
+      "toNode": "n_index_language_selector",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_page_index_product_section",
+      "fromNode": "n_index_page",
+      "toNode": "n_index_product_section",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_page_index_services_section",
+      "fromNode": "n_index_page",
+      "toNode": "n_index_services_section",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_page_index_thetectus",
+      "fromNode": "n_index_page",
+      "toNode": "n_index_thetectus",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_page_portfolio_page",
+      "fromNode": "n_index_page",
+      "toNode": "n_portfolio_page",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_hero_section_index_fieldtrack",
+      "fromNode": "n_index_hero_section",
+      "toNode": "n_index_fieldtrack",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_services_section_index_custom_software_service",
+      "fromNode": "n_index_services_section",
+      "toNode": "n_index_custom_software_service",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_services_section_index_dashboards_reports_service",
+      "fromNode": "n_index_services_section",
+      "toNode": "n_index_dashboards_reports_service",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_services_section_index_integrations_apis_service",
+      "fromNode": "n_index_services_section",
+      "toNode": "n_index_integrations_apis_service",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_services_section_index_process_automation_service",
+      "fromNode": "n_index_services_section",
+      "toNode": "n_index_process_automation_service",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_services_section_index_saas_products_service",
+      "fromNode": "n_index_services_section",
+      "toNode": "n_index_saas_products_service",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_services_section_index_support_maintenance_service",
+      "fromNode": "n_index_services_section",
+      "toNode": "n_index_support_maintenance_service",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_product_section_index_fieldtrack",
+      "fromNode": "n_index_product_section",
+      "toNode": "n_index_fieldtrack",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_fieldtrack_index_saas_products_service",
+      "fromNode": "n_index_fieldtrack",
+      "toNode": "n_index_saas_products_service",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_index_fieldtrack_portfolio_fieldtrack",
+      "fromNode": "n_index_fieldtrack",
+      "toNode": "n_portfolio_fieldtrack",
+      "label": "references [INFERRED]"
+    },
+    {
+      "id": "e_index_language_selector_portfolio_language_selector",
+      "fromNode": "n_index_language_selector",
+      "toNode": "n_portfolio_language_selector",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_portfolio_page_portfolio_assettrack",
+      "fromNode": "n_portfolio_page",
+      "toNode": "n_portfolio_assettrack",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_page_portfolio_docflow",
+      "fromNode": "n_portfolio_page",
+      "toNode": "n_portfolio_docflow",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_page_portfolio_fieldtrack",
+      "fromNode": "n_portfolio_page",
+      "toNode": "n_portfolio_fieldtrack",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_page_portfolio_filter_bar",
+      "fromNode": "n_portfolio_page",
+      "toNode": "n_portfolio_filter_bar",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_page_portfolio_fleettrack",
+      "fromNode": "n_portfolio_page",
+      "toNode": "n_portfolio_fleettrack",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_page_portfolio_language_selector",
+      "fromNode": "n_portfolio_page",
+      "toNode": "n_portfolio_language_selector",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_fieldtrack_portfolio_assettrack",
+      "fromNode": "n_portfolio_fieldtrack",
+      "toNode": "n_portfolio_assettrack",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_portfolio_fieldtrack_portfolio_docflow",
+      "fromNode": "n_portfolio_fieldtrack",
+      "toNode": "n_portfolio_docflow",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_portfolio_fieldtrack_portfolio_tech_stack",
+      "fromNode": "n_portfolio_fieldtrack",
+      "toNode": "n_portfolio_tech_stack",
+      "label": "shares_data_with [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_fieldtrack_portfolio_filter_bar",
+      "fromNode": "n_portfolio_fieldtrack",
+      "toNode": "n_portfolio_filter_bar",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_portfolio_fieldtrack_portfolio_fleettrack",
+      "fromNode": "n_portfolio_fieldtrack",
+      "toNode": "n_portfolio_fleettrack",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_apple_touch_icon_apple_touch_icon_apple_touch_icon_dark_navy_background",
+      "fromNode": "n_apple_touch_icon_apple_touch_icon",
+      "toNode": "n_apple_touch_icon_dark_navy_background",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_apple_touch_icon_apple_touch_icon_apple_touch_icon_dot_symbol",
+      "fromNode": "n_apple_touch_icon_apple_touch_icon",
+      "toNode": "n_apple_touch_icon_dot_symbol",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_favicon_16_favicon_favicon_16_logomark",
+      "fromNode": "n_favicon_16_favicon",
+      "toNode": "n_favicon_16_logomark",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_favicon_16_favicon_favicon_16_tectus_brand",
+      "fromNode": "n_favicon_16_favicon",
+      "toNode": "n_favicon_16_tectus_brand",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_favicon_16_tectus_brand_favicon_16_logomark",
+      "fromNode": "n_favicon_16_tectus_brand",
+      "toNode": "n_favicon_16_logomark",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_favicon_32_favicon_favicon_32_blue_dot_symbol",
+      "fromNode": "n_favicon_32_favicon",
+      "toNode": "n_favicon_32_blue_dot_symbol",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_favicon_32_favicon_favicon_32_dark_background",
+      "fromNode": "n_favicon_32_favicon",
+      "toNode": "n_favicon_32_dark_background",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_favicon_32_favicon_favicon_32_tectus_brand",
+      "fromNode": "n_favicon_32_favicon",
+      "toNode": "n_favicon_32_tectus_brand",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_favicon_32_blue_dot_symbol_favicon_32_tectus_brand",
+      "fromNode": "n_favicon_32_blue_dot_symbol",
+      "toNode": "n_favicon_32_tectus_brand",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_favicon_favicon_icon_favicon_blue_circle_symbol",
+      "fromNode": "n_favicon_favicon_icon",
+      "toNode": "n_favicon_blue_circle_symbol",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_favicon_favicon_icon_favicon_rounded_square_background",
+      "fromNode": "n_favicon_favicon_icon",
+      "toNode": "n_favicon_rounded_square_background",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_favicon_favicon_icon_favicon_tectus_brand",
+      "fromNode": "n_favicon_favicon_icon",
+      "toNode": "n_favicon_tectus_brand",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_favicon_blue_circle_symbol_favicon_circle_ring_outline",
+      "fromNode": "n_favicon_blue_circle_symbol",
+      "toNode": "n_favicon_circle_ring_outline",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_favicon_blue_circle_symbol_favicon_tectus_brand",
+      "fromNode": "n_favicon_blue_circle_symbol",
+      "toNode": "n_favicon_tectus_brand",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_og_image_og_image_og_image_domain_thetectus_com",
+      "fromNode": "n_og_image_og_image",
+      "toNode": "n_og_image_domain_thetectus_com",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_og_image_og_image_og_image_headline_software_problemas_reais",
+      "fromNode": "n_og_image_og_image",
+      "toNode": "n_og_image_headline_software_problemas_reais",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_og_image_og_image_og_image_subheadline_software_house_angolana",
+      "fromNode": "n_og_image_og_image",
+      "toNode": "n_og_image_subheadline_software_house_angolana",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_og_image_og_image_og_image_the_tectus_brand",
+      "fromNode": "n_og_image_og_image",
+      "toNode": "n_og_image_the_tectus_brand",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_og_image_the_tectus_brand_og_image_tectus_company",
+      "fromNode": "n_og_image_the_tectus_brand",
+      "toNode": "n_og_image_tectus_company",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_og_image_headline_software_problemas_reais_og_image_tectus_company",
+      "fromNode": "n_og_image_headline_software_problemas_reais",
+      "toNode": "n_og_image_tectus_company",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_og_image_subheadline_software_house_angolana_og_image_tectus_company",
+      "fromNode": "n_og_image_subheadline_software_house_angolana",
+      "toNode": "n_og_image_tectus_company",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_og_image_domain_thetectus_com_og_image_tectus_company",
+      "fromNode": "n_og_image_domain_thetectus_com",
+      "toNode": "n_og_image_tectus_company",
+      "label": "conceptually_related_to [INFERRED]"
+    }
+  ]
+}
