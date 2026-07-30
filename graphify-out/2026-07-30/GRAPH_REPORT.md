@@ -1,18 +1,12 @@
-# Graph Report - www.thetectus.com  (2026-07-30)
+# Graph Report - .  (2026-07-15)
 
 ## Corpus Check
-- 2 files · ~11,759 words
-- Verdict: corpus is large enough that graph structure adds value.
+- Corpus is ~11,565 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 47 nodes · 56 edges · 9 communities (8 shown, 1 thin omitted)
+- 45 nodes · 55 edges · 8 communities
 - Extraction: 73% EXTRACTED · 27% INFERRED · 0% AMBIGUOUS · INFERRED: 15 edges (avg confidence: 0.82)
-- Token cost: 0 input · 0 output
-
-## Graph Freshness
-- Built from commit: `c1faa019`
-- Run `git rev-parse HEAD` and compare to check if the graph is stale.
-- Run `graphify update .` after code changes (no API cost).
+- Token cost: 228,896 input · 0 output
 
 ## Community Hubs (Navigation)
 - Homepage Brand Story
@@ -23,7 +17,6 @@
 - Favicon 32px Mark
 - Apple Touch Icon
 - Favicon 16px Mark
-- CLAUDE.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `The Tectus Homepage` - 8 edges
@@ -53,7 +46,7 @@
 - **Homepage Navigation Flow (Nav links to Hero/About/Services/Product sections)** — index_hero_section, index_about_section, index_services_section, index_product_section [EXTRACTED 1.00]
 - **The Tectus SaaS Product Portfolio (FieldTrack, FleetTrack, AssetTrack, DocFlow)** — portfolio_fieldtrack, portfolio_fleettrack, portfolio_assettrack, portfolio_docflow [INFERRED 0.80]
 
-## Communities (9 total, 1 thin omitted)
+## Communities (8 total, 0 thin omitted)
 
 ### Community 0 - "Homepage Brand Story"
 Cohesion: 0.28
@@ -88,20 +81,19 @@ Cohesion: 1.00
 Nodes (3): Tectus Favicon (16x16), Circular Dark Logomark with Light Dot Accent, Tectus Brand Identity
 
 ## Knowledge Gaps
-- **13 isolated node(s):** `graphify`, `About Section (Quem Somos)`, `Custom Software Service`, `Process Automation Service`, `Dashboards & Reports Service` (+8 more)
+- **12 isolated node(s):** `About Section (Quem Somos)`, `Custom Software Service`, `Process Automation Service`, `Dashboards & Reports Service`, `Integrations & APIs Service` (+7 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `The Tectus Homepage` connect `Homepage Brand Story` to `Portfolio Product Family`, `Service Offerings`?**
-  _High betweenness centrality (0.135) - this node is a cross-community bridge._
+  _High betweenness centrality (0.148) - this node is a cross-community bridge._
 - **Why does `Services Section` connect `Service Offerings` to `Homepage Brand Story`?**
-  _High betweenness centrality (0.104) - this node is a cross-community bridge._
+  _High betweenness centrality (0.113) - this node is a cross-community bridge._
 - **Why does `Portfolio Page` connect `Portfolio Product Family` to `Homepage Brand Story`?**
-  _High betweenness centrality (0.086) - this node is a cross-community bridge._
+  _High betweenness centrality (0.094) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `FieldTrack Product (Portfolio featured card)` (e.g. with `AssetTrack Product (in development)` and `DocFlow Product (in development)`) actually correct?**
   _`FieldTrack Product (Portfolio featured card)` has 4 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `graphify`, `About Section (Quem Somos)`, `Custom Software Service` to the rest of the system?**
-  _13 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `About Section (Quem Somos)`, `Custom Software Service`, `Process Automation Service` to the rest of the system?**
+  _12 weakly-connected nodes found - possible documentation gaps or missing edges._

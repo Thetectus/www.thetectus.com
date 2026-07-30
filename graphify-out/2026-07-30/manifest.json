@@ -38,15 +38,5 @@
     "mtime": 1784115571.895478,
     "ast_hash": "558f503b99fdea0deed2004dc58f348f",
     "semantic_hash": "558f503b99fdea0deed2004dc58f348f"
-  },
-  ".claude/settings.json": {
-    "mtime": 1784144782.8477597,
-    "ast_hash": "007dd1a228f68611327c81b2fffe3678",
-    "semantic_hash": ""
-  },
-  "CLAUDE.md": {
-    "mtime": 1785405943.8435678,
-    "ast_hash": "e4a7b1aeabb3a7de6c4f40ab44a54ebb",
-    "semantic_hash": ""
   }
 }

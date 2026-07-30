@@ -484,9 +484,43 @@
       "y": 1140,
       "width": 180,
       "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "CLAUDE.md",
+      "x": 1480,
+      "y": 980,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_claude",
+      "type": "file",
+      "file": "CLAUDE.md",
+      "x": 1500,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_claude_graphify",
+      "type": "file",
+      "file": "graphify.md",
+      "x": 1700,
+      "y": 1060,
+      "width": 180,
+      "height": 60
     }
   ],
   "edges": [
+    {
+      "id": "e_claude_claude_graphify",
+      "fromNode": "n_claude",
+      "toNode": "n_claude_graphify",
+      "label": "contains [EXTRACTED]"
+    },
     {
       "id": "e_404_page_404_thetectus_brand",
       "fromNode": "n_404_page",

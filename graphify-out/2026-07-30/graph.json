@@ -35,28 +35,6 @@
   },
   "nodes": [
     {
-      "label": "CLAUDE.md",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "claude",
-      "community": 8,
-      "community_name": "CLAUDE.md",
-      "norm_label": "claude.md"
-    },
-    {
-      "label": "graphify",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "claude_graphify",
-      "community": 8,
-      "community_name": "CLAUDE.md",
-      "norm_label": "graphify"
-    },
-    {
       "label": "404 Not Found Page",
       "file_type": "document",
       "source_file": "404.html",
@@ -65,10 +43,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
-      "norm_label": "404 not found page",
       "id": "404_page",
-      "community_name": "Homepage Brand Story"
+      "community": 0,
+      "norm_label": "404 not found page"
     },
     {
       "label": "The Tectus Brand/Logo (404 page)",
@@ -79,10 +56,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
-      "norm_label": "the tectus brand/logo (404 page)",
       "id": "404_thetectus_brand",
-      "community_name": "Homepage Brand Story"
+      "community": 0,
+      "norm_label": "the tectus brand/logo (404 page)"
     },
     {
       "label": "The Tectus Homepage",
@@ -93,10 +69,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
-      "norm_label": "the tectus homepage",
       "id": "index_page",
-      "community_name": "Homepage Brand Story"
+      "community": 0,
+      "norm_label": "the tectus homepage"
     },
     {
       "label": "The Tectus (Company)",
@@ -107,10 +82,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
-      "norm_label": "the tectus (company)",
       "id": "index_thetectus",
-      "community_name": "Homepage Brand Story"
+      "community": 0,
+      "norm_label": "the tectus (company)"
     },
     {
       "label": "Hero Section",
@@ -121,10 +95,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
-      "norm_label": "hero section",
       "id": "index_hero_section",
-      "community_name": "Homepage Brand Story"
+      "community": 0,
+      "norm_label": "hero section"
     },
     {
       "label": "About Section (Quem Somos)",
@@ -135,10 +108,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
-      "norm_label": "about section (quem somos)",
       "id": "index_about_section",
-      "community_name": "Homepage Brand Story"
+      "community": 0,
+      "norm_label": "about section (quem somos)"
     },
     {
       "label": "Services Section",
@@ -149,10 +121,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "norm_label": "services section",
       "id": "index_services_section",
-      "community_name": "Service Offerings"
+      "community": 2,
+      "norm_label": "services section"
     },
     {
       "label": "Product Section (FieldTrack)",
@@ -163,10 +134,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
-      "norm_label": "product section (fieldtrack)",
       "id": "index_product_section",
-      "community_name": "Homepage Brand Story"
+      "community": 0,
+      "norm_label": "product section (fieldtrack)"
     },
     {
       "label": "FieldTrack Product (Homepage description)",
@@ -177,10 +147,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
-      "norm_label": "fieldtrack product (homepage description)",
       "id": "index_fieldtrack",
-      "community_name": "Homepage Brand Story"
+      "community": 0,
+      "norm_label": "fieldtrack product (homepage description)"
     },
     {
       "label": "Multi-language Selector (PT/EN/FR, Homepage)",
@@ -191,10 +160,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "multi-language selector (pt/en/fr, homepage)",
       "id": "index_language_selector",
-      "community_name": "Portfolio Product Family"
+      "community": 1,
+      "norm_label": "multi-language selector (pt/en/fr, homepage)"
     },
     {
       "label": "Custom Software Service",
@@ -205,10 +173,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "norm_label": "custom software service",
       "id": "index_custom_software_service",
-      "community_name": "Service Offerings"
+      "community": 2,
+      "norm_label": "custom software service"
     },
     {
       "label": "Process Automation Service",
@@ -219,10 +186,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "norm_label": "process automation service",
       "id": "index_process_automation_service",
-      "community_name": "Service Offerings"
+      "community": 2,
+      "norm_label": "process automation service"
     },
     {
       "label": "Dashboards & Reports Service",
@@ -233,10 +199,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "norm_label": "dashboards & reports service",
       "id": "index_dashboards_reports_service",
-      "community_name": "Service Offerings"
+      "community": 2,
+      "norm_label": "dashboards & reports service"
     },
     {
       "label": "SaaS Products Service",
@@ -247,10 +212,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
-      "norm_label": "saas products service",
       "id": "index_saas_products_service",
-      "community_name": "Homepage Brand Story"
+      "community": 0,
+      "norm_label": "saas products service"
     },
     {
       "label": "Integrations & APIs Service",
@@ -261,10 +225,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "norm_label": "integrations & apis service",
       "id": "index_integrations_apis_service",
-      "community_name": "Service Offerings"
+      "community": 2,
+      "norm_label": "integrations & apis service"
     },
     {
       "label": "Support & Maintenance Service",
@@ -275,10 +238,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 2,
-      "norm_label": "support & maintenance service",
       "id": "index_support_maintenance_service",
-      "community_name": "Service Offerings"
+      "community": 2,
+      "norm_label": "support & maintenance service"
     },
     {
       "label": "Portfolio Page",
@@ -289,10 +251,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "portfolio page",
       "id": "portfolio_page",
-      "community_name": "Portfolio Product Family"
+      "community": 1,
+      "norm_label": "portfolio page"
     },
     {
       "label": "FieldTrack Product (Portfolio featured card)",
@@ -303,10 +264,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "fieldtrack product (portfolio featured card)",
       "id": "portfolio_fieldtrack",
-      "community_name": "Portfolio Product Family"
+      "community": 1,
+      "norm_label": "fieldtrack product (portfolio featured card)"
     },
     {
       "label": "FleetTrack Product (in development)",
@@ -317,10 +277,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "fleettrack product (in development)",
       "id": "portfolio_fleettrack",
-      "community_name": "Portfolio Product Family"
+      "community": 1,
+      "norm_label": "fleettrack product (in development)"
     },
     {
       "label": "AssetTrack Product (in development)",
@@ -331,10 +290,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "assettrack product (in development)",
       "id": "portfolio_assettrack",
-      "community_name": "Portfolio Product Family"
+      "community": 1,
+      "norm_label": "assettrack product (in development)"
     },
     {
       "label": "DocFlow Product (in development)",
@@ -345,10 +303,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "docflow product (in development)",
       "id": "portfolio_docflow",
-      "community_name": "Portfolio Product Family"
+      "community": 1,
+      "norm_label": "docflow product (in development)"
     },
     {
       "label": "Multi-language Selector (PT/EN/FR, Portfolio)",
@@ -359,10 +316,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "multi-language selector (pt/en/fr, portfolio)",
       "id": "portfolio_language_selector",
-      "community_name": "Portfolio Product Family"
+      "community": 1,
+      "norm_label": "multi-language selector (pt/en/fr, portfolio)"
     },
     {
       "label": "Project Filter Bar (All/Live/Dev/SaaS/Oil&Gas/Logistics)",
@@ -373,10 +329,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "project filter bar (all/live/dev/saas/oil&gas/logistics)",
       "id": "portfolio_filter_bar",
-      "community_name": "Portfolio Product Family"
+      "community": 1,
+      "norm_label": "project filter bar (all/live/dev/saas/oil&gas/logistics)"
     },
     {
       "label": "FieldTrack Tech Stack (JavaScript, Supabase, PostgreSQL, Vercel, RLS)",
@@ -387,10 +342,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
-      "norm_label": "fieldtrack tech stack (javascript, supabase, postgresql, vercel, rls)",
       "id": "portfolio_tech_stack",
-      "community_name": "Portfolio Product Family"
+      "community": 1,
+      "norm_label": "fieldtrack tech stack (javascript, supabase, postgresql, vercel, rls)"
     },
     {
       "label": "Apple Touch Icon (Tectus Brand Mark)",
@@ -401,10 +355,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
-      "norm_label": "apple touch icon (tectus brand mark)",
       "id": "apple_touch_icon_apple_touch_icon",
-      "community_name": "Apple Touch Icon"
+      "community": 6,
+      "norm_label": "apple touch icon (tectus brand mark)"
     },
     {
       "label": "Blue Dot Symbol",
@@ -415,10 +368,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
-      "norm_label": "blue dot symbol",
       "id": "apple_touch_icon_dot_symbol",
-      "community_name": "Apple Touch Icon"
+      "community": 6,
+      "norm_label": "blue dot symbol"
     },
     {
       "label": "Dark Navy Rounded-Square Background",
@@ -429,10 +381,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
-      "norm_label": "dark navy rounded-square background",
       "id": "apple_touch_icon_dark_navy_background",
-      "community_name": "Apple Touch Icon"
+      "community": 6,
+      "norm_label": "dark navy rounded-square background"
     },
     {
       "label": "Tectus Favicon (16x16)",
@@ -443,10 +394,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
-      "norm_label": "tectus favicon (16x16)",
       "id": "favicon_16_favicon",
-      "community_name": "Favicon 16px Mark"
+      "community": 7,
+      "norm_label": "tectus favicon (16x16)"
     },
     {
       "label": "Tectus Brand Identity",
@@ -457,10 +407,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
-      "norm_label": "tectus brand identity",
       "id": "favicon_16_tectus_brand",
-      "community_name": "Favicon 16px Mark"
+      "community": 7,
+      "norm_label": "tectus brand identity"
     },
     {
       "label": "Circular Dark Logomark with Light Dot Accent",
@@ -471,10 +420,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
-      "norm_label": "circular dark logomark with light dot accent",
       "id": "favicon_16_logomark",
-      "community_name": "Favicon 16px Mark"
+      "community": 7,
+      "norm_label": "circular dark logomark with light dot accent"
     },
     {
       "label": "Tectus Favicon (32x32)",
@@ -485,10 +433,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
-      "norm_label": "tectus favicon (32x32)",
       "id": "favicon_32_favicon",
-      "community_name": "Favicon 32px Mark"
+      "community": 5,
+      "norm_label": "tectus favicon (32x32)"
     },
     {
       "label": "Dark Rounded-Square Background",
@@ -499,10 +446,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
-      "norm_label": "dark rounded-square background",
       "id": "favicon_32_dark_background",
-      "community_name": "Favicon 32px Mark"
+      "community": 5,
+      "norm_label": "dark rounded-square background"
     },
     {
       "label": "Blue Dot / Circle Symbol",
@@ -513,10 +459,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
-      "norm_label": "blue dot / circle symbol",
       "id": "favicon_32_blue_dot_symbol",
-      "community_name": "Favicon 32px Mark"
+      "community": 5,
+      "norm_label": "blue dot / circle symbol"
     },
     {
       "label": "Tectus Website Brand",
@@ -527,10 +472,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
-      "norm_label": "tectus website brand",
       "id": "favicon_32_tectus_brand",
-      "community_name": "Favicon 32px Mark"
+      "community": 5,
+      "norm_label": "tectus website brand"
     },
     {
       "label": "Tectus Favicon Icon (favicon.svg)",
@@ -541,10 +485,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "tectus favicon icon (favicon.svg)",
       "id": "favicon_favicon_icon",
-      "community_name": "Favicon SVG Mark"
+      "community": 4,
+      "norm_label": "tectus favicon icon (favicon.svg)"
     },
     {
       "label": "Dark Navy Rounded-Square Background",
@@ -555,10 +498,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "dark navy rounded-square background",
       "id": "favicon_rounded_square_background",
-      "community_name": "Favicon SVG Mark"
+      "community": 4,
+      "norm_label": "dark navy rounded-square background"
     },
     {
       "label": "Blue Filled Circle Symbol",
@@ -569,10 +511,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "blue filled circle symbol",
       "id": "favicon_blue_circle_symbol",
-      "community_name": "Favicon SVG Mark"
+      "community": 4,
+      "norm_label": "blue filled circle symbol"
     },
     {
       "label": "Darker Blue Ring Outline on Circle",
@@ -583,10 +524,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "darker blue ring outline on circle",
       "id": "favicon_circle_ring_outline",
-      "community_name": "Favicon SVG Mark"
+      "community": 4,
+      "norm_label": "darker blue ring outline on circle"
     },
     {
       "label": "Tectus Website Brand",
@@ -597,10 +537,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 4,
-      "norm_label": "tectus website brand",
       "id": "favicon_tectus_brand",
-      "community_name": "Favicon SVG Mark"
+      "community": 4,
+      "norm_label": "tectus website brand"
     },
     {
       "label": "Tectus Open Graph Preview Image",
@@ -611,10 +550,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
-      "norm_label": "tectus open graph preview image",
       "id": "og_image_og_image",
-      "community_name": "Social Share Image"
+      "community": 3,
+      "norm_label": "tectus open graph preview image"
     },
     {
       "label": "The Tectus (brand mark)",
@@ -625,10 +563,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
-      "norm_label": "the tectus (brand mark)",
       "id": "og_image_the_tectus_brand",
-      "community_name": "Social Share Image"
+      "community": 3,
+      "norm_label": "the tectus (brand mark)"
     },
     {
       "label": "Headline: 'Software que resolve problemas reais.'",
@@ -639,10 +576,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
-      "norm_label": "headline: 'software que resolve problemas reais.'",
       "id": "og_image_headline_software_problemas_reais",
-      "community_name": "Social Share Image"
+      "community": 3,
+      "norm_label": "headline: 'software que resolve problemas reais.'"
     },
     {
       "label": "Subheadline: 'Software house angolana \u2014 solu\u00e7\u00f5es sob medida e produtos SaaS pr\u00f3prios para \u00c1frica e al\u00e9m.'",
@@ -653,10 +589,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
-      "norm_label": "subheadline: 'software house angolana \u2014 solucoes sob medida e produtos saas proprios para africa e alem.'",
       "id": "og_image_subheadline_software_house_angolana",
-      "community_name": "Social Share Image"
+      "community": 3,
+      "norm_label": "subheadline: 'software house angolana \u2014 solucoes sob medida e produtos saas proprios para africa e alem.'"
     },
     {
       "label": "thetectus.com (domain)",
@@ -667,10 +602,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
-      "norm_label": "thetectus.com (domain)",
       "id": "og_image_domain_thetectus_com",
-      "community_name": "Social Share Image"
+      "community": 3,
+      "norm_label": "thetectus.com (domain)"
     },
     {
       "label": "Tectus (software house, Angola)",
@@ -681,24 +615,12 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
-      "norm_label": "tectus (software house, angola)",
       "id": "og_image_tectus_company",
-      "community_name": "Social Share Image"
+      "community": 3,
+      "norm_label": "tectus (software house, angola)"
     }
   ],
   "links": [
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CLAUDE.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "claude",
-      "target": "claude_graphify",
-      "confidence_score": 1.0
-    },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
@@ -1280,5 +1202,5 @@
       "source_file": "portfolio.html"
     }
   ],
-  "built_at_commit": "c1faa019fec7e644562e2e8e6beba53f5bb4b53b"
+  "built_at_commit": "a4dac92304e2bdfddd047770f0cec3d96b4e1634"
 }

@@ -55,6 +55,13 @@
         "a": 1,
         "rgb": 16752039
       }
+    },
+    {
+      "query": "tag:#community/CLAUDE.md",
+      "color": {
+        "a": 1,
+        "rgb": 10253663
+      }
     }
   ]
 }
