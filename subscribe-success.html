@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A confirmar pagamento — FieldTrack</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root{--ink:#0A0F1E;--slate:#1C2333;--gold:#C9A84C;--mist:#F2F4F8;--muted:#8A95A8;--green:#2E7D32;--green-bg:#EAF3DE;--red:#791F1F;--red-bg:#FCEBEB}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:var(--mist);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem}
+  .card{background:#fff;border-radius:16px;padding:2.5rem 2rem;max-width:420px;width:100%;text-align:center;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+  h1{font-family:'Syne',sans-serif;font-size:20px;margin-bottom:.75rem}
+  p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:1.5rem}
+  .spinner{width:32px;height:32px;border:3px solid #eee;border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 1.25rem}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .btn{display:inline-block;padding:11px 24px;background:var(--slate);color:#fff;border-radius:8px;font-size:13px;font-weight:500;text-decoration:none}
+  .status{font-size:12px;padding:8px 12px;border-radius:8px;margin-top:1rem;display:none}
+  .status.pending{background:#faeeda;color:#633806;display:block}
+  .status.error{background:var(--red-bg);color:var(--red);display:block}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="spinner" id="spinner"></div>
+    <h1 id="title">A confirmar o teu pagamento…</h1>
+    <p id="sub">Isto costuma demorar poucos segundos. Não fecha esta página.</p>
+    <a href="https://myinventorytracker.vercel.app" class="btn" id="btn-go" style="display:none">Entrar no FieldTrack →</a>
+    <div class="status" id="status"></div>
+  </div>
+
+<script>
+const SUPABASE_URL  = 'https://cqpsofmaaktsjtlkariw.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxcHNvZm1hYWt0c2p0bGthcml3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5ODM0MTIsImV4cCI6MjA5MTU1OTQxMn0.O5t-sDLAgvmy-Z9P_FVV2AS9ciewG33ZQy0HDbOA7yo';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+const params = new URLSearchParams(window.location.search);
+const tenantId = params.get('tenant');
+const slug = params.get('slug');
+
+async function poll(attempt) {
+  if (!tenantId) { showError('Falta a referência da empresa. Contacta support@thetectus.com.'); return; }
+  if (attempt > 15) {
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('title').textContent = 'Ainda a processar';
+    document.getElementById('status').className = 'status pending';
+    document.getElementById('status').textContent = 'O pagamento pode ainda estar a ser confirmado pelo banco/Flutterwave. Tenta entrar dentro de alguns minutos — os teus dados já estão guardados.';
+    document.getElementById('btn-go').style.display = 'inline-block';
+    document.getElementById('btn-go').href = `https://myinventorytracker.vercel.app?tenant=${tenantId}&slug=${slug}`;
+    return;
+  }
+  const { data, error } = await sb.rpc('get_tenant_activation_status', { p_tenant_id: tenantId });
+  if (!error && data?.active) {
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('title').textContent = 'Pagamento confirmado!';
+    document.getElementById('sub').textContent = 'A tua conta está activa.';
+    document.getElementById('btn-go').style.display = 'inline-block';
+    document.getElementById('btn-go').href = `https://myinventorytracker.vercel.app?tenant=${tenantId}&slug=${slug}`;
+    return;
+  }
+  setTimeout(() => poll(attempt + 1), 2000);
+}
+
+function showError(msg) {
+  document.getElementById('spinner').style.display = 'none';
+  document.getElementById('title').textContent = 'Algo correu mal';
+  document.getElementById('status').className = 'status error';
+  document.getElementById('status').textContent = msg;
+}
+
+poll(0);
+</script>
+</body>
+</html>
