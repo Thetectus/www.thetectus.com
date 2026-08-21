@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/trial", "destination": "/trial.html" },
+    { "source": "/trial/", "destination": "/trial.html" },
+    { "source": "/portfolio", "destination": "/portfolio.html" },
+    { "source": "/portfolio/", "destination": "/portfolio.html" }
+  ]
+}
