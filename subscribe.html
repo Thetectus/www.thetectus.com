@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <style>
 :root {
   --ink:      #0A0F1E;
@@ -106,32 +107,36 @@ footer a{color:var(--muted);text-decoration:none}
       FieldTrack
     </div>
     <h1>Escolhe o teu plano e <span>activa na hora</span></h1>
-    <p>Pagamento com cartão via Flutterwave. A conta fica activa assim que o pagamento for confirmado.</p>
+    <p>Pagamento com cartão via Paddle. A conta fica activa assim que o pagamento for confirmado.</p>
+
+    <div class="billing-toggle" style="display:flex;gap:6px;background:var(--white);border:0.5px solid var(--border-l);border-radius:var(--r-lg);padding:4px;margin-bottom:1rem;width:fit-content">
+      <button type="button" class="toggle-opt selected" data-cycle="month" onclick="setCycle('month')" style="border:none;background:none;padding:8px 16px;border-radius:10px;font-family:var(--f-display);font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)">Mensal</button>
+      <button type="button" class="toggle-opt" data-cycle="year" onclick="setCycle('year')" style="border:none;background:none;padding:8px 16px;border-radius:10px;font-family:var(--f-display);font-size:12px;font-weight:600;cursor:pointer;color:var(--muted)">Anual <span style="color:var(--green)">−17%</span></button>
+    </div>
 
     <div class="plan-list">
       <label class="plan-card selected" data-plan="starter">
         <input type="radio" name="plan" value="starter" checked>
         <div class="plan-name">Starter</div>
-        <div class="plan-price">$299/mês</div>
+        <div class="plan-price"><span class="price-month">$39/mês</span><span class="price-year" style="display:none">$390/ano</span></div>
         <div class="plan-desc">5 utilizadores · 3 localizações</div>
       </label>
       <label class="plan-card" data-plan="professional">
         <input type="radio" name="plan" value="professional">
         <div class="plan-name">Professional</div>
-        <div class="plan-price">$799/mês</div>
+        <div class="plan-price"><span class="price-month">$99/mês</span><span class="price-year" style="display:none">$990/ano</span></div>
         <div class="plan-desc">15 utilizadores · 10 localizações</div>
-      </label>
-      <label class="plan-card" data-plan="enterprise">
-        <input type="radio" name="plan" value="enterprise">
-        <div class="plan-name">Enterprise</div>
-        <div class="plan-price">desde $1.999/mês</div>
-        <div class="plan-desc">Utilizadores e localizações ilimitados</div>
       </label>
     </div>
 
     <div class="local-note">
+      <strong>Empresa maior ou operação O&amp;G multi-país?</strong>
+      Plano Enterprise sob consulta — escreve para
+      <a href="mailto:support@thetectus.com">support@thetectus.com</a>.
+    </div>
+    <div class="local-note" style="margin-top:10px">
       <strong>Pagamento em moeda local (AOA)?</strong>
-      Contacta <a href="mailto:support@thetectus.com">support@thetectus.com</a> para activares por transferência bancária.
+      Contacta <a href="mailto:support@thetectus.com">support@thetectus.com</a> para activares por transferência bancária nacional.
     </div>
   </div>
 
@@ -187,7 +192,37 @@ const SUPABASE_URL  = 'https://cqpsofmaaktsjtlkariw.supabase.co';
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxcHNvZm1hYWt0c2p0bGthcml3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5ODM0MTIsImV4cCI6MjA5MTU1OTQxMn0.O5t-sDLAgvmy-Z9P_FVV2AS9ciewG33ZQy0HDbOA7yo';
 const APP_URL = 'https://myinventorytracker.vercel.app';
 
+// TODO before going live: replace with the PRODUCTION client-side
+// token (Paddle Dashboard -> Developer Tools -> Authentication ->
+// Client-side tokens) and switch Environment to 'production' below.
+// This is a publishable token, safe to expose client-side — it is NOT
+// the API key used server-side to create the catalog.
+const PADDLE_CLIENT_TOKEN = 'REPLACE_WITH_SANDBOX_CLIENT_SIDE_TOKEN';
+
+// Paddle price IDs — sandbox catalog created 2026-08-31 (see the
+// cerebro-do-kiko vault, sessions/inventory-tracker/2026-08-31-precos-e-paddle.md).
+const PADDLE_PRICES = {
+  starter:      { month: 'pri_01m1arr3br8tjjjxpj92pj55vv', year: 'pri_01m1arr3s6b7z40231nx85d16z' },
+  professional: { month: 'pri_01m1arrbfcg4pbdk2kr6r4v3zj', year: 'pri_01m1arrbq1c4csvz3b7x3xrgwy' },
+};
+
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+Paddle.Environment.set('sandbox'); // TODO: remove this line for production
+Paddle.Initialize({ token: PADDLE_CLIENT_TOKEN });
+
+let billingCycle = 'month';
+function setCycle(cycle) {
+  billingCycle = cycle;
+  document.querySelectorAll('.toggle-opt').forEach(b => {
+    const on = b.dataset.cycle === cycle;
+    b.classList.toggle('selected', on);
+    b.style.background = on ? 'var(--gold)' : 'none';
+    b.style.color = on ? 'var(--ink)' : 'var(--muted)';
+  });
+  document.querySelectorAll('.price-month').forEach(el => el.style.display = cycle === 'month' ? '' : 'none');
+  document.querySelectorAll('.price-year').forEach(el => el.style.display = cycle === 'year' ? '' : 'none');
+}
 
 document.querySelectorAll('.plan-card').forEach(card => {
   card.addEventListener('click', () => {
@@ -243,8 +278,8 @@ async function startCheckout() {
     await new Promise(r => setTimeout(r, 800));
 
     // Creates the tenant in a "pending payment" state — inactive until
-    // the Flutterwave webhook confirms payment (see create_pending_tenant
-    // RPC + flutterwave-webhook Edge Function).
+    // the Paddle webhook confirms payment (see create_pending_tenant
+    // RPC + supabase/functions/paddle-webhook).
     const { data: result, error: fnErr } = await sb.rpc('create_pending_tenant', {
       p_name: companyName, p_slug: slug, p_email: email,
       p_user_id: authData.user.id, p_full_name: fullName, p_plan: plan
@@ -254,16 +289,21 @@ async function startCheckout() {
     const tenantId = result?.tenant_id || result?.[0]?.tenant_id;
     if (!tenantId) return showMsg('Empresa criada mas não foi possível iniciar o pagamento. Contacta support@thetectus.com', 'error');
 
-    // Ask the Edge Function (holds the Flutterwave secret key) for a
-    // hosted checkout link, then redirect the browser there.
-    const { data: checkout, error: checkoutErr } = await sb.functions.invoke('create-checkout', {
-      body: { tenant_id: tenantId, plan, email, company_name: companyName, redirect_url: `${window.location.origin}/subscribe-success?tenant=${tenantId}&slug=${slug}` }
+    // Open Paddle's embedded checkout directly in the browser — no
+    // server round-trip needed to get a checkout URL (unlike the
+    // Flutterwave hosted-link model this replaced). custom_data flows
+    // through to the transaction.completed webhook event, which is
+    // how paddle-webhook knows which tenant/plan to activate.
+    const priceId = PADDLE_PRICES[plan][billingCycle];
+    Paddle.Checkout.open({
+      items: [{ priceId, quantity: 1 }],
+      customer: { email },
+      customData: { tenant_id: tenantId, plan },
+      settings: {
+        displayMode: 'overlay',
+        successUrl: `${window.location.origin}/subscribe-success?tenant=${tenantId}&slug=${slug}`,
+      },
     });
-    if (checkoutErr || !checkout?.checkout_url) {
-      return showMsg('Conta criada, mas não foi possível abrir o pagamento. Contacta support@thetectus.com com o nome da tua empresa.', 'error');
-    }
-
-    window.location.href = checkout.checkout_url;
 
   } catch (err) {
     showMsg('Erro inesperado. Tenta novamente ou contacta support@thetectus.com', 'error');
