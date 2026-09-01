@@ -84,6 +84,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);backgrou
 .project-featured{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--surface-3);margin-bottom:2rem;transition:box-shadow .3s}
 .project-featured:hover{box-shadow:0 16px 50px rgba(24,71,200,.12)}
 .pf-visual{background:var(--ink);padding:2.5rem;display:flex;flex-direction:column;gap:14px}
+.pf-visual-label{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--glow)}
+.pf-visual-content{display:flex;flex-direction:column;gap:14px;transition:opacity .35s ease}
+.pf-visual-dots{display:flex;gap:6px;margin-top:2px}
+.pf-visual-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.18);border:none;padding:0;cursor:pointer;transition:background .2s,transform .2s}
+.pf-visual-dot.active{background:var(--glow);transform:scale(1.2)}
 .pf-visual-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .pf-visual-kpi{background:rgba(255,255,255,.06);border-radius:8px;padding:.875rem}
 .pf-visual-kpi-val{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:white}
@@ -228,16 +233,24 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
       </div>
       <div class="project-featured">
         <div class="pf-visual">
-          <div class="pf-visual-kpis">
-            <div class="pf-visual-kpi"><div class="pf-visual-kpi-val">$2.8M</div><div class="pf-visual-kpi-lab" data-pt="Valor em inventário" data-en="Inventory value" data-fr="Valeur en stock">Valor em inventário</div></div>
-            <div class="pf-visual-kpi"><div class="pf-visual-kpi-val" style="color:#FBBF24">3</div><div class="pf-visual-kpi-lab" data-pt="Alertas activos" data-en="Active alerts" data-fr="Alertes actives">Alertas activos</div></div>
-            <div class="pf-visual-kpi"><div class="pf-visual-kpi-val">147</div><div class="pf-visual-kpi-lab" data-pt="Itens rastreados" data-en="Items tracked" data-fr="Articles suivis">Itens rastreados</div></div>
-            <div class="pf-visual-kpi"><div class="pf-visual-kpi-val">8</div><div class="pf-visual-kpi-lab" data-pt="Países" data-en="Countries" data-fr="Pays">Países</div></div>
+          <div class="pf-visual-label" id="pf-visual-label">Inventário</div>
+          <div class="pf-visual-content" id="pf-visual-content">
+            <div class="pf-visual-kpis">
+              <div class="pf-visual-kpi"><div class="pf-visual-kpi-val">$2.8M</div><div class="pf-visual-kpi-lab">Valor em inventário</div></div>
+              <div class="pf-visual-kpi"><div class="pf-visual-kpi-val" style="color:#FBBF24">3</div><div class="pf-visual-kpi-lab">Alertas activos</div></div>
+              <div class="pf-visual-kpi"><div class="pf-visual-kpi-val">147</div><div class="pf-visual-kpi-lab">Itens rastreados</div></div>
+              <div class="pf-visual-kpi"><div class="pf-visual-kpi-val">8</div><div class="pf-visual-kpi-lab">Países</div></div>
+            </div>
+            <div class="pf-visual-bar"><div class="pf-visual-fill" style="width:73%"></div></div>
+            <div class="pf-visual-row"><span>SN-2024-047</span><span>Válvula hidráulica</span></div>
+            <div class="pf-visual-row"><span>SN-2024-031</span><span>Kit de vedantes</span></div>
+            <div class="pf-visual-row"><span>SN-2024-019</span><span>Bomba hidráulica</span></div>
           </div>
-          <div class="pf-visual-bar"><div class="pf-visual-fill" style="width:73%"></div></div>
-          <div class="pf-visual-row"><span>SN-2024-047</span><span>Válvula hidráulica</span></div>
-          <div class="pf-visual-row"><span>SN-2024-031</span><span>Kit de vedantes</span></div>
-          <div class="pf-visual-row"><span>SN-2024-019</span><span>Bomba hidráulica</span></div>
+          <div class="pf-visual-dots" id="pf-visual-dots">
+            <button type="button" class="pf-visual-dot active" aria-label="View 1"></button>
+            <button type="button" class="pf-visual-dot" aria-label="View 2"></button>
+            <button type="button" class="pf-visual-dot" aria-label="View 3"></button>
+          </div>
         </div>
         <div class="pf-info">
           <div class="pf-info-tags">
@@ -259,7 +272,7 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
           </div>
           <div class="pf-info-actions">
             <a href="https://myinventorytracker.vercel.app" target="_blank" class="btn-pf-primary" data-pt="Experimentar agora" data-en="Try it now" data-fr="Essayer maintenant">Experimentar agora</a>
-            <a href="index.html#contact" class="btn-pf-outline" data-pt="Solicitar demonstração" data-en="Request a demo" data-fr="Demander une démo">Solicitar demonstração</a>
+            <a href="https://myinventorytracker.vercel.app" target="_blank" class="btn-pf-outline" data-pt="Já é cliente? Aceder" data-en="Already a customer? Sign in" data-fr="Déjà client ? Se connecter">Já é cliente? Aceder</a>
           </div>
           <div class="pf-info-stack">
             <span class="stack-tag">JavaScript</span>
@@ -377,7 +390,9 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 
 <script>
 // ── LANGUAGE ─────────────────────────────────────────────────
+let currentLang='pt';
 function setLang(lang,flag,label,optEl){
+  currentLang=lang;
   document.getElementById('current-flag').textContent=flag;
   document.getElementById('current-lang-label').textContent=label;
   document.querySelectorAll('.lang-option').forEach(o=>o.classList.remove('active'));
@@ -390,7 +405,96 @@ function setLang(lang,flag,label,optEl){
     else el.textContent=val;
   });
   document.documentElement.lang=lang;
+  renderPfView(pfViewIdx);
 }
+
+// ── FIELDTRACK DASHBOARD PREVIEW ────────────────────────────
+const PF_VIEWS=[
+  {
+    label:{pt:'Inventário',en:'Inventory',fr:'Inventaire'},
+    kpis:[
+      {val:'$2.8M',color:'',lab:{pt:'Valor em inventário',en:'Inventory value',fr:'Valeur en stock'}},
+      {val:'3',color:'#FBBF24',lab:{pt:'Alertas activos',en:'Active alerts',fr:'Alertes actives'}},
+      {val:'147',color:'',lab:{pt:'Itens rastreados',en:'Items tracked',fr:'Articles suivis'}},
+      {val:'8',color:'',lab:{pt:'Países',en:'Countries',fr:'Pays'}}
+    ],
+    bar:73,
+    rows:[
+      ['SN-2024-047',{pt:'Válvula hidráulica',en:'Hydraulic valve',fr:'Vanne hydraulique'}],
+      ['SN-2024-031',{pt:'Kit de vedantes',en:'Seal kit',fr:'Kit de joints'}],
+      ['SN-2024-019',{pt:'Bomba hidráulica',en:'Hydraulic pump',fr:'Pompe hydraulique'}]
+    ]
+  },
+  {
+    label:{pt:'Alertas de stock',en:'Stock alerts',fr:'Alertes de stock'},
+    kpis:[
+      {val:'3',color:'#FBBF24',lab:{pt:'Stock baixo',en:'Low stock',fr:'Stock faible'}},
+      {val:'5',color:'#F87171',lab:{pt:'Reposição pendente',en:'Pending restock',fr:'Réappro en attente'}},
+      {val:'12',color:'',lab:{pt:'Dias até ruptura',en:'Days to stockout',fr:'Jours avant rupture'}},
+      {val:'2',color:'',lab:{pt:'Fornecedores',en:'Suppliers',fr:'Fournisseurs'}}
+    ],
+    bar:24,
+    rows:[
+      ['SN-2024-031',{pt:'Kit de vedantes — baixo',en:'Seal kit — low',fr:'Kit de joints — faible'}],
+      ['SN-2024-008',{pt:'Manómetro digital — baixo',en:'Digital gauge — low',fr:'Manomètre — faible'}],
+      ['SN-2024-052',{pt:'Filtro de óleo — baixo',en:'Oil filter — low',fr:"Filtre à huile — faible"}]
+    ]
+  },
+  {
+    label:{pt:'Transferências',en:'Transfers',fr:'Transferts'},
+    kpis:[
+      {val:'12',color:'',lab:{pt:'Transferências activas',en:'Active transfers',fr:'Transferts actifs'}},
+      {val:'4',color:'#FBBF24',lab:{pt:'Pendentes de aprovação',en:'Pending approval',fr:'En attente d\'approbation'}},
+      {val:'8',color:'',lab:{pt:'Países',en:'Countries',fr:'Pays'}},
+      {val:'36h',color:'',lab:{pt:'Tempo médio',en:'Average time',fr:'Temps moyen'}}
+    ],
+    bar:58,
+    rows:[
+      ['TR-2024-118',{pt:'Luanda → Cabinda',en:'Luanda → Cabinda',fr:'Luanda → Cabinda'}],
+      ['TR-2024-115',{pt:'Soyo → Malongo',en:'Soyo → Malongo',fr:'Soyo → Malongo'}],
+      ['TR-2024-109',{pt:'Huambo → Lobito',en:'Huambo → Lobito',fr:'Huambo → Lobito'}]
+    ]
+  }
+];
+let pfViewIdx=0;
+let pfRotateTimer=null;
+
+function renderPfView(idx){
+  const view=PF_VIEWS[idx];
+  const content=document.getElementById('pf-visual-content');
+  document.getElementById('pf-visual-label').textContent=view.label[currentLang];
+  content.innerHTML=
+    '<div class="pf-visual-kpis">'+
+      view.kpis.map(k=>'<div class="pf-visual-kpi"><div class="pf-visual-kpi-val"'+(k.color?' style="color:'+k.color+'"':'')+'>'+k.val+'</div><div class="pf-visual-kpi-lab">'+k.lab[currentLang]+'</div></div>').join('')+
+    '</div>'+
+    '<div class="pf-visual-bar"><div class="pf-visual-fill" style="width:'+view.bar+'%"></div></div>'+
+    view.rows.map(r=>'<div class="pf-visual-row"><span>'+r[0]+'</span><span>'+r[1][currentLang]+'</span></div>').join('');
+  document.querySelectorAll('.pf-visual-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+}
+
+function setPfView(idx,userTriggered){
+  if(idx===pfViewIdx)return;
+  const content=document.getElementById('pf-visual-content');
+  content.style.opacity='0';
+  setTimeout(()=>{
+    pfViewIdx=idx;
+    renderPfView(idx);
+    content.style.opacity='1';
+  },350);
+  if(userTriggered)restartPfRotation();
+}
+
+function restartPfRotation(){
+  clearInterval(pfRotateTimer);
+  pfRotateTimer=setInterval(()=>{
+    setPfView((pfViewIdx+1)%PF_VIEWS.length);
+  },5000);
+}
+
+document.querySelectorAll('.pf-visual-dot').forEach((dot,i)=>{
+  dot.addEventListener('click',()=>setPfView(i,true));
+});
+restartPfRotation();
 function toggleLangMenu(){
   document.getElementById('lang-trigger').classList.toggle('open');
   document.getElementById('lang-dropdown').classList.toggle('open');
