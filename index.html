@@ -72,8 +72,9 @@ nav.light .lang-trigger:hover{background:var(--surface-3)}
 .lang-option{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;font-size:.85rem;font-weight:500;color:var(--ink);transition:background .12s}
 .lang-option:hover{background:var(--surface-2)}
 .lang-option.active{background:var(--surface-2);color:var(--accent)}
-.lang-flag{font-size:1.15rem;line-height:1}
+.lang-flag{width:20px;height:15px;border-radius:2px;object-fit:cover;flex-shrink:0;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
 .lang-name{flex:1}
+#current-flag{width:18px;height:13px;border-radius:2px;object-fit:cover;flex-shrink:0}
 .lang-check{width:14px;height:14px;stroke:var(--accent);display:none}
 .lang-option.active .lang-check{display:block}
 
@@ -318,21 +319,21 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
   <div class="nav-right">
     <div class="lang-selector" id="lang-selector">
       <div class="lang-trigger" id="lang-trigger" onclick="toggleLangMenu()">
-        <span id="current-flag">🇦🇴</span>
+        <img id="current-flag" src="https://flagcdn.com/w40/ao.png" alt="AO">
         <span id="current-lang-label">PT</span>
         <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,4 6,8 10,4"/></svg>
       </div>
       <div class="lang-dropdown" id="lang-dropdown">
-        <div class="lang-option active" onclick="setLang('pt','🇦🇴','PT',this)">
-          <span class="lang-flag">🇦🇴</span><span class="lang-name">Português</span>
+        <div class="lang-option active" onclick="setLang('pt','https://flagcdn.com/w40/ao.png','PT',this)">
+          <img class="lang-flag" src="https://flagcdn.com/w40/ao.png" alt="AO"><span class="lang-name">Português</span>
           <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
         </div>
-        <div class="lang-option" onclick="setLang('en','🇬🇧','EN',this)">
-          <span class="lang-flag">🇬🇧</span><span class="lang-name">English</span>
+        <div class="lang-option" onclick="setLang('en','https://flagcdn.com/w40/gb.png','EN',this)">
+          <img class="lang-flag" src="https://flagcdn.com/w40/gb.png" alt="GB"><span class="lang-name">English</span>
           <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
         </div>
-        <div class="lang-option" onclick="setLang('fr','🇫🇷','FR',this)">
-          <span class="lang-flag">🇫🇷</span><span class="lang-name">Français</span>
+        <div class="lang-option" onclick="setLang('fr','https://flagcdn.com/w40/fr.png','FR',this)">
+          <img class="lang-flag" src="https://flagcdn.com/w40/fr.png" alt="FR"><span class="lang-name">Français</span>
           <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
         </div>
       </div>
@@ -832,7 +833,7 @@ function startTypewriter() {
 
 function setLang(lang, flag, label, optEl) {
   currentLang = lang;
-  document.getElementById('current-flag').textContent = flag;
+  document.getElementById('current-flag').src = flag;
   document.getElementById('current-lang-label').textContent = label;
   document.querySelectorAll('.lang-option').forEach(o => o.classList.remove('active'));
   if (optEl) optEl.classList.add('active');
