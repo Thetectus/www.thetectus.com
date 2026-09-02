@@ -310,11 +310,11 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 <nav id="main-nav">
   <a href="#hero" class="nav-logo"><span class="dot"></span>The Tectus</a>
   <div class="nav-links">
-    <a href="#about"    data-pt="Sobre nós"   data-en="About"      data-fr="À propos">Sobre nós</a>
-    <a href="#services" data-pt="Serviços"    data-en="Services"   data-fr="Services">Serviços</a>
-    <a href="#product"  data-pt="FieldTrack"  data-en="FieldTrack" data-fr="FieldTrack">FieldTrack</a>
-    <a href="#portfolio" data-pt="Portfólio"  data-en="Portfolio"  data-fr="Portfolio">Portfólio</a>
-    <a href="#contact"  data-pt="Contacto"    data-en="Contact"    data-fr="Contact">Contacto</a>
+    <a href="#about"    data-pt="Sobre nós" data-en="About" data-fr="À propos" data-es="Sobre nosotros" data-af="Oor ons" data-sw="Kuhusu sisi" data-ar="من نحن">Sobre nós</a>
+    <a href="#services" data-pt="Serviços" data-en="Services" data-fr="Services" data-es="Servicios" data-af="Dienste" data-sw="Huduma" data-ar="الخدمات">Serviços</a>
+    <a href="#product"  data-pt="FieldTrack" data-en="FieldTrack" data-fr="FieldTrack" data-es="FieldTrack" data-af="FieldTrack" data-sw="FieldTrack" data-ar="FieldTrack">FieldTrack</a>
+    <a href="#portfolio" data-pt="Portfólio" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-af="Portefeulje" data-sw="Kwingineko" data-ar="الأعمال">Portfólio</a>
+    <a href="#contact"  data-pt="Contacto" data-en="Contact" data-fr="Contact" data-es="Contacto" data-af="Kontak" data-sw="Wasiliana" data-ar="اتصل بنا">Contacto</a>
   </div>
   <div class="nav-right">
     <div class="lang-selector" id="lang-selector">
@@ -336,9 +336,25 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
           <img class="lang-flag" src="https://flagcdn.com/w40/fr.png" alt="FR"><span class="lang-name">Français</span>
           <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
         </div>
+        <div class="lang-option" onclick="setLang('es','https://flagcdn.com/w40/es.png','ES',this)">
+          <img class="lang-flag" src="https://flagcdn.com/w40/es.png" alt="ES"><span class="lang-name">Español</span>
+          <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+        </div>
+        <div class="lang-option" onclick="setLang('af','https://flagcdn.com/w40/za.png','AF',this)">
+          <img class="lang-flag" src="https://flagcdn.com/w40/za.png" alt="ZA"><span class="lang-name">Afrikaans</span>
+          <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+        </div>
+        <div class="lang-option" onclick="setLang('sw','https://flagcdn.com/w40/tz.png','SW',this)">
+          <img class="lang-flag" src="https://flagcdn.com/w40/tz.png" alt="TZ"><span class="lang-name">Kiswahili</span>
+          <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+        </div>
+        <div class="lang-option" onclick="setLang('ar','https://flagcdn.com/w40/sa.png','AR',this)">
+          <img class="lang-flag" src="https://flagcdn.com/w40/sa.png" alt="SA"><span class="lang-name">العربية</span>
+          <svg class="lang-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2,7 5.5,10.5 12,3"/></svg>
+        </div>
       </div>
     </div>
-    <a href="#contact" class="nav-cta" data-pt="Falar connosco" data-en="Get in touch" data-fr="Nous contacter">Falar connosco</a>
+    <a href="#contact" class="nav-cta" data-pt="Falar connosco" data-en="Get in touch" data-fr="Nous contacter" data-es="Hablar con nosotros" data-af="Praat met ons" data-sw="Wasiliana nasi" data-ar="تواصل معنا">Falar connosco</a>
   </div>
 </nav>
 
@@ -351,27 +367,25 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
   </div>
   <div class="hero-grid">
     <div>
-      <p class="hero-eyebrow" data-pt="Software House · Angola" data-en="Software House · Angola" data-fr="Éditeur de logiciels · Angola">Software House · Angola</p>
+      <p class="hero-eyebrow" data-pt="Software House · Angola" data-en="Software House · Angola" data-fr="Éditeur de logiciels · Angola" data-es="Software House · Angola" data-af="Sagteware-huis · Angola" data-sw="Kampuni ya Programu · Angola" data-ar="شركة برمجيات · أنغولا">Software House · Angola</p>
       <div class="typewriter-wrap">
         <h1 class="hero-title" id="typewriter-el" aria-live="polite"></h1>
       </div>
       <p class="hero-body"
-         data-pt="Desenvolvemos soluções digitais sob medida e produtos SaaS próprios para empresas que precisam de mais do que uma folha de cálculo."
-         data-en="We build custom digital solutions and our own SaaS products for companies that need more than a spreadsheet."
-         data-fr="Nous développons des solutions numériques sur mesure et des produits SaaS pour les entreprises qui ont besoin de plus qu'un tableur.">
+         data-pt="Desenvolvemos soluções digitais sob medida e produtos SaaS próprios para empresas que precisam de mais do que uma folha de cálculo." data-en="We build custom digital solutions and our own SaaS products for companies that need more than a spreadsheet." data-fr="Nous développons des solutions numériques sur mesure et des produits SaaS pour les entreprises qui ont besoin de plus qu'un tableur." data-es="Desarrollamos soluciones digitales a medida y productos SaaS propios para empresas que necesitan más que una hoja de cálculo." data-af="Ons ontwikkel pasgemaakte digitale oplossings en eie SaaS-produkte vir maatskappye wat meer as 'n sigblad nodig het." data-sw="Tunatengeneza suluhisho za kidijitali maalum na bidhaa zetu za SaaS kwa makampuni yanayohitaji zaidi ya lahajedwali." data-ar="نطوّر حلولاً رقمية مخصصة ومنتجات SaaS خاصة بنا للشركات التي تحتاج إلى أكثر من مجرد جدول بيانات.">
         Desenvolvemos soluções digitais sob medida e produtos SaaS próprios para empresas que precisam de mais do que uma folha de cálculo.
       </p>
       <div class="hero-actions">
-        <a href="#services" class="btn-primary" data-pt="Ver serviços"         data-en="Our services"       data-fr="Nos services">Ver serviços</a>
-        <a href="#product"  class="btn-outline" data-pt="Conhecer o FieldTrack" data-en="Discover FieldTrack" data-fr="Découvrir FieldTrack">Conhecer o FieldTrack</a>
+        <a href="#services" class="btn-primary" data-pt="Ver serviços" data-en="Our services" data-fr="Nos services" data-es="Ver servicios" data-af="Sien dienste" data-sw="Angalia huduma" data-ar="عرض الخدمات">Ver serviços</a>
+        <a href="#product"  class="btn-outline" data-pt="Conhecer o FieldTrack" data-en="Discover FieldTrack" data-fr="Découvrir FieldTrack" data-es="Conocer FieldTrack" data-af="Ontdek FieldTrack" data-sw="Gundua FieldTrack" data-ar="تعرّف على FieldTrack">Conhecer o FieldTrack</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-card tilt-main">
           <div>
-            <div class="hcard-label" data-pt="Valor de inventário" data-en="Inventory value" data-fr="Valeur du stock">Valor de inventário</div>
+            <div class="hcard-label" data-pt="Valor de inventário" data-en="Inventory value" data-fr="Valeur du stock" data-es="Valor de inventario" data-af="Voorraadwaarde" data-sw="Thamani ya hisa" data-ar="قيمة المخزون">Valor de inventário</div>
             <div class="hcard-value">$2,847,320</div>
-            <div class="hcard-sub" data-pt="8 países · 24 localizações" data-en="8 countries · 24 locations" data-fr="8 pays · 24 sites">8 países · 24 localizações</div>
+            <div class="hcard-sub" data-pt="8 países · 24 localizações" data-en="8 countries · 24 locations" data-fr="8 pays · 24 sites" data-es="8 países · 24 ubicaciones" data-af="8 lande · 24 liggings" data-sw="Nchi 8 · Maeneo 24" data-ar="8 دول · 24 موقعًا">8 países · 24 localizações</div>
           </div>
           <div style="width:42px;height:42px;border-radius:50%;background:rgba(74,124,255,.15);display:flex;align-items:center;justify-content:center">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="var(--glow)" stroke-width="1.5"><rect x="2" y="3" width="16" height="13" rx="2"/><path d="M2 8h16"/></svg>
@@ -381,20 +395,20 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div class="hero-card">
-          <div class="hcard-label" data-pt="Alertas de stock" data-en="Stock alerts" data-fr="Alertes stock">Alertas de stock</div>
+          <div class="hcard-label" data-pt="Alertas de stock" data-en="Stock alerts" data-fr="Alertes stock" data-es="Alertas de stock" data-af="Voorraad-waarskuwings" data-sw="Tahadhari za hisa" data-ar="تنبيهات المخزون">Alertas de stock</div>
           <div class="hcard-value" style="color:#FBBF24">3</div>
-          <div class="hcard-sub" data-pt="Abaixo do mínimo" data-en="Below minimum" data-fr="Sous le minimum">Abaixo do mínimo</div>
+          <div class="hcard-sub" data-pt="Abaixo do mínimo" data-en="Below minimum" data-fr="Sous le minimum" data-es="Por debajo del mínimo" data-af="Onder die minimum" data-sw="Chini ya kiwango cha chini" data-ar="أقل من الحد الأدنى">Abaixo do mínimo</div>
         </div>
         <div class="hero-card">
-          <div class="hcard-label" data-pt="Transferências" data-en="Transfers" data-fr="Transferts">Transferências</div>
+          <div class="hcard-label" data-pt="Transferências" data-en="Transfers" data-fr="Transferts" data-es="Transferencias" data-af="Oordragte" data-sw="Uhamisho" data-ar="التحويلات">Transferências</div>
           <div class="hcard-value" style="color:#4ADE80">12</div>
-          <div class="hcard-sub" data-pt="Este mês" data-en="This month" data-fr="Ce mois">Este mês</div>
+          <div class="hcard-sub" data-pt="Este mês" data-en="This month" data-fr="Ce mois" data-es="Este mes" data-af="Hierdie maand" data-sw="Mwezi huu" data-ar="هذا الشهر">Este mês</div>
         </div>
       </div>
       <div class="hero-card">
-        <div class="hcard-label" data-pt="Último movimento" data-en="Last movement" data-fr="Dernier mouvement">Último movimento</div>
-        <div style="font-size:.875rem;color:rgba(255,255,255,.65)" data-pt="Transferência · SN-2024-047 · Angola → Nigeria" data-en="Transfer · SN-2024-047 · Angola → Nigeria" data-fr="Transfert · SN-2024-047 · Angola → Nigeria">Transferência · SN-2024-047 · Angola → Nigeria</div>
-        <div class="hcard-sub" style="margin-top:4px" data-pt="Há 2 horas" data-en="2 hours ago" data-fr="Il y a 2 heures">Há 2 horas</div>
+        <div class="hcard-label" data-pt="Último movimento" data-en="Last movement" data-fr="Dernier mouvement" data-es="Último movimiento" data-af="Jongste beweging" data-sw="Mwendo wa hivi karibuni" data-ar="آخر حركة">Último movimento</div>
+        <div style="font-size:.875rem;color:rgba(255,255,255,.65)" data-pt="Transferência · SN-2024-047 · Angola → Nigeria" data-en="Transfer · SN-2024-047 · Angola → Nigeria" data-fr="Transfert · SN-2024-047 · Angola → Nigeria" data-es="Transferencia · SN-2024-047 · Angola → Nigeria" data-af="Oordrag · SN-2024-047 · Angola → Nigerië" data-sw="Uhamisho · SN-2024-047 · Angola → Nigeria" data-ar="تحويل · SN-2024-047 · أنغولا → نيجيريا">Transferência · SN-2024-047 · Angola → Nigeria</div>
+        <div class="hcard-sub" style="margin-top:4px" data-pt="Há 2 horas" data-en="2 hours ago" data-fr="Il y a 2 heures" data-es="Hace 2 horas" data-af="2 uur gelede" data-sw="Saa 2 zilizopita" data-ar="قبل ساعتين">Há 2 horas</div>
       </div>
     </div>
   </div>
@@ -405,23 +419,23 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
   <div class="section-inner">
     <div class="about-grid">
       <div class="anim-right">
-        <p class="section-label" data-pt="Quem somos" data-en="Who we are" data-fr="Qui sommes-nous">Quem somos</p>
-        <h2 class="section-title" data-pt="Construídos em Angola, pensados para o mundo." data-en="Built in Angola, designed for the world." data-fr="Construits en Angola, pensés pour le monde.">Construídos em Angola, pensados para o mundo.</h2>
-        <p class="section-body" data-pt="A The Tectus é uma software house angolana que desenvolve software sob medida e produtos próprios para empresas com operações complexas. Nascemos da necessidade de resolver um problema real — e ficámos para resolver muitos mais." data-en="The Tectus is an Angolan software house that builds custom software and its own products for companies with complex operations. We were born out of the need to solve a real problem — and we stayed to solve many more." data-fr="The Tectus est une entreprise de logiciels angolaise qui développe des solutions sur mesure pour les entreprises aux opérations complexes. Nous sommes nés d'un besoin réel — et nous sommes restés pour en résoudre beaucoup d'autres.">A The Tectus é uma software house angolana que desenvolve software sob medida e produtos próprios para empresas com operações complexas.</p>
+        <p class="section-label" data-pt="Quem somos" data-en="Who we are" data-fr="Qui sommes-nous" data-es="Quiénes somos" data-af="Wie ons is" data-sw="Sisi ni akina nani" data-ar="من نحن">Quem somos</p>
+        <h2 class="section-title" data-pt="Construídos em Angola, pensados para o mundo." data-en="Built in Angola, designed for the world." data-fr="Construits en Angola, pensés pour le monde." data-es="Construidos en Angola, pensados para el mundo." data-af="Gebou in Angola, ontwerp vir die wêreld." data-sw="Zimejengwa Angola, zimebuniwa kwa ajili ya dunia." data-ar="صُنعت في أنغولا، وصُممت للعالم.">Construídos em Angola, pensados para o mundo.</h2>
+        <p class="section-body" data-pt="A The Tectus é uma software house angolana que desenvolve software sob medida e produtos próprios para empresas com operações complexas. Nascemos da necessidade de resolver um problema real — e ficámos para resolver muitos mais." data-en="The Tectus is an Angolan software house that builds custom software and its own products for companies with complex operations. We were born out of the need to solve a real problem — and we stayed to solve many more." data-fr="The Tectus est une entreprise de logiciels angolaise qui développe des solutions sur mesure pour les entreprises aux opérations complexes. Nous sommes nés d'un besoin réel — et nous sommes restés pour en résoudre beaucoup d'autres." data-es="The Tectus es una software house angolana que desarrolla software a medida y productos propios para empresas con operaciones complejas. Nacimos de la necesidad de resolver un problema real — y nos quedamos para resolver muchos más." data-af="The Tectus is 'n Angolese sagteware-huis wat pasgemaakte sagteware en eie produkte ontwikkel vir maatskappye met komplekse bedrywighede. Ons is gebore uit die behoefte om 'n werklike probleem op te los — en het gebly om nog baie meer op te los." data-sw="The Tectus ni kampuni ya programu ya Angola inayotengeneza programu maalum na bidhaa zake kwa makampuni yenye shughuli ngumu. Tulizaliwa kutokana na hitaji la kutatua tatizo halisi — na tukabaki kutatua mengine mengi zaidi." data-ar="The Tectus هي شركة برمجيات أنغولية تطوّر برمجيات مخصصة ومنتجات خاصة بها للشركات ذات العمليات المعقدة. وُلدنا من الحاجة إلى حل مشكلة حقيقية — وبقينا لحل الكثير غيرها.">A The Tectus é uma software house angolana que desenvolve software sob medida e produtos próprios para empresas com operações complexas.</p>
         <div class="about-stats stagger">
-          <div class="stat-box"><div class="stat-num">8</div><div class="stat-desc" data-pt="Países com clientes activos" data-en="Countries with active clients" data-fr="Pays avec clients actifs">Países com clientes activos</div></div>
-          <div class="stat-box"><div class="stat-num">100%</div><div class="stat-desc" data-pt="SaaS multi-tenant" data-en="Multi-tenant SaaS" data-fr="SaaS multi-locataire">SaaS multi-tenant</div></div>
-          <div class="stat-box"><div class="stat-num">3</div><div class="stat-desc" data-pt="Idiomas suportados" data-en="Supported languages" data-fr="Langues supportées">Idiomas suportados</div></div>
-          <div class="stat-box"><div class="stat-num">O&amp;G</div><div class="stat-desc" data-pt="Especialização de origem" data-en="Core specialisation" data-fr="Spécialisation principale">Especialização de origem</div></div>
+          <div class="stat-box"><div class="stat-num">8</div><div class="stat-desc" data-pt="Países com clientes activos" data-en="Countries with active clients" data-fr="Pays avec clients actifs" data-es="Países con clientes activos" data-af="Lande met aktiewe kliënte" data-sw="Nchi zenye wateja hai" data-ar="دول بها عملاء نشطون">Países com clientes activos</div></div>
+          <div class="stat-box"><div class="stat-num">100%</div><div class="stat-desc" data-pt="SaaS multi-tenant" data-en="Multi-tenant SaaS" data-fr="SaaS multi-locataire" data-es="SaaS multiinquilino" data-af="Multi-tenant SaaS" data-sw="SaaS ya wapangaji wengi" data-ar="SaaS متعدد المستأجرين">SaaS multi-tenant</div></div>
+          <div class="stat-box"><div class="stat-num">3</div><div class="stat-desc" data-pt="Idiomas suportados" data-en="Supported languages" data-fr="Langues supportées" data-es="Idiomas soportados" data-af="Ondersteunde tale" data-sw="Lugha zinazotumika" data-ar="اللغات المدعومة">Idiomas suportados</div></div>
+          <div class="stat-box"><div class="stat-num">O&amp;G</div><div class="stat-desc" data-pt="Especialização de origem" data-en="Core specialisation" data-fr="Spécialisation principale" data-es="Especialización de origen" data-af="Oorspronklike spesialisasie" data-sw="Utaalam wa asili" data-ar="التخصص الأصلي">Especialização de origem</div></div>
         </div>
       </div>
       <div class="about-block anim-left">
-        <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:white;margin-bottom:.5rem" data-pt="O nosso compromisso" data-en="Our commitment" data-fr="Notre engagement">O nosso compromisso</div>
-        <p style="font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem" data-pt="Não fornecemos software genérico. Estudamos o negócio do cliente, identificamos o problema e construímos a solução adequada." data-en="We don't provide generic software. We study our client's business, identify the problem, and build the right solution." data-fr="Nous ne fournissons pas de logiciels génériques. Nous étudions le métier du client, identifions le problème et construisons la solution adéquate.">Não fornecemos software genérico. Estudamos o negócio do cliente, identificamos o problema e construímos a solução adequada.</p>
-        <div class="about-pill"><span class="g"></span><span data-pt="Desenvolvimento ágil e transparente" data-en="Agile and transparent development" data-fr="Développement agile et transparent">Desenvolvimento ágil e transparente</span></div>
-        <div class="about-pill"><span class="g"></span><span data-pt="Produtos próprios em crescimento" data-en="Proprietary products in growth" data-fr="Produits propriétaires en croissance">Produtos próprios em crescimento</span></div>
-        <div class="about-pill"><span class="g"></span><span data-pt="Suporte contínuo pós-entrega" data-en="Continuous post-delivery support" data-fr="Support continu après livraison">Suporte contínuo pós-entrega</span></div>
-        <div class="about-pill"><span class="g"></span><span data-pt="Isolamento total de dados por empresa" data-en="Full data isolation per company" data-fr="Isolation totale des données par entreprise">Isolamento total de dados por empresa</span></div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:white;margin-bottom:.5rem" data-pt="O nosso compromisso" data-en="Our commitment" data-fr="Notre engagement" data-es="Nuestro compromiso" data-af="Ons verbintenis" data-sw="Ahadi yetu" data-ar="التزامنا">O nosso compromisso</div>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem" data-pt="Não fornecemos software genérico. Estudamos o negócio do cliente, identificamos o problema e construímos a solução adequada." data-en="We don't provide generic software. We study our client's business, identify the problem, and build the right solution." data-fr="Nous ne fournissons pas de logiciels génériques. Nous étudions le métier du client, identifions le problème et construisons la solution adéquate." data-es="No ofrecemos software genérico. Estudiamos el negocio del cliente, identificamos el problema y construimos la solución adecuada." data-af="Ons verskaf nie generiese sagteware nie. Ons bestudeer die kliënt se besigheid, identifiseer die probleem en bou die regte oplossing." data-sw="Hatutoi programu za jumla. Tunachunguza biashara ya mteja, tunatambua tatizo na kujenga suluhisho linalofaa." data-ar="نحن لا نقدّم برمجيات عامة. ندرس أعمال العميل، ونحدد المشكلة، ونبني الحل المناسب.">Não fornecemos software genérico. Estudamos o negócio do cliente, identificamos o problema e construímos a solução adequada.</p>
+        <div class="about-pill"><span class="g"></span><span data-pt="Desenvolvimento ágil e transparente" data-en="Agile and transparent development" data-fr="Développement agile et transparent" data-es="Desarrollo ágil y transparente" data-af="Ratse en deursigtige ontwikkeling" data-sw="Maendeleo ya haraka na wazi" data-ar="تطوير مرن وشفاف">Desenvolvimento ágil e transparente</span></div>
+        <div class="about-pill"><span class="g"></span><span data-pt="Produtos próprios em crescimento" data-en="Proprietary products in growth" data-fr="Produits propriétaires en croissance" data-es="Productos propios en crecimiento" data-af="Groeiende eie produkte" data-sw="Bidhaa zetu zinazokua" data-ar="منتجات خاصة في نمو مستمر">Produtos próprios em crescimento</span></div>
+        <div class="about-pill"><span class="g"></span><span data-pt="Suporte contínuo pós-entrega" data-en="Continuous post-delivery support" data-fr="Support continu après livraison" data-es="Soporte continuo post-entrega" data-af="Deurlopende ondersteuning na aflewering" data-sw="Msaada endelevu baada ya utoaji" data-ar="دعم مستمر بعد التسليم">Suporte contínuo pós-entrega</span></div>
+        <div class="about-pill"><span class="g"></span><span data-pt="Isolamento total de dados por empresa" data-en="Full data isolation per company" data-fr="Isolation totale des données par entreprise" data-es="Aislamiento total de datos por empresa" data-af="Volledige data-isolasie per maatskappy" data-sw="Utengano kamili wa data kwa kila kampuni" data-ar="عزل كامل للبيانات لكل شركة">Isolamento total de dados por empresa</span></div>
       </div>
     </div>
   </div>
@@ -431,39 +445,39 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 <section id="services">
   <div class="section-inner">
     <div class="anim-up">
-      <p class="section-label" data-pt="O que fazemos" data-en="What we do" data-fr="Ce que nous faisons">O que fazemos</p>
-      <h2 class="section-title" data-pt="Soluções para problemas que a folha de cálculo já não consegue resolver." data-en="Solutions for problems that spreadsheets can no longer solve." data-fr="Des solutions aux problèmes que les tableurs ne peuvent plus résoudre.">Soluções para problemas que a folha de cálculo já não consegue resolver.</h2>
+      <p class="section-label" data-pt="O que fazemos" data-en="What we do" data-fr="Ce que nous faisons" data-es="Lo que hacemos" data-af="Wat ons doen" data-sw="Tunachofanya" data-ar="ما نقوم به">O que fazemos</p>
+      <h2 class="section-title" data-pt="Soluções para problemas que a folha de cálculo já não consegue resolver." data-en="Solutions for problems that spreadsheets can no longer solve." data-fr="Des solutions aux problèmes que les tableurs ne peuvent plus résoudre." data-es="Soluciones para problemas que la hoja de cálculo ya no puede resolver." data-af="Oplossings vir probleme wat 'n sigblad nie meer kan oplos nie." data-sw="Suluhisho kwa matatizo ambayo lahajedwali haiwezi tena kutatua." data-ar="حلول للمشكلات التي لم يعد جدول البيانات قادرًا على حلها.">Soluções para problemas que a folha de cálculo já não consegue resolver.</h2>
     </div>
     <div class="services-grid stagger">
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="2" y="3" width="18" height="15" rx="2"/><path d="M7 8h8M7 12h5"/></svg></div>
-        <h3 class="service-title" data-pt="Software sob medida" data-en="Custom software" data-fr="Logiciel sur mesure">Software sob medida</h3>
-        <p class="service-desc" data-pt="Desenvolvimento de sistemas adaptados aos processos específicos de cada empresa, desde plataformas de gestão interna a soluções orientadas ao cliente." data-en="Development of systems tailored to each company's specific processes, from internal management platforms to client-facing solutions." data-fr="Développement de systèmes adaptés aux processus spécifiques de chaque entreprise, des plateformes de gestion interne aux solutions clients.">Desenvolvimento de sistemas adaptados aos processos específicos de cada empresa, desde plataformas de gestão interna a soluções orientadas ao cliente.</p>
+        <h3 class="service-title" data-pt="Software sob medida" data-en="Custom software" data-fr="Logiciel sur mesure" data-es="Software a medida" data-af="Pasgemaakte sagteware" data-sw="Programu maalum" data-ar="برمجيات مخصصة">Software sob medida</h3>
+        <p class="service-desc" data-pt="Desenvolvimento de sistemas adaptados aos processos específicos de cada empresa, desde plataformas de gestão interna a soluções orientadas ao cliente." data-en="Development of systems tailored to each company's specific processes, from internal management platforms to client-facing solutions." data-fr="Développement de systèmes adaptés aux processus spécifiques de chaque entreprise, des plateformes de gestion interne aux solutions clients." data-es="Desarrollo de sistemas adaptados a los procesos específicos de cada empresa, desde plataformas de gestión interna hasta soluciones orientadas al cliente." data-af="Ontwikkeling van stelsels aangepas by die spesifieke prosesse van elke maatskappy, van interne bestuursplatforms tot kliëntgerigte oplossings." data-sw="Uundaji wa mifumo inayolingana na michakato mahususi ya kila kampuni, kutoka majukwaa ya usimamizi wa ndani hadi suluhisho zinazolenga wateja." data-ar="تطوير أنظمة مصمَّمة خصيصًا للعمليات المحددة لكل شركة، من منصات الإدارة الداخلية إلى الحلول الموجهة للعملاء.">Desenvolvimento de sistemas adaptados aos processos específicos de cada empresa, desde plataformas de gestão interna a soluções orientadas ao cliente.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M11 7v4l3 3"/></svg></div>
-        <h3 class="service-title" data-pt="Automatização de processos" data-en="Process automation" data-fr="Automatisation des processus">Automatização de processos</h3>
-        <p class="service-desc" data-pt="Identificação e substituição de tarefas repetitivas por fluxos automáticos que reduzem erros e libertam a equipa para o que realmente importa." data-en="Identification and replacement of repetitive tasks with automated workflows that reduce errors and free teams for what truly matters." data-fr="Identification et remplacement des tâches répétitives par des flux automatisés qui réduisent les erreurs et libèrent les équipes pour l'essentiel.">Identificação e substituição de tarefas repetitivas por fluxos automáticos que reduzem erros e libertam a equipa para o que realmente importa.</p>
+        <h3 class="service-title" data-pt="Automatização de processos" data-en="Process automation" data-fr="Automatisation des processus" data-es="Automatización de procesos" data-af="Prosesoutomatisering" data-sw="Uwekaji otomatiki wa michakato" data-ar="أتمتة العمليات">Automatização de processos</h3>
+        <p class="service-desc" data-pt="Identificação e substituição de tarefas repetitivas por fluxos automáticos que reduzem erros e libertam a equipa para o que realmente importa." data-en="Identification and replacement of repetitive tasks with automated workflows that reduce errors and free teams for what truly matters." data-fr="Identification et remplacement des tâches répétitives par des flux automatisés qui réduisent les erreurs et libèrent les équipes pour l'essentiel." data-es="Identificación y sustitución de tareas repetitivas por flujos automáticos que reducen errores y liberan al equipo para lo que realmente importa." data-af="Identifisering en vervanging van herhalende take met outomatiese vloeie wat foute verminder en die span vrymaak vir wat werklik saak maak." data-sw="Kutambua na kubadilisha kazi zinazojirudia kwa mifumo ya kiotomatiki inayopunguza makosa na kuachilia timu kufanya yaliyo muhimu zaidi." data-ar="تحديد المهام المتكررة واستبدالها بتدفقات آلية تقلل الأخطاء وتحرر الفريق للتركيز على ما يهم فعلاً.">Identificação e substituição de tarefas repetitivas por fluxos automáticos que reduzem erros e libertam a equipa para o que realmente importa.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 3h16v6H3zM3 13h8v6H3zM15 13h4v6h-4z"/></svg></div>
-        <h3 class="service-title" data-pt="Dashboards e relatórios" data-en="Dashboards & reports" data-fr="Tableaux de bord et rapports">Dashboards e relatórios</h3>
-        <p class="service-desc" data-pt="Transformação de dados dispersos em painéis de gestão claros e accionáveis, disponíveis em tempo real sem depender de relatórios manuais." data-en="Transformation of scattered data into clear, actionable management dashboards, available in real time without relying on manual reports." data-fr="Transformation de données dispersées en tableaux de bord clairs et actionnables, disponibles en temps réel sans dépendre de rapports manuels.">Transformação de dados dispersos em painéis de gestão claros e accionáveis, disponíveis em tempo real.</p>
+        <h3 class="service-title" data-pt="Dashboards e relatórios" data-en="Dashboards & reports" data-fr="Tableaux de bord et rapports" data-es="Paneles e informes" data-af="Kontroleskerms en verslae" data-sw="Dashibodi na ripoti" data-ar="لوحات المعلومات والتقارير">Dashboards e relatórios</h3>
+        <p class="service-desc" data-pt="Transformação de dados dispersos em painéis de gestão claros e accionáveis, disponíveis em tempo real sem depender de relatórios manuais." data-en="Transformation of scattered data into clear, actionable management dashboards, available in real time without relying on manual reports." data-fr="Transformation de données dispersées en tableaux de bord clairs et actionnables, disponibles en temps réel sans dépendre de rapports manuels." data-es="Transformación de datos dispersos en paneles de gestión claros y accionables, disponibles en tiempo real sin depender de informes manuales." data-af="Omskepping van verspreide data in duidelike, uitvoerbare bestuurspanele, beskikbaar in reële tyd sonder om op handmatige verslae staat te maak." data-sw="Kubadilisha data iliyotawanyika kuwa dashibodi za usimamizi zilizo wazi na zenye hatua, zinazopatikana kwa wakati halisi bila kutegemea ripoti za mikono." data-ar="تحويل البيانات المتناثرة إلى لوحات إدارة واضحة وقابلة للتنفيذ، متاحة في الوقت الفعلي دون الاعتماد على تقارير يدوية.">Transformação de dados dispersos em painéis de gestão claros e accionáveis, disponíveis em tempo real.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="12" y="3" width="7" height="7" rx="1"/><rect x="3" y="12" width="7" height="7" rx="1"/><rect x="12" y="12" width="7" height="7" rx="1"/></svg></div>
-        <h3 class="service-title" data-pt="Produtos SaaS" data-en="SaaS Products" data-fr="Produits SaaS">Produtos SaaS</h3>
-        <p class="service-desc" data-pt="Para além dos projectos sob medida, a The Tectus desenvolve produtos próprios prontos a utilizar. O FieldTrack é o primeiro — mais estão em desenvolvimento." data-en="Beyond bespoke projects, The Tectus develops its own ready-to-use products. FieldTrack is the first — more are in development." data-fr="Au-delà des projets sur mesure, The Tectus développe ses propres produits prêts à l'emploi. FieldTrack est le premier — d'autres sont en développement.">Para além dos projectos sob medida, a The Tectus desenvolve produtos próprios prontos a utilizar.</p>
+        <h3 class="service-title" data-pt="Produtos SaaS" data-en="SaaS Products" data-fr="Produits SaaS" data-es="Productos SaaS" data-af="SaaS-produkte" data-sw="Bidhaa za SaaS" data-ar="منتجات SaaS">Produtos SaaS</h3>
+        <p class="service-desc" data-pt="Para além dos projectos sob medida, a The Tectus desenvolve produtos próprios prontos a utilizar. O FieldTrack é o primeiro — mais estão em desenvolvimento." data-en="Beyond bespoke projects, The Tectus develops its own ready-to-use products. FieldTrack is the first — more are in development." data-fr="Au-delà des projets sur mesure, The Tectus développe ses propres produits prêts à l'emploi. FieldTrack est le premier — d'autres sont en développement." data-es="Además de los proyectos a medida, The Tectus desarrolla productos propios listos para usar. FieldTrack es el primero — hay más en desarrollo." data-af="Benewens pasgemaakte projekte, ontwikkel The Tectus eie kant-en-klaar produkte. FieldTrack is die eerste — meer is in ontwikkeling." data-sw="Mbali na miradi maalum, The Tectus inatengeneza bidhaa zake tayari kutumika. FieldTrack ni ya kwanza — nyingine ziko katika maendeleo." data-ar="بالإضافة إلى المشاريع المخصصة، تطوّر The Tectus منتجاتها الخاصة الجاهزة للاستخدام. FieldTrack هو الأول — والمزيد قيد التطوير.">Para além dos projectos sob medida, a The Tectus desenvolve produtos próprios prontos a utilizar.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M11 2L2 7l9 5 9-5-9-5zM2 17l9 5 9-5M2 12l9 5 9-5"/></svg></div>
-        <h3 class="service-title" data-pt="Integrações e APIs" data-en="Integrations & APIs" data-fr="Intégrations et APIs">Integrações e APIs</h3>
-        <p class="service-desc" data-pt="Ligação dos sistemas existentes — SAP, ERPs, Excel — à nova solução, sem forçar uma migração total que paralisa a operação." data-en="Connection of existing systems — SAP, ERPs, Excel — to the new solution, without forcing a total migration that disrupts operations." data-fr="Connexion des systèmes existants — SAP, ERP, Excel — à la nouvelle solution, sans migration totale qui perturbe les opérations.">Ligação dos sistemas existentes à nova solução, sem disrupção operacional.</p>
+        <h3 class="service-title" data-pt="Integrações e APIs" data-en="Integrations & APIs" data-fr="Intégrations et APIs" data-es="Integraciones y APIs" data-af="Integrasies en API's" data-sw="Uunganishaji na API" data-ar="عمليات التكامل وواجهات البرمجة">Integrações e APIs</h3>
+        <p class="service-desc" data-pt="Ligação dos sistemas existentes — SAP, ERPs, Excel — à nova solução, sem forçar uma migração total que paralisa a operação." data-en="Connection of existing systems — SAP, ERPs, Excel — to the new solution, without forcing a total migration that disrupts operations." data-fr="Connexion des systèmes existants — SAP, ERP, Excel — à la nouvelle solution, sans migration totale qui perturbe les opérations." data-es="Conexión de los sistemas existentes — SAP, ERPs, Excel — con la nueva solución, sin forzar una migración total que paralice la operación." data-af="Koppeling van bestaande stelsels — SAP, ERP's, Excel — aan die nuwe oplossing, sonder om 'n volledige migrasie te forseer wat die bedrywighede lamlê." data-sw="Kuunganisha mifumo iliyopo — SAP, ERP, Excel — na suluhisho jipya, bila kulazimisha uhamishaji kamili unaosimamisha shughuli." data-ar="ربط الأنظمة الحالية — SAP وERP وExcel — بالحل الجديد، دون فرض ترحيل كامل يشلّ العمليات.">Ligação dos sistemas existentes à nova solução, sem disrupção operacional.</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-        <h3 class="service-title" data-pt="Suporte e manutenção" data-en="Support & maintenance" data-fr="Support et maintenance">Suporte e manutenção</h3>
-        <p class="service-desc" data-pt="Contratos de manutenção, actualizações e suporte técnico contínuo após a entrega. A parceria não termina na data de lançamento." data-en="Maintenance contracts, updates, and continuous technical support after delivery. The partnership does not end on launch day." data-fr="Contrats de maintenance, mises à jour et support technique continu après livraison. Le partenariat ne se termine pas le jour du lancement.">Manutenção, actualizações e suporte técnico contínuo. A parceria não termina na data de lançamento.</p>
+        <h3 class="service-title" data-pt="Suporte e manutenção" data-en="Support & maintenance" data-fr="Support et maintenance" data-es="Soporte y mantenimiento" data-af="Ondersteuning en instandhouding" data-sw="Msaada na matengenezo" data-ar="الدعم والصيانة">Suporte e manutenção</h3>
+        <p class="service-desc" data-pt="Contratos de manutenção, actualizações e suporte técnico contínuo após a entrega. A parceria não termina na data de lançamento." data-en="Maintenance contracts, updates, and continuous technical support after delivery. The partnership does not end on launch day." data-fr="Contrats de maintenance, mises à jour et support technique continu après livraison. Le partenariat ne se termine pas le jour du lancement." data-es="Contratos de mantenimiento, actualizaciones y soporte técnico continuo tras la entrega. La colaboración no termina en la fecha de lanzamiento." data-af="Instandhoudingskontrakte, opdaterings en deurlopende tegniese ondersteuning na aflewering. Die vennootskap eindig nie op die bekendstellingsdatum nie." data-sw="Mikataba ya matengenezo, masasisho, na msaada wa kiufundi endelevu baada ya utoaji. Ushirikiano hauishii siku ya uzinduzi." data-ar="عقود الصيانة والتحديثات والدعم الفني المستمر بعد التسليم. الشراكة لا تنتهي بتاريخ الإطلاق.">Manutenção, actualizações e suporte técnico contínuo. A parceria não termina na data de lançamento.</p>
       </div>
     </div>
   </div>
@@ -473,17 +487,17 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 <section id="product">
   <div class="product-grid">
     <div class="anim-right">
-      <p class="product-label" data-pt="Produto próprio" data-en="Proprietary product" data-fr="Produit propriétaire">Produto próprio</p>
-      <h2 class="product-title" data-pt="FieldTrack — controlo de inventário para operações distribuídas." data-en="FieldTrack — inventory control for distributed operations." data-fr="FieldTrack — contrôle des stocks pour les opérations distribuées.">FieldTrack — controlo de inventário para operações distribuídas.</h2>
-      <p class="product-body" data-pt="Desenvolvido para o sector petrolífero, o FieldTrack resolve um problema que o SAP não consegue — rastrear inventário quando sai do armazém para workshops offshore e bases operacionais em múltiplos países." data-en="Built for the oil sector, FieldTrack solves a problem SAP cannot — tracking inventory as it leaves the warehouse for offshore workshops and operational bases across multiple countries." data-fr="Conçu pour le secteur pétrolier, FieldTrack résout un problème que SAP ne peut résoudre — suivre les stocks quand ils quittent l'entrepôt pour les ateliers offshore dans plusieurs pays.">Desenvolvido para o sector petrolífero, o FieldTrack resolve um problema que o SAP não consegue — rastrear inventário quando sai do armazém para workshops offshore e bases em múltiplos países.</p>
+      <p class="product-label" data-pt="Produto próprio" data-en="Proprietary product" data-fr="Produit propriétaire" data-es="Producto propio" data-af="Eie produk" data-sw="Bidhaa yetu" data-ar="منتج خاص">Produto próprio</p>
+      <h2 class="product-title" data-pt="FieldTrack — controlo de inventário para operações distribuídas." data-en="FieldTrack — inventory control for distributed operations." data-fr="FieldTrack — contrôle des stocks pour les opérations distribuées." data-es="FieldTrack — control de inventario para operaciones distribuidas." data-af="FieldTrack — voorraadbeheer vir verspreide bedrywighede." data-sw="FieldTrack — udhibiti wa hisa kwa shughuli zilizotawanyika." data-ar="FieldTrack — التحكم في المخزون للعمليات الموزعة.">FieldTrack — controlo de inventário para operações distribuídas.</h2>
+      <p class="product-body" data-pt="Desenvolvido para o sector petrolífero, o FieldTrack resolve um problema que o SAP não consegue — rastrear inventário quando sai do armazém para workshops offshore e bases operacionais em múltiplos países." data-en="Built for the oil sector, FieldTrack solves a problem SAP cannot — tracking inventory as it leaves the warehouse for offshore workshops and operational bases across multiple countries." data-fr="Conçu pour le secteur pétrolier, FieldTrack résout un problème que SAP ne peut résoudre — suivre les stocks quand ils quittent l'entrepôt pour les ateliers offshore dans plusieurs pays." data-es="Desarrollado para el sector petrolero, FieldTrack resuelve un problema que SAP no puede — rastrear el inventario cuando sale del almacén hacia talleres offshore y bases operativas en múltiples países." data-af="Ontwikkel vir die oliesektor, FieldTrack los 'n probleem op wat SAP nie kan nie — voorraad naspoor wanneer dit die pakhuis verlaat na vaarwater-werkswinkels en operasionele basisse in verskeie lande." data-sw="Iliyotengenezwa kwa sekta ya mafuta, FieldTrack inatatua tatizo ambalo SAP haliwezi — kufuatilia hisa zinapoondoka ghalani kwenda warsha za pwani na vituo vya uendeshaji katika nchi mbalimbali." data-ar="صُمم لقطاع النفط، يحل FieldTrack مشكلة لا يستطيع SAP حلها — تتبع المخزون عند خروجه من المستودع إلى ورش العمل البحرية والقواعد التشغيلية في عدة دول.">Desenvolvido para o sector petrolífero, o FieldTrack resolve um problema que o SAP não consegue — rastrear inventário quando sai do armazém para workshops offshore e bases em múltiplos países.</p>
       <div class="feature-list">
-        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Multi-país e multi-localização em tempo real" data-en="Multi-country and multi-location in real time" data-fr="Multi-pays et multi-site en temps réel">Multi-país e multi-localização em tempo real</span></div>
-        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Upload em Excel por supervisores no campo" data-en="Excel upload by field supervisors" data-fr="Upload Excel par les superviseurs terrain">Upload em Excel por supervisores no campo</span></div>
-        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Aprovação de transferências com notificação" data-en="Transfer approval with notification" data-fr="Approbation de transferts avec notification">Aprovação de transferências com notificação</span></div>
-        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Relatórios PDF e Excel com filtros avançados" data-en="PDF and Excel reports with advanced filters" data-fr="Rapports PDF et Excel avec filtres avancés">Relatórios PDF e Excel com filtros avançados</span></div>
-        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Isolamento total de dados por empresa" data-en="Full data isolation per company" data-fr="Isolation totale des données par entreprise">Isolamento total de dados por empresa</span></div>
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Multi-país e multi-localização em tempo real" data-en="Multi-country and multi-location in real time" data-fr="Multi-pays et multi-site en temps réel" data-es="Multi-país y multi-ubicación en tiempo real" data-af="Multi-land en multi-ligging in reële tyd" data-sw="Nchi nyingi na maeneo mengi kwa wakati halisi" data-ar="متعدد الدول والمواقع في الوقت الفعلي">Multi-país e multi-localização em tempo real</span></div>
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Upload em Excel por supervisores no campo" data-en="Excel upload by field supervisors" data-fr="Upload Excel par les superviseurs terrain" data-es="Carga en Excel por supervisores en campo" data-af="Excel-oplaai deur veldtoesighouers" data-sw="Upakiaji wa Excel na wasimamizi wa uwanjani" data-ar="رفع بيانات Excel من قِبل المشرفين الميدانيين">Upload em Excel por supervisores no campo</span></div>
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Aprovação de transferências com notificação" data-en="Transfer approval with notification" data-fr="Approbation de transferts avec notification" data-es="Aprobación de transferencias con notificación" data-af="Oordraggoedkeuring met kennisgewing" data-sw="Idhini ya uhamisho na arifa" data-ar="الموافقة على التحويلات مع إشعار">Aprovação de transferências com notificação</span></div>
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Relatórios PDF e Excel com filtros avançados" data-en="PDF and Excel reports with advanced filters" data-fr="Rapports PDF et Excel avec filtres avancés" data-es="Informes PDF y Excel con filtros avanzados" data-af="PDF- en Excel-verslae met gevorderde filters" data-sw="Ripoti za PDF na Excel zenye vichujio vya kina" data-ar="تقارير PDF وExcel بفلاتر متقدمة">Relatórios PDF e Excel com filtros avançados</span></div>
+        <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 10 10" fill="none" stroke="var(--glow)" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div><span class="feature-text" data-pt="Isolamento total de dados por empresa" data-en="Full data isolation per company" data-fr="Isolation totale des données par entreprise" data-es="Aislamiento total de datos por empresa" data-af="Volledige data-isolasie per maatskappy" data-sw="Utengano kamili wa data kwa kila kampuni" data-ar="عزل كامل للبيانات لكل شركة">Isolamento total de dados por empresa</span></div>
       </div>
-      <button type="button" class="btn-primary" onclick="openFtModal()" data-pt="Experimentar o FieldTrack" data-en="Try FieldTrack" data-fr="Essayer FieldTrack">Experimentar o FieldTrack</button>
+      <button type="button" class="btn-primary" onclick="openFtModal()" data-pt="Experimentar o FieldTrack" data-en="Try FieldTrack" data-fr="Essayer FieldTrack" data-es="Probar FieldTrack" data-af="Probeer FieldTrack" data-sw="Jaribu FieldTrack" data-ar="جرّب FieldTrack">Experimentar o FieldTrack</button>
     </div>
     <div class="product-visual anim-zoom">
       <div class="pv-header">
@@ -493,10 +507,10 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
         <div class="pv-title">FieldTrack · Dashboard</div>
       </div>
       <div class="pv-kpis">
-        <div class="pv-kpi"><div class="pv-kpi-val">$2.8M</div><div class="pv-kpi-lab" data-pt="Valor total de inventário" data-en="Total inventory value" data-fr="Valeur totale du stock">Valor total de inventário</div></div>
-        <div class="pv-kpi"><div class="pv-kpi-val" style="color:#FBBF24">3</div><div class="pv-kpi-lab" data-pt="Alertas de stock mínimo" data-en="Low stock alerts" data-fr="Alertes stock minimum">Alertas de stock mínimo</div></div>
-        <div class="pv-kpi"><div class="pv-kpi-val">147</div><div class="pv-kpi-lab" data-pt="Itens rastreados" data-en="Items tracked" data-fr="Articles suivis">Itens rastreados</div></div>
-        <div class="pv-kpi"><div class="pv-kpi-val">8</div><div class="pv-kpi-lab" data-pt="Países activos" data-en="Active countries" data-fr="Pays actifs">Países activos</div></div>
+        <div class="pv-kpi"><div class="pv-kpi-val">$2.8M</div><div class="pv-kpi-lab" data-pt="Valor total de inventário" data-en="Total inventory value" data-fr="Valeur totale du stock" data-es="Valor total de inventario" data-af="Totale voorraadwaarde" data-sw="Thamani jumla ya hisa" data-ar="إجمالي قيمة المخزون">Valor total de inventário</div></div>
+        <div class="pv-kpi"><div class="pv-kpi-val" style="color:#FBBF24">3</div><div class="pv-kpi-lab" data-pt="Alertas de stock mínimo" data-en="Low stock alerts" data-fr="Alertes stock minimum" data-es="Alertas de stock mínimo" data-af="Waarskuwings vir minimum voorraad" data-sw="Tahadhari za kiwango cha chini cha hisa" data-ar="تنبيهات الحد الأدنى للمخزون">Alertas de stock mínimo</div></div>
+        <div class="pv-kpi"><div class="pv-kpi-val">147</div><div class="pv-kpi-lab" data-pt="Itens rastreados" data-en="Items tracked" data-fr="Articles suivis" data-es="Artículos rastreados" data-af="Nagespoorde items" data-sw="Vitu vilivyofuatiliwa" data-ar="العناصر المتتبعة">Itens rastreados</div></div>
+        <div class="pv-kpi"><div class="pv-kpi-val">8</div><div class="pv-kpi-lab" data-pt="Países activos" data-en="Active countries" data-fr="Pays actifs" data-es="Países activos" data-af="Aktiewe lande" data-sw="Nchi hai" data-ar="الدول النشطة">Países activos</div></div>
       </div>
       <div class="pv-row"><span class="pv-label">SN-2024-047</span><span class="pv-value">Válvula hidráulica</span><span class="pv-badge pv-ok">OK</span></div>
       <div class="pv-row"><span class="pv-label">SN-2024-031</span><span class="pv-value">Kit de vedantes</span><span class="pv-badge pv-warn">Low</span></div>
@@ -510,11 +524,11 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 <section id="portfolio">
   <div class="portfolio-header">
     <div class="portfolio-title-block anim-up">
-      <p class="section-label" style="color:rgba(74,124,255,.8)" data-pt="Os nossos produtos" data-en="Our products" data-fr="Nos produits">Os nossos produtos</p>
-      <h2 class="section-title" style="color:white" data-pt="Aquilo que construímos." data-en="What we build." data-fr="Ce que nous construisons.">Aquilo que construímos.</h2>
+      <p class="section-label" style="color:rgba(74,124,255,.8)" data-pt="Os nossos produtos" data-en="Our products" data-fr="Nos produits" data-es="Nuestros productos" data-af="Ons produkte" data-sw="Bidhaa zetu" data-ar="منتجاتنا">Os nossos produtos</p>
+      <h2 class="section-title" style="color:white" data-pt="Aquilo que construímos." data-en="What we build." data-fr="Ce que nous construisons." data-es="Lo que construimos." data-af="Wat ons bou." data-sw="Tunachojenga." data-ar="ما نبنيه.">Aquilo que construímos.</h2>
     </div>
     <a href="portfolio.html" class="portfolio-link anim-up">
-      <span data-pt="Ver portfólio completo" data-en="View full portfolio" data-fr="Voir le portfolio complet">Ver portfólio completo</span>
+      <span data-pt="Ver portfólio completo" data-en="View full portfolio" data-fr="Voir le portfolio complet" data-es="Ver portafolio completo" data-af="Sien volledige portefeulje" data-sw="Angalia kwingineko kamili" data-ar="عرض كامل الأعمال">Ver portfólio completo</span>
       <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M7 2l5 5-5 5"/></svg>
     </a>
   </div>
@@ -544,12 +558,12 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
         </div>
         <div class="pf-body">
           <div class="pf-tags">
-            <span class="pf-tag tag-live" data-pt="Em produção" data-en="Live" data-fr="En production">Em produção</span>
-            <span class="pf-tag tag-sector" data-pt="Oil & Gas" data-en="Oil & Gas" data-fr="Pétrole & Gaz">Oil &amp; Gas</span>
+            <span class="pf-tag tag-live" data-pt="Em produção" data-en="Live" data-fr="En production" data-es="En producción" data-af="In produksie" data-sw="Katika uzalishaji" data-ar="قيد التشغيل">Em produção</span>
+            <span class="pf-tag tag-sector" data-pt="Oil & Gas" data-en="Oil & Gas" data-fr="Pétrole & Gaz" data-es="Petróleo y Gas" data-af="Olie en Gas" data-sw="Mafuta na Gesi" data-ar="النفط والغاز">Oil &amp; Gas</span>
             <span class="pf-tag tag-sector">SaaS</span>
           </div>
           <div class="pf-name">FieldTrack</div>
-          <p class="pf-desc" data-pt="Plataforma de gestão de inventário multi-localização para operações petrolíferas distribuídas em múltiplos países." data-en="Multi-location inventory management platform for oil operations distributed across multiple countries." data-fr="Plateforme de gestion des stocks multi-sites pour les opérations pétrolières réparties dans plusieurs pays.">Plataforma de gestão de inventário multi-localização para operações petrolíferas distribuídas em múltiplos países.</p>
+          <p class="pf-desc" data-pt="Plataforma de gestão de inventário multi-localização para operações petrolíferas distribuídas em múltiplos países." data-en="Multi-location inventory management platform for oil operations distributed across multiple countries." data-fr="Plateforme de gestion des stocks multi-sites pour les opérations pétrolières réparties dans plusieurs pays." data-es="Plataforma de gestión de inventario multi-ubicación para operaciones petroleras distribuidas en múltiples países." data-af="Multi-ligging voorraadbestuurplatform vir oliebedrywighede versprei oor verskeie lande." data-sw="Jukwaa la usimamizi wa hisa la maeneo mengi kwa shughuli za mafuta zilizotawanyika katika nchi mbalimbali." data-ar="منصة لإدارة المخزون متعددة المواقع للعمليات النفطية الموزعة عبر عدة دول.">Plataforma de gestão de inventário multi-localização para operações petrolíferas distribuídas em múltiplos países.</p>
           <div class="pf-footer">
             <span class="pf-stack">Supabase · Vercel · JavaScript</span>
             <div class="pf-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></div>
@@ -565,17 +579,17 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
           <div class="pf-dev-icon">
             <svg viewBox="0 0 26 26" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"><rect x="2" y="8" width="22" height="12" rx="2"/><path d="M5 8V6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v2"/><circle cx="7" cy="20" r="2"/><circle cx="19" cy="20" r="2"/></svg>
           </div>
-          <span style="font-size:.72rem;color:rgba(255,255,255,.2);letter-spacing:.08em;text-transform:uppercase" data-pt="Em desenvolvimento" data-en="In development" data-fr="En développement">Em desenvolvimento</span>
+          <span style="font-size:.72rem;color:rgba(255,255,255,.2);letter-spacing:.08em;text-transform:uppercase" data-pt="Em desenvolvimento" data-en="In development" data-fr="En développement" data-es="En desarrollo" data-af="In ontwikkeling" data-sw="Katika maendeleo" data-ar="قيد التطوير">Em desenvolvimento</span>
         </div>
         <div class="pf-body">
           <div class="pf-tags">
-            <span class="pf-tag tag-dev" data-pt="Em breve" data-en="Coming soon" data-fr="Bientôt">Em breve</span>
-            <span class="pf-tag tag-sector" data-pt="Logística" data-en="Logistics" data-fr="Logistique">Logística</span>
+            <span class="pf-tag tag-dev" data-pt="Em breve" data-en="Coming soon" data-fr="Bientôt" data-es="Próximamente" data-af="Binnekort" data-sw="Hivi karibuni" data-ar="قريبًا">Em breve</span>
+            <span class="pf-tag tag-sector" data-pt="Logística" data-en="Logistics" data-fr="Logistique" data-es="Logística" data-af="Logistiek" data-sw="Usafirishaji" data-ar="الخدمات اللوجستية">Logística</span>
           </div>
           <div class="pf-name">FleetTrack</div>
-          <p class="pf-desc" data-pt="Gestão de frota e manutenção preventiva para empresas de logística e transporte com activos distribuídos." data-en="Fleet and preventive maintenance management for logistics and transport companies with distributed assets." data-fr="Gestion de flotte et maintenance préventive pour les entreprises de logistique avec des actifs distribués.">Gestão de frota e manutenção preventiva para empresas de logística e transporte com activos distribuídos.</p>
+          <p class="pf-desc" data-pt="Gestão de frota e manutenção preventiva para empresas de logística e transporte com activos distribuídos." data-en="Fleet and preventive maintenance management for logistics and transport companies with distributed assets." data-fr="Gestion de flotte et maintenance préventive pour les entreprises de logistique avec des actifs distribués." data-es="Gestión de flota y mantenimiento preventivo para empresas de logística y transporte con activos distribuidos." data-af="Vlootbestuur en voorkomende instandhouding vir logistieke en vervoermaatskappye met verspreide bates." data-sw="Usimamizi wa meli na matengenezo ya kinga kwa makampuni ya usafirishaji yenye mali zilizotawanyika." data-ar="إدارة الأسطول والصيانة الوقائية لشركات الخدمات اللوجستية والنقل ذات الأصول الموزعة.">Gestão de frota e manutenção preventiva para empresas de logística e transporte com activos distribuídos.</p>
           <div class="pf-footer">
-            <span class="pf-stack" data-pt="Próximo produto" data-en="Next product" data-fr="Prochain produit">Próximo produto</span>
+            <span class="pf-stack" data-pt="Próximo produto" data-en="Next product" data-fr="Prochain produit" data-es="Próximo producto" data-af="Volgende produk" data-sw="Bidhaa inayofuata" data-ar="المنتج القادم">Próximo produto</span>
             <div class="pf-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></div>
           </div>
         </div>
@@ -589,17 +603,17 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
           <div class="pf-dev-icon">
             <svg viewBox="0 0 26 26" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.5"><rect x="3" y="3" width="9" height="9" rx="1.5"/><rect x="14" y="3" width="9" height="9" rx="1.5"/><rect x="3" y="14" width="9" height="9" rx="1.5"/><rect x="14" y="14" width="9" height="9" rx="1.5"/></svg>
           </div>
-          <span style="font-size:.72rem;color:rgba(255,255,255,.2);letter-spacing:.08em;text-transform:uppercase" data-pt="Em desenvolvimento" data-en="In development" data-fr="En développement">Em desenvolvimento</span>
+          <span style="font-size:.72rem;color:rgba(255,255,255,.2);letter-spacing:.08em;text-transform:uppercase" data-pt="Em desenvolvimento" data-en="In development" data-fr="En développement" data-es="En desarrollo" data-af="In ontwikkeling" data-sw="Katika maendeleo" data-ar="قيد التطوير">Em desenvolvimento</span>
         </div>
         <div class="pf-body">
           <div class="pf-tags">
-            <span class="pf-tag tag-dev" data-pt="Em breve" data-en="Coming soon" data-fr="Bientôt">Em breve</span>
-            <span class="pf-tag tag-sector" data-pt="Construção" data-en="Construction" data-fr="Construction">Construção</span>
+            <span class="pf-tag tag-dev" data-pt="Em breve" data-en="Coming soon" data-fr="Bientôt" data-es="Próximamente" data-af="Binnekort" data-sw="Hivi karibuni" data-ar="قريبًا">Em breve</span>
+            <span class="pf-tag tag-sector" data-pt="Construção" data-en="Construction" data-fr="Construction" data-es="Construcción" data-af="Konstruksie" data-sw="Ujenzi" data-ar="البناء">Construção</span>
           </div>
           <div class="pf-name">AssetTrack</div>
-          <p class="pf-desc" data-pt="Controlo de activos fixos e equipamento pesado para empresas de construção e engenharia com múltiplos estaleiros." data-en="Fixed asset and heavy equipment control for construction and engineering companies with multiple sites." data-fr="Contrôle des actifs fixes et équipements lourds pour les entreprises de construction avec plusieurs chantiers.">Controlo de activos fixos e equipamento pesado para empresas de construção e engenharia com múltiplos estaleiros.</p>
+          <p class="pf-desc" data-pt="Controlo de activos fixos e equipamento pesado para empresas de construção e engenharia com múltiplos estaleiros." data-en="Fixed asset and heavy equipment control for construction and engineering companies with multiple sites." data-fr="Contrôle des actifs fixes et équipements lourds pour les entreprises de construction avec plusieurs chantiers." data-es="Control de activos fijos y equipos pesados para empresas de construcción e ingeniería con múltiples obras." data-af="Beheer van vaste bates en swaar toerusting vir konstruksie- en ingenieursmaatskappye met veelvuldige werwe." data-sw="Udhibiti wa mali za kudumu na vifaa vizito kwa makampuni ya ujenzi na uhandisi yenye maeneo mengi ya kazi." data-ar="التحكم في الأصول الثابتة والمعدات الثقيلة لشركات البناء والهندسة ذات المواقع المتعددة.">Controlo de activos fixos e equipamento pesado para empresas de construção e engenharia com múltiplos estaleiros.</p>
           <div class="pf-footer">
-            <span class="pf-stack" data-pt="Em planeamento" data-en="In planning" data-fr="En planification">Em planeamento</span>
+            <span class="pf-stack" data-pt="Em planeamento" data-en="In planning" data-fr="En planification" data-es="En planificación" data-af="In beplanning" data-sw="Katika mipango" data-ar="قيد التخطيط">Em planeamento</span>
             <div class="pf-arrow"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></div>
           </div>
         </div>
@@ -613,29 +627,29 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 <section id="process">
   <div class="section-inner">
     <div class="anim-up">
-      <p class="section-label" data-pt="Como trabalhamos" data-en="How we work" data-fr="Comment nous travaillons">Como trabalhamos</p>
-      <h2 class="section-title" data-pt="Sem surpresas. Sem entregas que não resolvem nada." data-en="No surprises. No deliveries that solve nothing." data-fr="Sans surprises. Sans livraisons qui ne résolvent rien.">Sem surpresas. Sem entregas que não resolvem nada.</h2>
+      <p class="section-label" data-pt="Como trabalhamos" data-en="How we work" data-fr="Comment nous travaillons" data-es="Cómo trabajamos" data-af="Hoe ons werk" data-sw="Jinsi tunavyofanya kazi" data-ar="كيف نعمل">Como trabalhamos</p>
+      <h2 class="section-title" data-pt="Sem surpresas. Sem entregas que não resolvem nada." data-en="No surprises. No deliveries that solve nothing." data-fr="Sans surprises. Sans livraisons qui ne résolvent rien." data-es="Sin sorpresas. Sin entregas que no resuelven nada." data-af="Geen verrassings nie. Geen aflewerings wat niks oplos nie." data-sw="Hakuna mshangao. Hakuna utoaji usiotatua chochote." data-ar="بلا مفاجآت. بلا تسليمات لا تحل شيئًا.">Sem surpresas. Sem entregas que não resolvem nada.</h2>
     </div>
     <div class="process-steps stagger">
       <div class="process-step">
         <div class="step-num">1</div>
-        <h4 class="step-title" data-pt="Diagnóstico" data-en="Discovery" data-fr="Diagnostic">Diagnóstico</h4>
-        <p class="step-desc" data-pt="Ouvimos primeiro. O problema real é mapeado antes de qualquer proposta de solução." data-en="We listen first. The real problem is mapped before any solution is proposed." data-fr="Nous écoutons d'abord. Le vrai problème est cartographié avant toute proposition de solution.">Ouvimos primeiro. O problema real é mapeado antes de qualquer proposta de solução.</p>
+        <h4 class="step-title" data-pt="Diagnóstico" data-en="Discovery" data-fr="Diagnostic" data-es="Diagnóstico" data-af="Diagnose" data-sw="Uchunguzi" data-ar="التشخيص">Diagnóstico</h4>
+        <p class="step-desc" data-pt="Ouvimos primeiro. O problema real é mapeado antes de qualquer proposta de solução." data-en="We listen first. The real problem is mapped before any solution is proposed." data-fr="Nous écoutons d'abord. Le vrai problème est cartographié avant toute proposition de solution." data-es="Escuchamos primero. El problema real se mapea antes de cualquier propuesta de solución." data-af="Ons luister eers. Die werklike probleem word gekarteer voor enige oplossingsvoorstel." data-sw="Tunasikiliza kwanza. Tatizo halisi linachambuliwa kabla ya pendekezo lolote la suluhisho." data-ar="نستمع أولاً. تُحدَّد المشكلة الحقيقية قبل أي اقتراح للحل.">Ouvimos primeiro. O problema real é mapeado antes de qualquer proposta de solução.</p>
       </div>
       <div class="process-step">
         <div class="step-num">2</div>
-        <h4 class="step-title" data-pt="Proposta clara" data-en="Clear proposal" data-fr="Proposition claire">Proposta clara</h4>
-        <p class="step-desc" data-pt="Âmbito, prazo e preço fixos desde o início. Sem alterações não comunicadas." data-en="Fixed scope, timeline, and price from the start. No uncommunicated changes." data-fr="Périmètre, délai et prix fixes dès le début. Aucune modification non communiquée.">Âmbito, prazo e preço fixos desde o início. Sem alterações não comunicadas.</p>
+        <h4 class="step-title" data-pt="Proposta clara" data-en="Clear proposal" data-fr="Proposition claire" data-es="Propuesta clara" data-af="Duidelike voorstel" data-sw="Pendekezo wazi" data-ar="عرض واضح">Proposta clara</h4>
+        <p class="step-desc" data-pt="Âmbito, prazo e preço fixos desde o início. Sem alterações não comunicadas." data-en="Fixed scope, timeline, and price from the start. No uncommunicated changes." data-fr="Périmètre, délai et prix fixes dès le début. Aucune modification non communiquée." data-es="Alcance, plazo y precio fijos desde el inicio. Sin cambios no comunicados." data-af="Omvang, tydlyn en prys vas van die begin af. Geen ongekommunikeerde veranderinge nie." data-sw="Wigo, muda, na bei vimewekwa tangu mwanzo. Hakuna mabadiliko yasiyoarifiwa." data-ar="النطاق والجدول الزمني والسعر ثابتون منذ البداية. لا تغييرات دون إشعار.">Âmbito, prazo e preço fixos desde o início. Sem alterações não comunicadas.</p>
       </div>
       <div class="process-step">
         <div class="step-num">3</div>
-        <h4 class="step-title" data-pt="Desenvolvimento iterativo" data-en="Iterative build" data-fr="Développement itératif">Desenvolvimento iterativo</h4>
-        <p class="step-desc" data-pt="Entregas parciais frequentes para validação contínua pelo cliente antes da versão final." data-en="Frequent partial deliveries for continuous client validation before the final version." data-fr="Livraisons partielles fréquentes pour validation continue par le client avant la version finale.">Entregas parciais frequentes para validação contínua pelo cliente antes da versão final.</p>
+        <h4 class="step-title" data-pt="Desenvolvimento iterativo" data-en="Iterative build" data-fr="Développement itératif" data-es="Desarrollo iterativo" data-af="Iteratiewe ontwikkeling" data-sw="Maendeleo ya hatua kwa hatua" data-ar="تطوير تكراري">Desenvolvimento iterativo</h4>
+        <p class="step-desc" data-pt="Entregas parciais frequentes para validação contínua pelo cliente antes da versão final." data-en="Frequent partial deliveries for continuous client validation before the final version." data-fr="Livraisons partielles fréquentes pour validation continue par le client avant la version finale." data-es="Entregas parciales frecuentes para validación continua por parte del cliente antes de la versión final." data-af="Gereelde gedeeltelike aflewerings vir deurlopende validering deur die kliënt voor die finale weergawe." data-sw="Utoaji wa sehemu mara kwa mara kwa uthibitisho endelevu wa mteja kabla ya toleo la mwisho." data-ar="تسليمات جزئية متكررة للتحقق المستمر من قبل العميل قبل النسخة النهائية.">Entregas parciais frequentes para validação contínua pelo cliente antes da versão final.</p>
       </div>
       <div class="process-step">
         <div class="step-num">4</div>
-        <h4 class="step-title" data-pt="Entrega e suporte" data-en="Delivery & support" data-fr="Livraison et support">Entrega e suporte</h4>
-        <p class="step-desc" data-pt="Formação da equipa, documentação e suporte técnico pós-entrega incluídos em todos os projectos." data-en="Team training, documentation, and post-delivery technical support included in all projects." data-fr="Formation d'équipe, documentation et support technique post-livraison inclus dans tous les projets.">Formação da equipa, documentação e suporte técnico pós-entrega incluídos em todos os projectos.</p>
+        <h4 class="step-title" data-pt="Entrega e suporte" data-en="Delivery & support" data-fr="Livraison et support" data-es="Entrega y soporte" data-af="Aflewering en ondersteuning" data-sw="Utoaji na msaada" data-ar="التسليم والدعم">Entrega e suporte</h4>
+        <p class="step-desc" data-pt="Formação da equipa, documentação e suporte técnico pós-entrega incluídos em todos os projectos." data-en="Team training, documentation, and post-delivery technical support included in all projects." data-fr="Formation d'équipe, documentation et support technique post-livraison inclus dans tous les projets." data-es="Formación del equipo, documentación y soporte técnico post-entrega incluidos en todos los proyectos." data-af="Spanopleiding, dokumentasie en tegniese ondersteuning na aflewering ingesluit in alle projekte." data-sw="Mafunzo ya timu, nyaraka, na msaada wa kiufundi baada ya utoaji vimejumuishwa katika miradi yote." data-ar="تدريب الفريق والتوثيق والدعم الفني بعد التسليم مشمولون في جميع المشاريع.">Formação da equipa, documentação e suporte técnico pós-entrega incluídos em todos os projectos.</p>
       </div>
     </div>
   </div>
@@ -646,9 +660,9 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
   <div class="section-inner">
     <div class="contact-grid">
       <div class="anim-right">
-        <p class="section-label" data-pt="Fale connosco" data-en="Get in touch" data-fr="Contactez-nous">Fale connosco</p>
-        <h2 class="section-title" data-pt="A empresa tem um problema que o software ainda não resolveu?" data-en="Does your company have a problem that software hasn't solved yet?" data-fr="Votre entreprise a un problème que le logiciel n'a pas encore résolu ?">A empresa tem um problema que o software ainda não resolveu?</h2>
-        <p class="section-body" data-pt="Descreva o desafio. Sem compromisso — a primeira conversa é sempre gratuita." data-en="Describe the challenge. No commitment — the first conversation is always free." data-fr="Décrivez le défi. Sans engagement — la première conversation est toujours gratuite.">Descreva o desafio. Sem compromisso — a primeira conversa é sempre gratuita.</p>
+        <p class="section-label" data-pt="Fale connosco" data-en="Get in touch" data-fr="Contactez-nous" data-es="Habla con nosotros" data-af="Praat met ons" data-sw="Ongea nasi" data-ar="تحدث معنا">Fale connosco</p>
+        <h2 class="section-title" data-pt="A empresa tem um problema que o software ainda não resolveu?" data-en="Does your company have a problem that software hasn't solved yet?" data-fr="Votre entreprise a un problème que le logiciel n'a pas encore résolu ?" data-es="¿Su empresa tiene un problema que el software aún no ha resuelto?" data-af="Het u maatskappy 'n probleem wat sagteware nog nie opgelos het nie?" data-sw="Je, kampuni yako ina tatizo ambalo programu bado haijalitatua?" data-ar="هل تواجه شركتك مشكلة لم تحلها البرمجيات بعد؟">A empresa tem um problema que o software ainda não resolveu?</h2>
+        <p class="section-body" data-pt="Descreva o desafio. Sem compromisso — a primeira conversa é sempre gratuita." data-en="Describe the challenge. No commitment — the first conversation is always free." data-fr="Décrivez le défi. Sans engagement — la première conversation est toujours gratuite." data-es="Describa el desafío. Sin compromiso — la primera conversación siempre es gratuita." data-af="Beskryf die uitdaging. Geen verpligting nie — die eerste gesprek is altyd gratis." data-sw="Eleza changamoto. Bila ahadi — mazungumzo ya kwanza ni bure kila wakati." data-ar="صف التحدي. دون التزام — المحادثة الأولى مجانية دائمًا.">Descreva o desafio. Sem compromisso — a primeira conversa é sempre gratuita.</p>
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-icon"><svg viewBox="0 0 18 18" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 4h12a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><polyline points="2,4 9,10 16,4"/></svg></div>
@@ -660,31 +674,31 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
           </div>
           <div class="contact-item">
             <div class="contact-icon"><svg viewBox="0 0 18 18" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M9 2C5.7 2 3 4.7 3 8c0 4.4 6 10 6 10s6-5.6 6-10c0-3.3-2.7-6-6-6z"/><circle cx="9" cy="8" r="2"/></svg></div>
-            <div><div class="contact-label" data-pt="Localização" data-en="Location" data-fr="Localisation">Localização</div><div class="contact-value">Luanda, Angola</div></div>
+            <div><div class="contact-label" data-pt="Localização" data-en="Location" data-fr="Localisation" data-es="Ubicación" data-af="Ligging" data-sw="Mahali" data-ar="الموقع">Localização</div><div class="contact-value">Luanda, Angola</div></div>
           </div>
         </div>
       </div>
       <div class="anim-left">
         <form class="contact-form" id="contact-form" onsubmit="submitForm(event)">
           <div class="form-row">
-            <div class="form-field"><label data-pt="Nome" data-en="Name" data-fr="Nom">Nome</label><input type="text" name="name" required placeholder="Nome completo"></div>
-            <div class="form-field"><label data-pt="Empresa" data-en="Company" data-fr="Entreprise">Empresa</label><input type="text" name="company" placeholder="Nome da empresa"></div>
+            <div class="form-field"><label data-pt="Nome" data-en="Name" data-fr="Nom" data-es="Nombre" data-af="Naam" data-sw="Jina" data-ar="الاسم">Nome</label><input type="text" name="name" required placeholder="Nome completo"></div>
+            <div class="form-field"><label data-pt="Empresa" data-en="Company" data-fr="Entreprise" data-es="Empresa" data-af="Maatskappy" data-sw="Kampuni" data-ar="الشركة">Empresa</label><input type="text" name="company" placeholder="Nome da empresa"></div>
           </div>
           <div class="form-field"><label>Email</label><input type="email" name="email" required placeholder="email@empresa.com"></div>
           <div class="form-field">
-            <label data-pt="Assunto" data-en="Subject" data-fr="Sujet">Assunto</label>
+            <label data-pt="Assunto" data-en="Subject" data-fr="Sujet" data-es="Asunto" data-af="Onderwerp" data-sw="Somo" data-ar="الموضوع">Assunto</label>
             <select name="subject">
-              <option data-pt="Projecto sob medida" data-en="Custom project"  data-fr="Projet sur mesure">Projecto sob medida</option>
-              <option data-pt="FieldTrack"           data-en="FieldTrack"      data-fr="FieldTrack">FieldTrack</option>
-              <option data-pt="Parceria"             data-en="Partnership"     data-fr="Partenariat">Parceria</option>
-              <option data-pt="Outro"                data-en="Other"           data-fr="Autre">Outro</option>
+              <option data-pt="Projecto sob medida" data-en="Custom project" data-fr="Projet sur mesure" data-es="Proyecto a medida" data-af="Pasgemaakte projek" data-sw="Mradi maalum" data-ar="مشروع مخصص">Projecto sob medida</option>
+              <option data-pt="FieldTrack" data-en="FieldTrack" data-fr="FieldTrack" data-es="FieldTrack" data-af="FieldTrack" data-sw="FieldTrack" data-ar="FieldTrack">FieldTrack</option>
+              <option data-pt="Parceria" data-en="Partnership" data-fr="Partenariat" data-es="Colaboración" data-af="Vennootskap" data-sw="Ushirikiano" data-ar="شراكة">Parceria</option>
+              <option data-pt="Outro" data-en="Other" data-fr="Autre" data-es="Otro" data-af="Ander" data-sw="Nyingine" data-ar="أخرى">Outro</option>
             </select>
           </div>
-          <div class="form-field"><label data-pt="Mensagem" data-en="Message" data-fr="Message">Mensagem</label><textarea name="message" required placeholder="Descreva o problema ou ideia..."></textarea></div>
-          <button type="submit" class="form-submit" id="form-submit-btn" data-pt="Enviar mensagem" data-en="Send message" data-fr="Envoyer le message">Enviar mensagem</button>
-          <p class="form-note" data-pt="Respondemos em menos de 24 horas em dias úteis." data-en="We reply within 24 hours on business days." data-fr="Nous répondons en moins de 24 heures les jours ouvrables.">Respondemos em menos de 24 horas em dias úteis.</p>
-          <div class="form-success" id="form-success" data-pt="Mensagem enviada com sucesso. Entraremos em contacto em breve." data-en="Message sent successfully. We will be in touch shortly." data-fr="Message envoyé avec succès. Nous vous contacterons bientôt.">Mensagem enviada com sucesso. Entraremos em contacto em breve.</div>
-          <div class="form-error" id="form-error" style="display:none;background:#FEF2F2;border:1px solid #FCA5A5;border-radius:var(--radius);padding:1rem 1.25rem;color:#991B1B;font-size:.875rem;font-weight:500" data-pt="Não foi possível enviar a mensagem. Tente novamente ou escreva para support@thetectus.com." data-en="Could not send the message. Please try again or email support@thetectus.com." data-fr="Impossible d'envoyer le message. Réessayez ou écrivez à support@thetectus.com.">Não foi possível enviar a mensagem. Tente novamente ou escreva para support@thetectus.com.</div>
+          <div class="form-field"><label data-pt="Mensagem" data-en="Message" data-fr="Message" data-es="Mensaje" data-af="Boodskap" data-sw="Ujumbe" data-ar="الرسالة">Mensagem</label><textarea name="message" required placeholder="Descreva o problema ou ideia..."></textarea></div>
+          <button type="submit" class="form-submit" id="form-submit-btn" data-pt="Enviar mensagem" data-en="Send message" data-fr="Envoyer le message" data-es="Enviar mensaje" data-af="Stuur boodskap" data-sw="Tuma ujumbe" data-ar="إرسال الرسالة">Enviar mensagem</button>
+          <p class="form-note" data-pt="Respondemos em menos de 24 horas em dias úteis." data-en="We reply within 24 hours on business days." data-fr="Nous répondons en moins de 24 heures les jours ouvrables." data-es="Respondemos en menos de 24 horas en días hábiles." data-af="Ons reageer binne 24 uur op werksdae." data-sw="Tunajibu ndani ya saa 24 siku za kazi." data-ar="نرد خلال أقل من 24 ساعة في أيام العمل.">Respondemos em menos de 24 horas em dias úteis.</p>
+          <div class="form-success" id="form-success" data-pt="Mensagem enviada com sucesso. Entraremos em contacto em breve." data-en="Message sent successfully. We will be in touch shortly." data-fr="Message envoyé avec succès. Nous vous contacterons bientôt." data-es="Mensaje enviado con éxito. Nos pondremos en contacto pronto." data-af="Boodskap suksesvol gestuur. Ons sal binnekort met u in verbinding tree." data-sw="Ujumbe umetumwa kwa mafanikio. Tutawasiliana nawe hivi karibuni." data-ar="تم إرسال الرسالة بنجاح. سنتواصل معك قريبًا.">Mensagem enviada com sucesso. Entraremos em contacto em breve.</div>
+          <div class="form-error" id="form-error" style="display:none;background:#FEF2F2;border:1px solid #FCA5A5;border-radius:var(--radius);padding:1rem 1.25rem;color:#991B1B;font-size:.875rem;font-weight:500" data-pt="Não foi possível enviar a mensagem. Tente novamente ou escreva para support@thetectus.com." data-en="Could not send the message. Please try again or email support@thetectus.com." data-fr="Impossible d'envoyer le message. Réessayez ou écrivez à support@thetectus.com." data-es="No se pudo enviar el mensaje. Inténtelo de nuevo o escriba a support@thetectus.com." data-af="Kon nie die boodskap stuur nie. Probeer weer of skryf na support@thetectus.com." data-sw="Imeshindikana kutuma ujumbe. Jaribu tena au andika kwa support@thetectus.com." data-ar="تعذّر إرسال الرسالة. حاول مرة أخرى أو راسلنا على support@thetectus.com.">Não foi possível enviar a mensagem. Tente novamente ou escreva para support@thetectus.com.</div>
         </form>
       </div>
     </div>
@@ -695,12 +709,12 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 <footer>
   <div class="footer-logo">The Tectus</div>
   <div class="footer-links">
-    <a href="#services" data-pt="Serviços"  data-en="Services" data-fr="Services">Serviços</a>
+    <a href="#services" data-pt="Serviços" data-en="Services" data-fr="Services" data-es="Servicios" data-af="Dienste" data-sw="Huduma" data-ar="الخدمات">Serviços</a>
     <a href="#product">FieldTrack</a>
-    <a href="#contact" data-pt="Contacto"  data-en="Contact"  data-fr="Contact">Contacto</a>
+    <a href="#contact" data-pt="Contacto" data-en="Contact" data-fr="Contact" data-es="Contacto" data-af="Kontak" data-sw="Wasiliana" data-ar="اتصل بنا">Contacto</a>
     <a href="mailto:support@thetectus.com">support@thetectus.com</a>
   </div>
-  <p class="footer-copy">© 2026 The Tectus. <span data-pt="Todos os direitos reservados." data-en="All rights reserved." data-fr="Tous droits réservés.">Todos os direitos reservados.</span></p>
+  <p class="footer-copy">© 2026 The Tectus. <span data-pt="Todos os direitos reservados." data-en="All rights reserved." data-fr="Tous droits réservés." data-es="Todos los derechos reservados." data-af="Alle regte voorbehou." data-sw="Haki zote zimehifadhiwa." data-ar="جميع الحقوق محفوظة.">Todos os direitos reservados.</span></p>
 </footer>
 
 <!-- FIELDTRACK MODAL -->
@@ -712,18 +726,18 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 
     <!-- STEP 1: choose plan -->
     <div class="ft-step active" id="ft-step-choose">
-      <h3 class="ft-modal-title" data-pt="Experimentar o FieldTrack" data-en="Try FieldTrack" data-fr="Essayer FieldTrack">Experimentar o FieldTrack</h3>
-      <p class="ft-modal-sub" data-pt="Escolha como quer começar." data-en="Choose how you'd like to start." data-fr="Choisissez comment commencer.">Escolha como quer começar.</p>
+      <h3 class="ft-modal-title" data-pt="Experimentar o FieldTrack" data-en="Try FieldTrack" data-fr="Essayer FieldTrack" data-es="Probar FieldTrack" data-af="Probeer FieldTrack" data-sw="Jaribu FieldTrack" data-ar="جرّب FieldTrack">Experimentar o FieldTrack</h3>
+      <p class="ft-modal-sub" data-pt="Escolha como quer começar." data-en="Choose how you'd like to start." data-fr="Choisissez comment commencer." data-es="Elija cómo quiere empezar." data-af="Kies hoe u wil begin." data-sw="Chagua jinsi unavyotaka kuanza." data-ar="اختر كيف تريد البدء.">Escolha como quer começar.</p>
       <div class="ft-plan-options">
         <button type="button" class="ft-plan-card" onclick="openFtForm('trial')">
-          <span class="ft-plan-tag" data-pt="14 dias grátis" data-en="14 days free" data-fr="14 jours gratuits">14 dias grátis</span>
-          <span class="ft-plan-name" data-pt="Trial gratuito" data-en="Free trial" data-fr="Essai gratuit">Trial gratuito</span>
-          <span class="ft-plan-desc" data-pt="Acesso completo ao FieldTrack durante 14 dias, sem custos. Sem necessidade de cartão de crédito." data-en="Full access to FieldTrack for 14 days, at no cost. No credit card required." data-fr="Accès complet à FieldTrack pendant 14 jours, sans frais. Aucune carte bancaire requise.">Acesso completo ao FieldTrack durante 14 dias, sem custos. Sem necessidade de cartão de crédito.</span>
+          <span class="ft-plan-tag" data-pt="14 dias grátis" data-en="14 days free" data-fr="14 jours gratuits" data-es="14 días gratis" data-af="14 dae gratis" data-sw="Siku 14 bila malipo" data-ar="14 يومًا مجانًا">14 dias grátis</span>
+          <span class="ft-plan-name" data-pt="Trial gratuito" data-en="Free trial" data-fr="Essai gratuit" data-es="Prueba gratuita" data-af="Gratis proeflopie" data-sw="Jaribio bila malipo" data-ar="تجربة مجانية">Trial gratuito</span>
+          <span class="ft-plan-desc" data-pt="Acesso completo ao FieldTrack durante 14 dias, sem custos. Sem necessidade de cartão de crédito." data-en="Full access to FieldTrack for 14 days, at no cost. No credit card required." data-fr="Accès complet à FieldTrack pendant 14 jours, sans frais. Aucune carte bancaire requise." data-es="Acceso completo a FieldTrack durante 14 días, sin costo. Sin necesidad de tarjeta de crédito." data-af="Volledige toegang tot FieldTrack vir 14 dae, gratis. Geen kredietkaart nodig nie." data-sw="Ufikiaji kamili wa FieldTrack kwa siku 14, bila gharama. Hakuna kadi ya mkopo inayohitajika." data-ar="وصول كامل إلى FieldTrack لمدة 14 يومًا، دون تكلفة. لا حاجة لبطاقة ائتمان.">Acesso completo ao FieldTrack durante 14 dias, sem custos. Sem necessidade de cartão de crédito.</span>
         </button>
         <button type="button" class="ft-plan-card" onclick="openFtForm('paid')">
-          <span class="ft-plan-tag" data-pt="Para equipas" data-en="For teams" data-fr="Pour les équipes">Para equipas</span>
-          <span class="ft-plan-name" data-pt="Plano pago" data-en="Paid plan" data-fr="Plan payant">Plano pago</span>
-          <span class="ft-plan-desc" data-pt="Fale connosco para um plano adaptado ao número de utilizadores e países da sua operação." data-en="Talk to us about a plan tailored to your number of users and countries of operation." data-fr="Parlez-nous d'un plan adapté au nombre d'utilisateurs et de pays de votre opération.">Fale connosco para um plano adaptado ao número de utilizadores e países da sua operação.</span>
+          <span class="ft-plan-tag" data-pt="Para equipas" data-en="For teams" data-fr="Pour les équipes" data-es="Para equipos" data-af="Vir spanne" data-sw="Kwa timu" data-ar="للفرق">Para equipas</span>
+          <span class="ft-plan-name" data-pt="Plano pago" data-en="Paid plan" data-fr="Plan payant" data-es="Plan de pago" data-af="Betaalde plan" data-sw="Mpango wa malipo" data-ar="خطة مدفوعة">Plano pago</span>
+          <span class="ft-plan-desc" data-pt="Fale connosco para um plano adaptado ao número de utilizadores e países da sua operação." data-en="Talk to us about a plan tailored to your number of users and countries of operation." data-fr="Parlez-nous d'un plan adapté au nombre d'utilisateurs et de pays de votre opération." data-es="Hable con nosotros para un plan adaptado al número de usuarios y países de su operación." data-af="Praat met ons vir 'n plan aangepas by die aantal gebruikers en lande van u bedrywighede." data-sw="Ongea nasi kwa mpango unaolingana na idadi ya watumiaji na nchi za shughuli zako." data-ar="تواصل معنا للحصول على خطة مصممة حسب عدد المستخدمين ودول عملياتك.">Fale connosco para um plano adaptado ao número de utilizadores e países da sua operação.</span>
         </button>
       </div>
     </div>
@@ -732,26 +746,26 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
     <div class="ft-step" id="ft-step-form">
       <button type="button" class="ft-back" onclick="backToFtChoose()">
         <svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M7.5 2L2.5 6l5 4"/></svg>
-        <span data-pt="Voltar" data-en="Back" data-fr="Retour">Voltar</span>
+        <span data-pt="Voltar" data-en="Back" data-fr="Retour" data-es="Volver" data-af="Terug" data-sw="Rudi" data-ar="رجوع">Voltar</span>
       </button>
-      <h3 class="ft-modal-title" id="ft-form-title" data-pt="Pedir trial gratuito" data-en="Request free trial" data-fr="Demander un essai gratuit">Pedir trial gratuito</h3>
-      <p class="ft-modal-sub" id="ft-form-sub" data-pt="Preencha os seus dados e entraremos em contacto para activar o seu acesso." data-en="Fill in your details and we'll be in touch to activate your access." data-fr="Remplissez vos coordonnées et nous vous contacterons pour activer votre accès.">Preencha os seus dados e entraremos em contacto para activar o seu acesso.</p>
+      <h3 class="ft-modal-title" id="ft-form-title" data-pt="Pedir trial gratuito" data-en="Request free trial" data-fr="Demander un essai gratuit" data-es="Solicitar prueba gratuita" data-af="Vra gratis proeflopie" data-sw="Omba jaribio bila malipo" data-ar="طلب تجربة مجانية">Pedir trial gratuito</h3>
+      <p class="ft-modal-sub" id="ft-form-sub" data-pt="Preencha os seus dados e entraremos em contacto para activar o seu acesso." data-en="Fill in your details and we'll be in touch to activate your access." data-fr="Remplissez vos coordonnées et nous vous contacterons pour activer votre accès." data-es="Complete sus datos y nos pondremos en contacto para activar su acceso." data-af="Voltooi u besonderhede en ons sal u kontak om u toegang te aktiveer." data-sw="Jaza taarifa zako na tutawasiliana nawe kuwezesha ufikiaji wako." data-ar="املأ بياناتك وسنتواصل معك لتفعيل وصولك.">Preencha os seus dados e entraremos em contacto para activar o seu acesso.</p>
 
       <form class="contact-form" id="ft-form" onsubmit="submitFtForm(event)">
         <input type="hidden" name="_subject" id="ft-form-subject" value="Pedido de trial — FieldTrack">
         <input type="hidden" name="plan" id="ft-form-plan" value="trial">
         <div class="form-row">
-          <div class="form-field"><label data-pt="Nome" data-en="Name" data-fr="Nom">Nome</label><input type="text" name="name" required placeholder="Nome completo"></div>
-          <div class="form-field"><label data-pt="Empresa" data-en="Company" data-fr="Entreprise">Empresa</label><input type="text" name="company" required placeholder="Nome da empresa"></div>
+          <div class="form-field"><label data-pt="Nome" data-en="Name" data-fr="Nom" data-es="Nombre" data-af="Naam" data-sw="Jina" data-ar="الاسم">Nome</label><input type="text" name="name" required placeholder="Nome completo"></div>
+          <div class="form-field"><label data-pt="Empresa" data-en="Company" data-fr="Entreprise" data-es="Empresa" data-af="Maatskappy" data-sw="Kampuni" data-ar="الشركة">Empresa</label><input type="text" name="company" required placeholder="Nome da empresa"></div>
         </div>
         <div class="form-row">
           <div class="form-field"><label>Email</label><input type="email" name="email" required placeholder="email@empresa.com"></div>
-          <div class="form-field"><label data-pt="Telefone" data-en="Phone" data-fr="Téléphone">Telefone</label><input type="tel" name="phone" placeholder="+244 900 000 000"></div>
+          <div class="form-field"><label data-pt="Telefone" data-en="Phone" data-fr="Téléphone" data-es="Teléfono" data-af="Telefoon" data-sw="Simu" data-ar="الهاتف">Telefone</label><input type="tel" name="phone" placeholder="+244 900 000 000"></div>
         </div>
-        <div class="form-field"><label data-pt="País de operação" data-en="Country of operation" data-fr="Pays d'opération">País de operação</label><input type="text" name="country" placeholder="Angola, Nigéria, ..."></div>
-        <button type="submit" class="form-submit" id="ft-form-submit-btn" data-pt="Pedir acesso" data-en="Request access" data-fr="Demander l'accès">Pedir acesso</button>
-        <div class="form-success" id="ft-form-success" data-pt="Pedido enviado com sucesso. Entraremos em contacto em breve." data-en="Request sent successfully. We will be in touch shortly." data-fr="Demande envoyée avec succès. Nous vous contacterons bientôt.">Pedido enviado com sucesso. Entraremos em contacto em breve.</div>
-        <div class="form-error" id="ft-form-error" style="display:none;background:#FEF2F2;border:1px solid #FCA5A5;border-radius:var(--radius);padding:1rem 1.25rem;color:#991B1B;font-size:.875rem;font-weight:500" data-pt="Não foi possível enviar o pedido. Tente novamente ou escreva para support@thetectus.com." data-en="Could not send the request. Please try again or email support@thetectus.com." data-fr="Impossible d'envoyer la demande. Réessayez ou écrivez à support@thetectus.com.">Não foi possível enviar o pedido. Tente novamente ou escreva para support@thetectus.com.</div>
+        <div class="form-field"><label data-pt="País de operação" data-en="Country of operation" data-fr="Pays d'opération" data-es="País de operación" data-af="Land van bedrywighede" data-sw="Nchi ya uendeshaji" data-ar="بلد التشغيل">País de operação</label><input type="text" name="country" placeholder="Angola, Nigéria, ..."></div>
+        <button type="submit" class="form-submit" id="ft-form-submit-btn" data-pt="Pedir acesso" data-en="Request access" data-fr="Demander l'accès" data-es="Solicitar acceso" data-af="Vra toegang" data-sw="Omba ufikiaji" data-ar="طلب الوصول">Pedir acesso</button>
+        <div class="form-success" id="ft-form-success" data-pt="Pedido enviado com sucesso. Entraremos em contacto em breve." data-en="Request sent successfully. We will be in touch shortly." data-fr="Demande envoyée avec succès. Nous vous contacterons bientôt." data-es="Solicitud enviada con éxito. Nos pondremos en contacto pronto." data-af="Versoek suksesvol gestuur. Ons sal binnekort kontak maak." data-sw="Ombi limetumwa kwa mafanikio. Tutawasiliana hivi karibuni." data-ar="تم إرسال الطلب بنجاح. سنتواصل معك قريبًا.">Pedido enviado com sucesso. Entraremos em contacto em breve.</div>
+        <div class="form-error" id="ft-form-error" style="display:none;background:#FEF2F2;border:1px solid #FCA5A5;border-radius:var(--radius);padding:1rem 1.25rem;color:#991B1B;font-size:.875rem;font-weight:500" data-pt="Não foi possível enviar o pedido. Tente novamente ou escreva para support@thetectus.com." data-en="Could not send the request. Please try again or email support@thetectus.com." data-fr="Impossible d'envoyer la demande. Réessayez ou écrivez à support@thetectus.com." data-es="No se pudo enviar la solicitud. Inténtelo de nuevo o escriba a support@thetectus.com." data-af="Kon nie die versoek stuur nie. Probeer weer of skryf na support@thetectus.com." data-sw="Imeshindikana kutuma ombi. Jaribu tena au andika kwa support@thetectus.com." data-ar="تعذّر إرسال الطلب. حاول مرة أخرى أو راسلنا على support@thetectus.com.">Não foi possível enviar o pedido. Tente novamente ou escreva para support@thetectus.com.</div>
       </form>
     </div>
   </div>
@@ -765,6 +779,10 @@ const SLOGANS = {
   pt: ['Software que <span class="aw">resolve</span> problemas reais.', 'Inovação que <span class="aw">transforma</span> operações.', 'Tecnologia feita para <span class="aw">durar</span>.'],
   en: ['Software that <span class="aw">solves</span> real problems.', 'Innovation that <span class="aw">transforms</span> operations.', 'Technology built to <span class="aw">last</span>.'],
   fr: ['Des logiciels qui <span class="aw">résolvent</span> de vrais problèmes.', 'Une innovation qui <span class="aw">transforme</span> les opérations.', 'Une technologie faite pour <span class="aw">durer</span>.'],
+  es: ['Software que <span class="aw">resuelve</span> problemas reales.', 'Innovación que <span class="aw">transforma</span> operaciones.', 'Tecnología hecha para <span class="aw">durar</span>.'],
+  af: ['Sagteware wat werklike probleme <span class="aw">oplos</span>.', 'Innovasie wat bedrywighede <span class="aw">transformeer</span>.', 'Tegnologie gebou om lank te <span class="aw">hou</span>.'],
+  sw: ['Programu ambazo <span class="aw">zinatatua</span> matatizo halisi.', 'Ubunifu unaobadilisha <span class="aw">uendeshaji</span>.', 'Teknolojia iliyoundwa <span class="aw">kudumu</span>.'],
+  ar: ['برمجيات <span class="aw">تحل</span> مشاكل حقيقية.', 'ابتكار <span class="aw">يُحوّل</span> العمليات.', 'تقنية صُنعت <span class="aw">لتدوم</span>.'],
 };
 
 let sloganIdx = 0;
@@ -852,6 +870,7 @@ function setLang(lang, flag, label, optEl) {
     if (v) o.textContent = v;
   });
   document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
   // Restart typewriter in new language
   sloganIdx = 0;
@@ -903,6 +922,7 @@ document.querySelectorAll('.anim-up,.anim-left,.anim-right,.anim-zoom,.anim-flip
 
 // ── FORM ─────────────────────────────────────────────────────
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mrenzzwa';
+const SENDING_TEXT = { pt: 'A enviar...', en: 'Sending...', fr: 'Envoi...', es: 'Enviando...', af: 'Stuur tans...', sw: 'Inatuma...', ar: 'جارٍ الإرسال...' };
 
 function submitForm(e) {
   e.preventDefault();
@@ -916,7 +936,7 @@ function submitForm(e) {
   const originalBtnText = btn.textContent;
   btn.disabled = true;
   btn.style.opacity = '.65';
-  btn.textContent = currentLang === 'pt' ? 'A enviar...' : currentLang === 'fr' ? 'Envoi...' : 'Sending...';
+  btn.textContent = SENDING_TEXT[currentLang] || SENDING_TEXT.en;
 
   fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
@@ -946,20 +966,28 @@ function submitForm(e) {
 const FT_COPY = {
   trial: {
     subject: 'Pedido de trial — FieldTrack',
-    title: { pt: 'Pedir trial gratuito', en: 'Request free trial', fr: "Demander un essai gratuit" },
+    title: { pt: 'Pedir trial gratuito', en: 'Request free trial', fr: "Demander un essai gratuit", es: 'Solicitar prueba gratuita', af: 'Vra gratis proeflopie', sw: 'Omba jaribio bila malipo', ar: 'طلب تجربة مجانية' },
     sub: {
       pt: 'Preencha os seus dados e entraremos em contacto para activar o seu acesso.',
       en: "Fill in your details and we'll be in touch to activate your access.",
-      fr: 'Remplissez vos coordonnées et nous vous contacterons pour activer votre accès.'
+      fr: 'Remplissez vos coordonnées et nous vous contacterons pour activer votre accès.',
+      es: 'Complete sus datos y nos pondremos en contacto para activar su acceso.',
+      af: 'Voltooi u besonderhede en ons sal u kontak om u toegang te aktiveer.',
+      sw: 'Jaza taarifa zako na tutawasiliana nawe kuwezesha ufikiaji wako.',
+      ar: 'املأ بياناتك وسنتواصل معك لتفعيل وصولك.'
     }
   },
   paid: {
     subject: 'Pedido de plano pago — FieldTrack',
-    title: { pt: 'Pedir plano pago', en: 'Request paid plan', fr: 'Demander un plan payant' },
+    title: { pt: 'Pedir plano pago', en: 'Request paid plan', fr: 'Demander un plan payant', es: 'Solicitar plan de pago', af: 'Vra betaalde plan', sw: 'Omba mpango wa malipo', ar: 'طلب خطة مدفوعة' },
     sub: {
       pt: 'Conte-nos sobre a sua operação e entraremos em contacto com uma proposta.',
       en: "Tell us about your operation and we'll follow up with a proposal.",
-      fr: 'Parlez-nous de votre opération et nous vous enverrons une proposition.'
+      fr: 'Parlez-nous de votre opération et nous vous enverrons une proposition.',
+      es: 'Cuéntenos sobre su operación y le enviaremos una propuesta.',
+      af: "Vertel ons van u bedrywighede en ons sal met 'n voorstel opvolg.",
+      sw: 'Tueleze kuhusu shughuli zako na tutafuatilia kwa pendekezo.',
+      ar: 'أخبرنا عن عملياتك وسنتابع معك بعرض.'
     }
   }
 };
@@ -1007,7 +1035,7 @@ function submitFtForm(e) {
   const originalBtnText = btn.textContent;
   btn.disabled = true;
   btn.style.opacity = '.65';
-  btn.textContent = currentLang === 'pt' ? 'A enviar...' : currentLang === 'fr' ? 'Envoi...' : 'Sending...';
+  btn.textContent = SENDING_TEXT[currentLang] || SENDING_TEXT.en;
 
   fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
