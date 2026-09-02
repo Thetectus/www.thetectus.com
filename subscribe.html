@@ -15,8 +15,8 @@
   --ink:      #0A0F1E;
   --slate:    #1C2333;
   --slate2:   #242D42;
-  --gold:     #C9A84C;
-  --gold-l:   #F0D080;
+  --gold:     #1847C8;
+  --gold-l:   #4A7CFF;
   --mist:     #F2F4F8;
   --white:    #FFFFFF;
   --body-txt: #4A5568;
@@ -42,7 +42,7 @@ nav{background:var(--slate);padding:0 2rem;height:60px;display:flex;align-items:
 .page{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:3rem 1rem 4rem;gap:3rem;flex-wrap:wrap}
 
 .benefits{max-width:340px;padding-top:1rem}
-.product-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.12);color:var(--gold);border:0.5px solid rgba(201,168,76,.3);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:1.25rem;font-family:var(--f-display)}
+.product-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(24,71,200,.12);color:var(--gold);border:0.5px solid rgba(24,71,200,.3);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:1.25rem;font-family:var(--f-display)}
 .benefits h1{font-family:var(--f-display);font-size:28px;font-weight:700;line-height:1.25;margin-bottom:.75rem;color:var(--ink)}
 .benefits h1 span{color:var(--gold)}
 .benefits p{font-size:14px;color:var(--body-txt);line-height:1.65;margin-bottom:1.75rem}
@@ -50,7 +50,7 @@ nav{background:var(--slate);padding:0 2rem;height:60px;display:flex;align-items:
 .plan-list{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
 .plan-card{border:1.5px solid var(--border-l);border-radius:var(--r-lg);padding:14px 16px;cursor:pointer;background:var(--white);transition:border-color .15s}
 .plan-card:hover{border-color:var(--gold-l)}
-.plan-card.selected{border-color:var(--gold);background:rgba(201,168,76,.06)}
+.plan-card.selected{border-color:var(--gold);background:rgba(24,71,200,.06)}
 .plan-card input{display:none}
 .plan-name{font-family:var(--f-display);font-size:15px;font-weight:600}
 .plan-price{font-family:var(--f-display);font-size:13px;color:var(--gold);font-weight:600}
@@ -70,7 +70,7 @@ nav{background:var(--slate);padding:0 2rem;height:60px;display:flex;align-items:
 .field input{padding:9px 12px;border:0.5px solid var(--border-l);border-radius:var(--r);background:var(--mist);color:var(--ink);font-size:13px;font-family:var(--f-body);outline:none;transition:border-color .15s}
 .field input:focus{border-color:var(--gold);background:var(--white)}
 .divider{height:0.5px;background:var(--border-l);margin:1.25rem 0}
-.btn-trial{width:100%;padding:13px;border:none;border-radius:var(--r);background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;font-family:var(--f-display);cursor:pointer;transition:opacity .15s;letter-spacing:.02em;margin-top:4px}
+.btn-trial{width:100%;padding:13px;border:none;border-radius:var(--r);background:var(--gold);color:var(--white);font-size:14px;font-weight:700;font-family:var(--f-display);cursor:pointer;transition:opacity .15s;letter-spacing:.02em;margin-top:4px}
 .btn-trial:hover{opacity:.88}
 .btn-trial:disabled{opacity:.5;cursor:not-allowed}
 .msg{font-size:12px;margin-top:12px;text-align:center;padding:8px 12px;border-radius:var(--r);display:none}
@@ -110,7 +110,7 @@ footer a{color:var(--muted);text-decoration:none}
     <p>Pagamento com cartão via Paddle. A conta fica activa assim que o pagamento for confirmado.</p>
 
     <div class="billing-toggle" style="display:flex;gap:6px;background:var(--white);border:0.5px solid var(--border-l);border-radius:var(--r-lg);padding:4px;margin-bottom:1rem;width:fit-content">
-      <button type="button" class="toggle-opt selected" data-cycle="month" onclick="setCycle('month')" style="border:none;background:none;padding:8px 16px;border-radius:10px;font-family:var(--f-display);font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)">Mensal</button>
+      <button type="button" class="toggle-opt selected" data-cycle="month" onclick="setCycle('month')" style="border:none;background:var(--gold);padding:8px 16px;border-radius:10px;font-family:var(--f-display);font-size:12px;font-weight:600;cursor:pointer;color:var(--white)">Mensal</button>
       <button type="button" class="toggle-opt" data-cycle="year" onclick="setCycle('year')" style="border:none;background:none;padding:8px 16px;border-radius:10px;font-family:var(--f-display);font-size:12px;font-weight:600;cursor:pointer;color:var(--muted)">Anual <span style="color:var(--green)">−17%</span></button>
     </div>
 
@@ -218,7 +218,7 @@ function setCycle(cycle) {
     const on = b.dataset.cycle === cycle;
     b.classList.toggle('selected', on);
     b.style.background = on ? 'var(--gold)' : 'none';
-    b.style.color = on ? 'var(--ink)' : 'var(--muted)';
+    b.style.color = on ? 'var(--white)' : 'var(--muted)';
   });
   document.querySelectorAll('.price-month').forEach(el => el.style.display = cycle === 'month' ? '' : 'none');
   document.querySelectorAll('.price-year').forEach(el => el.style.display = cycle === 'year' ? '' : 'none');

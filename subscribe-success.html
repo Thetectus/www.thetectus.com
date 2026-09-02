@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
-  :root{--ink:#0A0F1E;--slate:#1C2333;--gold:#C9A84C;--mist:#F2F4F8;--muted:#8A95A8;--green:#2E7D32;--green-bg:#EAF3DE;--red:#791F1F;--red-bg:#FCEBEB}
+  :root{--ink:#0A0F1E;--slate:#1C2333;--gold:#1847C8;--mist:#F2F4F8;--muted:#8A95A8;--green:#2E7D32;--green-bg:#EAF3DE;--red:#791F1F;--red-bg:#FCEBEB}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Inter',sans-serif;background:var(--mist);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem}
   .card{background:#fff;border-radius:16px;padding:2.5rem 2rem;max-width:420px;width:100%;text-align:center;box-shadow:0 2px 16px rgba(0,0,0,.06)}
@@ -45,7 +45,7 @@ async function poll(attempt) {
     document.getElementById('spinner').style.display = 'none';
     document.getElementById('title').textContent = 'Ainda a processar';
     document.getElementById('status').className = 'status pending';
-    document.getElementById('status').textContent = 'O pagamento pode ainda estar a ser confirmado pelo banco/Flutterwave. Tenta entrar dentro de alguns minutos — os teus dados já estão guardados.';
+    document.getElementById('status').textContent = 'O pagamento pode ainda estar a ser confirmado pelo banco/Paddle. Tenta entrar dentro de alguns minutos — os teus dados já estão guardados.';
     document.getElementById('btn-go').style.display = 'inline-block';
     document.getElementById('btn-go').href = `https://myinventorytracker.vercel.app?tenant=${tenantId}&slug=${slug}`;
     return;
