@@ -57,6 +57,12 @@ nav.light .nav-links a{color:var(--ink-2)}
 .nav-links a:hover{color:white}
 nav.light .nav-links a:hover{color:var(--ink)}
 .nav-right{display:flex;align-items:center;gap:1rem;position:relative}
+.nav-toggle{display:none;width:36px;height:36px;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:0}
+.nav-toggle span{width:20px;height:2px;background:white;border-radius:2px;transition:transform .2s,opacity .2s}
+nav.light .nav-toggle span{background:var(--ink)}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* Language dropdown */
 .lang-selector{position:relative}
@@ -152,7 +158,7 @@ section{padding:7rem clamp(1.25rem,5vw,3rem)}
 /* ── ABOUT ── */
 #about{background:var(--surface-2)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}
 .stat-box{background:var(--surface);border-radius:var(--radius-lg);padding:1.5rem;border:1px solid var(--surface-3);transition:transform .3s,box-shadow .3s}
 .stat-box:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.08)}
 .stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);margin-bottom:.25rem}
@@ -174,6 +180,10 @@ section{padding:7rem clamp(1.25rem,5vw,3rem)}
 .service-icon svg{width:22px;height:22px}
 .service-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.75rem}
 .service-desc{font-size:.87rem;color:var(--ink-2);line-height:1.65}
+.service-link{display:inline-flex;align-items:center;gap:4px;margin-top:1rem;font-size:.82rem;font-weight:600;color:var(--accent);position:relative;z-index:1}
+.service-link:hover{color:var(--glow)}
+.service-link svg{width:12px;height:12px;transition:transform .15s}
+.service-link:hover svg{transform:translateX(2px)}
 
 /* ── PRODUCT ── */
 #product{background:var(--ink);padding:7rem clamp(1.25rem,5vw,3rem)}
@@ -297,8 +307,22 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 .pf-card:hover .pf-arrow svg{stroke:white}
 
 /* ── RESPONSIVE ── */
-@media(max-width:900px){.hero-grid,.about-grid,.product-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}.services-grid{grid-template-columns:1fr 1fr}.process-steps{grid-template-columns:1fr 1fr}.process-steps::before{display:none}.nav-links{display:none}}
-@media(max-width:580px){.services-grid,.process-steps,.form-row,.ft-plan-options{grid-template-columns:1fr}.about-stats{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.hero-grid,.about-grid,.product-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}.services-grid{grid-template-columns:1fr 1fr}.process-steps{grid-template-columns:1fr 1fr}.process-steps::before{display:none}
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,15,30,.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.08);padding:.5rem clamp(1.25rem,5vw,3rem) 1rem}
+  nav.light .nav-links{background:rgba(255,255,255,.98);border-bottom:1px solid var(--surface-3)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  nav.light .nav-links a{border-bottom:1px solid var(--surface-3)}
+  .nav-links a:last-child{border-bottom:none}
+}
+@media(max-width:580px){.services-grid,.process-steps,.form-row,.ft-plan-options,.about-stats{grid-template-columns:1fr}}
+@media(max-width:430px){
+  .nav-logo{font-size:1rem;white-space:nowrap}
+  .nav-cta{padding:7px 12px;font-size:.78rem}
+  #current-lang-label{display:none}
+  .lang-trigger{padding:6px 8px}
+}
 </style>
 </head>
 <body>
@@ -306,14 +330,17 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
 <!-- NAV -->
 <nav id="main-nav">
   <a href="#hero" class="nav-logo"><span class="dot"></span>The Tectus</a>
-  <div class="nav-links">
-    <a href="#about"    data-pt="Sobre nós" data-en="About" data-fr="À propos" data-es="Sobre nosotros" data-af="Oor ons" data-sw="Kuhusu sisi" data-ar="من نحن">Sobre nós</a>
-    <a href="#services" data-pt="Serviços" data-en="Services" data-fr="Services" data-es="Servicios" data-af="Dienste" data-sw="Huduma" data-ar="الخدمات">Serviços</a>
-    <a href="#product"  data-pt="FieldTrack" data-en="FieldTrack" data-fr="FieldTrack" data-es="FieldTrack" data-af="FieldTrack" data-sw="FieldTrack" data-ar="FieldTrack">FieldTrack</a>
-    <a href="#portfolio" data-pt="Portfólio" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-af="Portefeulje" data-sw="Kwingineko" data-ar="الأعمال">Portfólio</a>
-    <a href="#contact"  data-pt="Contacto" data-en="Contact" data-fr="Contact" data-es="Contacto" data-af="Kontak" data-sw="Wasiliana" data-ar="اتصل بنا">Contacto</a>
+  <div class="nav-links" id="nav-links">
+    <a href="#about"    onclick="closeNavMenu()" data-pt="Sobre nós" data-en="About" data-fr="À propos" data-es="Sobre nosotros" data-af="Oor ons" data-sw="Kuhusu sisi" data-ar="من نحن">Sobre nós</a>
+    <a href="#services" onclick="closeNavMenu()" data-pt="Serviços" data-en="Services" data-fr="Services" data-es="Servicios" data-af="Dienste" data-sw="Huduma" data-ar="الخدمات">Serviços</a>
+    <a href="#product"  onclick="closeNavMenu()" data-pt="FieldTrack" data-en="FieldTrack" data-fr="FieldTrack" data-es="FieldTrack" data-af="FieldTrack" data-sw="FieldTrack" data-ar="FieldTrack">FieldTrack</a>
+    <a href="#portfolio" onclick="closeNavMenu()" data-pt="Portfólio" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-af="Portefeulje" data-sw="Kwingineko" data-ar="الأعمال">Portfólio</a>
+    <a href="#contact"  onclick="closeNavMenu()" data-pt="Contacto" data-en="Contact" data-fr="Contact" data-es="Contacto" data-af="Kontak" data-sw="Wasiliana" data-ar="اتصل بنا">Contacto</a>
   </div>
   <div class="nav-right">
+    <button type="button" class="nav-toggle" id="nav-toggle" onclick="toggleNavMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
     <div class="lang-selector" id="lang-selector">
       <div class="lang-trigger" id="lang-trigger" onclick="toggleLangMenu()">
         <img id="current-flag" src="https://flagcdn.com/w40/ao.png" alt="AO">
@@ -420,9 +447,8 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
         <h2 class="section-title" data-pt="Construídos em Angola, pensados para o mundo." data-en="Built in Angola, designed for the world." data-fr="Construits en Angola, pensés pour le monde." data-es="Construidos en Angola, pensados para el mundo." data-af="Gebou in Angola, ontwerp vir die wêreld." data-sw="Zimejengwa Angola, zimebuniwa kwa ajili ya dunia." data-ar="صُنعت في أنغولا، وصُممت للعالم.">Construídos em Angola, pensados para o mundo.</h2>
         <p class="section-body" data-pt="A The Tectus é uma software house angolana que desenvolve software sob medida e produtos próprios para empresas com operações complexas. Nascemos da necessidade de resolver um problema real — e ficámos para resolver muitos mais." data-en="The Tectus is an Angolan software house that builds custom software and its own products for companies with complex operations. We were born out of the need to solve a real problem — and we stayed to solve many more." data-fr="The Tectus est une entreprise de logiciels angolaise qui développe des solutions sur mesure pour les entreprises aux opérations complexes. Nous sommes nés d'un besoin réel — et nous sommes restés pour en résoudre beaucoup d'autres." data-es="The Tectus es una software house angolana que desarrolla software a medida y productos propios para empresas con operaciones complejas. Nacimos de la necesidad de resolver un problema real — y nos quedamos para resolver muchos más." data-af="The Tectus is 'n Angolese sagteware-huis wat pasgemaakte sagteware en eie produkte ontwikkel vir maatskappye met komplekse bedrywighede. Ons is gebore uit die behoefte om 'n werklike probleem op te los — en het gebly om nog baie meer op te los." data-sw="The Tectus ni kampuni ya programu ya Angola inayotengeneza programu maalum na bidhaa zake kwa makampuni yenye shughuli ngumu. Tulizaliwa kutokana na hitaji la kutatua tatizo halisi — na tukabaki kutatua mengine mengi zaidi." data-ar="The Tectus هي شركة برمجيات أنغولية تطوّر برمجيات مخصصة ومنتجات خاصة بها للشركات ذات العمليات المعقدة. وُلدنا من الحاجة إلى حل مشكلة حقيقية — وبقينا لحل الكثير غيرها.">A The Tectus é uma software house angolana que desenvolve software sob medida e produtos próprios para empresas com operações complexas.</p>
         <div class="about-stats stagger">
-          <div class="stat-box"><div class="stat-num">8</div><div class="stat-desc" data-pt="Países com clientes activos" data-en="Countries with active clients" data-fr="Pays avec clients actifs" data-es="Países con clientes activos" data-af="Lande met aktiewe kliënte" data-sw="Nchi zenye wateja hai" data-ar="دول بها عملاء نشطون">Países com clientes activos</div></div>
           <div class="stat-box"><div class="stat-num">100%</div><div class="stat-desc" data-pt="SaaS multi-tenant" data-en="Multi-tenant SaaS" data-fr="SaaS multi-locataire" data-es="SaaS multiinquilino" data-af="Multi-tenant SaaS" data-sw="SaaS ya wapangaji wengi" data-ar="SaaS متعدد المستأجرين">SaaS multi-tenant</div></div>
-          <div class="stat-box"><div class="stat-num">3</div><div class="stat-desc" data-pt="Idiomas suportados" data-en="Supported languages" data-fr="Langues supportées" data-es="Idiomas soportados" data-af="Ondersteunde tale" data-sw="Lugha zinazotumika" data-ar="اللغات المدعومة">Idiomas suportados</div></div>
+          <div class="stat-box"><div class="stat-num">7</div><div class="stat-desc" data-pt="Idiomas suportados" data-en="Supported languages" data-fr="Langues supportées" data-es="Idiomas soportados" data-af="Ondersteunde tale" data-sw="Lugha zinazotumika" data-ar="اللغات المدعومة">Idiomas suportados</div></div>
           <div class="stat-box"><div class="stat-num">O&amp;G</div><div class="stat-desc" data-pt="Especialização de origem" data-en="Core specialisation" data-fr="Spécialisation principale" data-es="Especialización de origen" data-af="Oorspronklike spesialisasie" data-sw="Utaalam wa asili" data-ar="التخصص الأصلي">Especialização de origem</div></div>
         </div>
       </div>
@@ -450,31 +476,31 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="2" y="3" width="18" height="15" rx="2"/><path d="M7 8h8M7 12h5"/></svg></div>
         <h3 class="service-title" data-pt="Software sob medida" data-en="Custom software" data-fr="Logiciel sur mesure" data-es="Software a medida" data-af="Pasgemaakte sagteware" data-sw="Programu maalum" data-ar="برمجيات مخصصة">Software sob medida</h3>
         <p class="service-desc" data-pt="Desenvolvimento de sistemas adaptados aos processos específicos de cada empresa, desde plataformas de gestão interna a soluções orientadas ao cliente." data-en="Development of systems tailored to each company's specific processes, from internal management platforms to client-facing solutions." data-fr="Développement de systèmes adaptés aux processus spécifiques de chaque entreprise, des plateformes de gestion interne aux solutions clients." data-es="Desarrollo de sistemas adaptados a los procesos específicos de cada empresa, desde plataformas de gestión interna hasta soluciones orientadas al cliente." data-af="Ontwikkeling van stelsels aangepas by die spesifieke prosesse van elke maatskappy, van interne bestuursplatforms tot kliëntgerigte oplossings." data-sw="Uundaji wa mifumo inayolingana na michakato mahususi ya kila kampuni, kutoka majukwaa ya usimamizi wa ndani hadi suluhisho zinazolenga wateja." data-ar="تطوير أنظمة مصمَّمة خصيصًا للعمليات المحددة لكل شركة، من منصات الإدارة الداخلية إلى الحلول الموجهة للعملاء.">Desenvolvimento de sistemas adaptados aos processos específicos de cada empresa, desde plataformas de gestão interna a soluções orientadas ao cliente.</p>
+        <a href="#contact" class="service-link" data-pt="Falar sobre isto" data-en="Talk to us about this" data-fr="Nous en parler" data-es="Hablarnos de esto" data-af="Praat met ons hieroor" data-sw="Ongea nasi kuhusu hili" data-ar="تحدث معنا عن هذا">Falar sobre isto <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M11 7v4l3 3"/></svg></div>
         <h3 class="service-title" data-pt="Automatização de processos" data-en="Process automation" data-fr="Automatisation des processus" data-es="Automatización de procesos" data-af="Prosesoutomatisering" data-sw="Uwekaji otomatiki wa michakato" data-ar="أتمتة العمليات">Automatização de processos</h3>
         <p class="service-desc" data-pt="Identificação e substituição de tarefas repetitivas por fluxos automáticos que reduzem erros e libertam a equipa para o que realmente importa." data-en="Identification and replacement of repetitive tasks with automated workflows that reduce errors and free teams for what truly matters." data-fr="Identification et remplacement des tâches répétitives par des flux automatisés qui réduisent les erreurs et libèrent les équipes pour l'essentiel." data-es="Identificación y sustitución de tareas repetitivas por flujos automáticos que reducen errores y liberan al equipo para lo que realmente importa." data-af="Identifisering en vervanging van herhalende take met outomatiese vloeie wat foute verminder en die span vrymaak vir wat werklik saak maak." data-sw="Kutambua na kubadilisha kazi zinazojirudia kwa mifumo ya kiotomatiki inayopunguza makosa na kuachilia timu kufanya yaliyo muhimu zaidi." data-ar="تحديد المهام المتكررة واستبدالها بتدفقات آلية تقلل الأخطاء وتحرر الفريق للتركيز على ما يهم فعلاً.">Identificação e substituição de tarefas repetitivas por fluxos automáticos que reduzem erros e libertam a equipa para o que realmente importa.</p>
+        <a href="#contact" class="service-link" data-pt="Falar sobre isto" data-en="Talk to us about this" data-fr="Nous en parler" data-es="Hablarnos de esto" data-af="Praat met ons hieroor" data-sw="Ongea nasi kuhusu hili" data-ar="تحدث معنا عن هذا">Falar sobre isto <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 3h16v6H3zM3 13h8v6H3zM15 13h4v6h-4z"/></svg></div>
         <h3 class="service-title" data-pt="Dashboards e relatórios" data-en="Dashboards & reports" data-fr="Tableaux de bord et rapports" data-es="Paneles e informes" data-af="Kontroleskerms en verslae" data-sw="Dashibodi na ripoti" data-ar="لوحات المعلومات والتقارير">Dashboards e relatórios</h3>
         <p class="service-desc" data-pt="Transformação de dados dispersos em painéis de gestão claros e accionáveis, disponíveis em tempo real sem depender de relatórios manuais." data-en="Transformation of scattered data into clear, actionable management dashboards, available in real time without relying on manual reports." data-fr="Transformation de données dispersées en tableaux de bord clairs et actionnables, disponibles en temps réel sans dépendre de rapports manuels." data-es="Transformación de datos dispersos en paneles de gestión claros y accionables, disponibles en tiempo real sin depender de informes manuales." data-af="Omskepping van verspreide data in duidelike, uitvoerbare bestuurspanele, beskikbaar in reële tyd sonder om op handmatige verslae staat te maak." data-sw="Kubadilisha data iliyotawanyika kuwa dashibodi za usimamizi zilizo wazi na zenye hatua, zinazopatikana kwa wakati halisi bila kutegemea ripoti za mikono." data-ar="تحويل البيانات المتناثرة إلى لوحات إدارة واضحة وقابلة للتنفيذ، متاحة في الوقت الفعلي دون الاعتماد على تقارير يدوية.">Transformação de dados dispersos em painéis de gestão claros e accionáveis, disponíveis em tempo real.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="12" y="3" width="7" height="7" rx="1"/><rect x="3" y="12" width="7" height="7" rx="1"/><rect x="12" y="12" width="7" height="7" rx="1"/></svg></div>
-        <h3 class="service-title" data-pt="Produtos SaaS" data-en="SaaS Products" data-fr="Produits SaaS" data-es="Productos SaaS" data-af="SaaS-produkte" data-sw="Bidhaa za SaaS" data-ar="منتجات SaaS">Produtos SaaS</h3>
-        <p class="service-desc" data-pt="Para além dos projectos sob medida, a The Tectus desenvolve produtos próprios prontos a utilizar. O FieldTrack é o primeiro — mais estão em desenvolvimento." data-en="Beyond bespoke projects, The Tectus develops its own ready-to-use products. FieldTrack is the first — more are in development." data-fr="Au-delà des projets sur mesure, The Tectus développe ses propres produits prêts à l'emploi. FieldTrack est le premier — d'autres sont en développement." data-es="Además de los proyectos a medida, The Tectus desarrolla productos propios listos para usar. FieldTrack es el primero — hay más en desarrollo." data-af="Benewens pasgemaakte projekte, ontwikkel The Tectus eie kant-en-klaar produkte. FieldTrack is die eerste — meer is in ontwikkeling." data-sw="Mbali na miradi maalum, The Tectus inatengeneza bidhaa zake tayari kutumika. FieldTrack ni ya kwanza — nyingine ziko katika maendeleo." data-ar="بالإضافة إلى المشاريع المخصصة، تطوّر The Tectus منتجاتها الخاصة الجاهزة للاستخدام. FieldTrack هو الأول — والمزيد قيد التطوير.">Para além dos projectos sob medida, a The Tectus desenvolve produtos próprios prontos a utilizar.</p>
+        <a href="#contact" class="service-link" data-pt="Falar sobre isto" data-en="Talk to us about this" data-fr="Nous en parler" data-es="Hablarnos de esto" data-af="Praat met ons hieroor" data-sw="Ongea nasi kuhusu hili" data-ar="تحدث معنا عن هذا">Falar sobre isto <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M11 2L2 7l9 5 9-5-9-5zM2 17l9 5 9-5M2 12l9 5 9-5"/></svg></div>
         <h3 class="service-title" data-pt="Integrações e APIs" data-en="Integrations & APIs" data-fr="Intégrations et APIs" data-es="Integraciones y APIs" data-af="Integrasies en API's" data-sw="Uunganishaji na API" data-ar="عمليات التكامل وواجهات البرمجة">Integrações e APIs</h3>
         <p class="service-desc" data-pt="Ligação dos sistemas existentes — SAP, ERPs, Excel — à nova solução, sem forçar uma migração total que paralisa a operação." data-en="Connection of existing systems — SAP, ERPs, Excel — to the new solution, without forcing a total migration that disrupts operations." data-fr="Connexion des systèmes existants — SAP, ERP, Excel — à la nouvelle solution, sans migration totale qui perturbe les opérations." data-es="Conexión de los sistemas existentes — SAP, ERPs, Excel — con la nueva solución, sin forzar una migración total que paralice la operación." data-af="Koppeling van bestaande stelsels — SAP, ERP's, Excel — aan die nuwe oplossing, sonder om 'n volledige migrasie te forseer wat die bedrywighede lamlê." data-sw="Kuunganisha mifumo iliyopo — SAP, ERP, Excel — na suluhisho jipya, bila kulazimisha uhamishaji kamili unaosimamisha shughuli." data-ar="ربط الأنظمة الحالية — SAP وERP وExcel — بالحل الجديد، دون فرض ترحيل كامل يشلّ العمليات.">Ligação dos sistemas existentes à nova solução, sem disrupção operacional.</p>
+        <a href="#contact" class="service-link" data-pt="Falar sobre isto" data-en="Talk to us about this" data-fr="Nous en parler" data-es="Hablarnos de esto" data-af="Praat met ons hieroor" data-sw="Ongea nasi kuhusu hili" data-ar="تحدث معنا عن هذا">Falar sobre isto <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
       </div>
       <div class="service-card">
         <div class="service-icon"><svg viewBox="0 0 22 22" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
         <h3 class="service-title" data-pt="Suporte e manutenção" data-en="Support & maintenance" data-fr="Support et maintenance" data-es="Soporte y mantenimiento" data-af="Ondersteuning en instandhouding" data-sw="Msaada na matengenezo" data-ar="الدعم والصيانة">Suporte e manutenção</h3>
         <p class="service-desc" data-pt="Contratos de manutenção, actualizações e suporte técnico contínuo após a entrega. A parceria não termina na data de lançamento." data-en="Maintenance contracts, updates, and continuous technical support after delivery. The partnership does not end on launch day." data-fr="Contrats de maintenance, mises à jour et support technique continu après livraison. Le partenariat ne se termine pas le jour du lancement." data-es="Contratos de mantenimiento, actualizaciones y soporte técnico continuo tras la entrega. La colaboración no termina en la fecha de lanzamiento." data-af="Instandhoudingskontrakte, opdaterings en deurlopende tegniese ondersteuning na aflewering. Die vennootskap eindig nie op die bekendstellingsdatum nie." data-sw="Mikataba ya matengenezo, masasisho, na msaada wa kiufundi endelevu baada ya utoaji. Ushirikiano hauishii siku ya uzinduzi." data-ar="عقود الصيانة والتحديثات والدعم الفني المستمر بعد التسليم. الشراكة لا تنتهي بتاريخ الإطلاق.">Manutenção, actualizações e suporte técnico contínuo. A parceria não termina na data de lançamento.</p>
+        <a href="#contact" class="service-link" data-pt="Falar sobre isto" data-en="Talk to us about this" data-fr="Nous en parler" data-es="Hablarnos de esto" data-af="Praat met ons hieroor" data-sw="Ongea nasi kuhusu hili" data-ar="تحدث معنا عن هذا">Falar sobre isto <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -868,6 +894,22 @@ function closeLangMenu() {
 
 document.addEventListener('click', e => {
   if (!document.getElementById('lang-selector').contains(e.target)) closeLangMenu();
+});
+
+function toggleNavMenu() {
+  document.getElementById('nav-toggle').classList.toggle('open');
+  document.getElementById('nav-links').classList.toggle('open');
+}
+
+function closeNavMenu() {
+  document.getElementById('nav-toggle').classList.remove('open');
+  document.getElementById('nav-links').classList.remove('open');
+}
+
+document.addEventListener('click', e => {
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  if (!toggle.contains(e.target) && !links.contains(e.target)) closeNavMenu();
 });
 
 // ── NAV SCROLL ───────────────────────────────────────────────
