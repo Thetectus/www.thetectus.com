@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subscrever — FieldTrack | The Tectus</title>
+<meta name="description" content="Escolhe o teu plano FieldTrack e activa a conta na hora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<style>
+:root {
+  --ink:      #0A0F1E;
+  --slate:    #1C2333;
+  --slate2:   #242D42;
+  --gold:     #C9A84C;
+  --gold-l:   #F0D080;
+  --mist:     #F2F4F8;
+  --white:    #FFFFFF;
+  --body-txt: #4A5568;
+  --muted:    #8A95A8;
+  --border-l: rgba(0,0,0,0.08);
+  --green:    #2E7D32;
+  --green-bg: #EAF3DE;
+  --red:      #791F1F;
+  --red-bg:   #FCEBEB;
+  --f-display:'Syne', sans-serif;
+  --f-body:   'Inter', sans-serif;
+  --r: 8px; --r-lg: 16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--f-body);background:var(--mist);color:var(--ink);min-height:100vh;display:flex;flex-direction:column}
+
+nav{background:var(--slate);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--f-display);font-weight:700;font-size:17px;color:var(--white);text-decoration:none;letter-spacing:.01em}
+.nav-logo span{color:var(--gold)}
+.nav-back{font-size:13px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:6px}
+.nav-back:hover{color:var(--white)}
+
+.page{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:3rem 1rem 4rem;gap:3rem;flex-wrap:wrap}
+
+.benefits{max-width:340px;padding-top:1rem}
+.product-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.12);color:var(--gold);border:0.5px solid rgba(201,168,76,.3);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:1.25rem;font-family:var(--f-display)}
+.benefits h1{font-family:var(--f-display);font-size:28px;font-weight:700;line-height:1.25;margin-bottom:.75rem;color:var(--ink)}
+.benefits h1 span{color:var(--gold)}
+.benefits p{font-size:14px;color:var(--body-txt);line-height:1.65;margin-bottom:1.75rem}
+
+.plan-list{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
+.plan-card{border:1.5px solid var(--border-l);border-radius:var(--r-lg);padding:14px 16px;cursor:pointer;background:var(--white);transition:border-color .15s}
+.plan-card:hover{border-color:var(--gold-l)}
+.plan-card.selected{border-color:var(--gold);background:rgba(201,168,76,.06)}
+.plan-card input{display:none}
+.plan-name{font-family:var(--f-display);font-size:15px;font-weight:600}
+.plan-price{font-family:var(--f-display);font-size:13px;color:var(--gold);font-weight:600}
+.plan-desc{font-size:12px;color:var(--muted);margin-top:2px}
+
+.local-note{background:var(--slate);color:var(--white);border-radius:var(--r-lg);padding:14px 16px;font-size:12px;line-height:1.6}
+.local-note strong{color:var(--gold-l);display:block;margin-bottom:3px;font-size:13px}
+.local-note a{color:var(--gold-l)}
+
+.card{background:var(--white);border:0.5px solid var(--border-l);border-radius:var(--r-lg);padding:2rem;width:100%;max-width:420px;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.card h2{font-family:var(--f-display);font-size:20px;font-weight:600;margin-bottom:.25rem}
+.card p{font-size:13px;color:var(--muted);margin-bottom:1.5rem}
+.section-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:1.25rem 0 .75rem;display:flex;align-items:center;gap:8px}
+.section-label::after{content:'';flex:1;height:0.5px;background:var(--border-l)}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.field label{font-size:12px;color:var(--body-txt);font-weight:500}
+.field input{padding:9px 12px;border:0.5px solid var(--border-l);border-radius:var(--r);background:var(--mist);color:var(--ink);font-size:13px;font-family:var(--f-body);outline:none;transition:border-color .15s}
+.field input:focus{border-color:var(--gold);background:var(--white)}
+.divider{height:0.5px;background:var(--border-l);margin:1.25rem 0}
+.btn-trial{width:100%;padding:13px;border:none;border-radius:var(--r);background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;font-family:var(--f-display);cursor:pointer;transition:opacity .15s;letter-spacing:.02em;margin-top:4px}
+.btn-trial:hover{opacity:.88}
+.btn-trial:disabled{opacity:.5;cursor:not-allowed}
+.msg{font-size:12px;margin-top:12px;text-align:center;padding:8px 12px;border-radius:var(--r);display:none}
+.msg.error{background:var(--red-bg);color:var(--red);display:block}
+.msg.success{background:var(--green-bg);color:var(--green);display:block}
+.legal{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;line-height:1.6}
+.legal a{color:var(--muted);text-decoration:underline}
+
+footer{text-align:center;padding:1.5rem;font-size:12px;color:var(--muted);border-top:0.5px solid var(--border-l)}
+footer a{color:var(--muted);text-decoration:none}
+
+@media(max-width:600px){
+  .benefits{max-width:100%;padding-top:0}
+  .page{padding:2rem 1rem}
+  .card{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">The <span>Tectus</span></a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>
+    Voltar ao site
+  </a>
+</nav>
+
+<div class="page">
+
+  <div class="benefits">
+    <div class="product-tag">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="2" width="10" height="8" rx="1"/><path d="M1 5h10M4 2v3M8 2v3"/></svg>
+      FieldTrack
+    </div>
+    <h1>Escolhe o teu plano e <span>activa na hora</span></h1>
+    <p>Pagamento com cartão via Paddle. A conta fica activa assim que o pagamento for confirmado.</p>
+
+    <div class="billing-toggle" style="display:flex;gap:6px;background:var(--white);border:0.5px solid var(--border-l);border-radius:var(--r-lg);padding:4px;margin-bottom:1rem;width:fit-content">
+      <button type="button" class="toggle-opt selected" data-cycle="month" onclick="setCycle('month')" style="border:none;background:none;padding:8px 16px;border-radius:10px;font-family:var(--f-display);font-size:12px;font-weight:600;cursor:pointer;color:var(--ink)">Mensal</button>
+      <button type="button" class="toggle-opt" data-cycle="year" onclick="setCycle('year')" style="border:none;background:none;padding:8px 16px;border-radius:10px;font-family:var(--f-display);font-size:12px;font-weight:600;cursor:pointer;color:var(--muted)">Anual <span style="color:var(--green)">−17%</span></button>
+    </div>
+
+    <div class="plan-list">
+      <label class="plan-card selected" data-plan="starter">
+        <input type="radio" name="plan" value="starter" checked>
+        <div class="plan-name">Starter</div>
+        <div class="plan-price"><span class="price-month">$39/mês</span><span class="price-year" style="display:none">$390/ano</span></div>
+        <div class="plan-desc">5 utilizadores · 3 localizações</div>
+      </label>
+      <label class="plan-card" data-plan="professional">
+        <input type="radio" name="plan" value="professional">
+        <div class="plan-name">Professional</div>
+        <div class="plan-price"><span class="price-month">$99/mês</span><span class="price-year" style="display:none">$990/ano</span></div>
+        <div class="plan-desc">15 utilizadores · 10 localizações</div>
+      </label>
+    </div>
+
+    <div class="local-note">
+      <strong>Empresa maior ou operação O&amp;G multi-país?</strong>
+      Plano Enterprise sob consulta — escreve para
+      <a href="mailto:support@thetectus.com">support@thetectus.com</a>.
+    </div>
+    <div class="local-note" style="margin-top:10px">
+      <strong>Pagamento em moeda local (AOA)?</strong>
+      Contacta <a href="mailto:support@thetectus.com">support@thetectus.com</a> para activares por transferência bancária nacional.
+    </div>
+  </div>
+
+  <div class="card">
+    <div id="form-screen">
+      <h2>Criar conta</h2>
+      <p>Preenche os dados da tua empresa. No passo seguinte pagas com cartão.</p>
+
+      <div class="section-label">A tua empresa</div>
+      <div class="field">
+        <label>Nome da empresa</label>
+        <input type="text" id="company-name" placeholder="Ex: TotalEnergies Angola" oninput="generateSlug()">
+        <div class="slug-preview" id="slug-preview" style="font-family:var(--f-display);font-size:11px;color:var(--muted);margin-top:3px;min-height:14px"></div>
+      </div>
+
+      <div class="section-label">A tua conta de administrador</div>
+      <div class="field">
+        <label>Nome completo</label>
+        <input type="text" id="full-name" placeholder="O teu nome">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="email@empresa.com">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Mínimo 6 caracteres">
+      </div>
+
+      <div class="divider"></div>
+
+      <button class="btn-trial" onclick="startCheckout()" id="btn-start">
+        Continuar para pagamento →
+      </button>
+      <div class="msg" id="msg"></div>
+      <p class="legal">
+        Ao continuares, aceitas os nossos
+        <a href="/termos">Termos de Serviço</a> e
+        <a href="/privacidade">Política de Privacidade</a>.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 The Tectus · <a href="/">thetectus.com</a> · <a href="mailto:support@thetectus.com">support@thetectus.com</a>
+</footer>
+
+<script>
+// ─── CONFIG ───────────────────────────────────────────
+const SUPABASE_URL  = 'https://cqpsofmaaktsjtlkariw.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxcHNvZm1hYWt0c2p0bGthcml3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5ODM0MTIsImV4cCI6MjA5MTU1OTQxMn0.O5t-sDLAgvmy-Z9P_FVV2AS9ciewG33ZQy0HDbOA7yo';
+const APP_URL = 'https://myinventorytracker.vercel.app';
+
+// TODO before going live: replace with the PRODUCTION client-side
+// token (Paddle Dashboard -> Developer Tools -> Authentication ->
+// Client-side tokens) and switch Environment to 'production' below.
+// This is a publishable token, safe to expose client-side — it is NOT
+// the API key used server-side to create the catalog.
+const PADDLE_CLIENT_TOKEN = 'test_ed41d2ee53f4bd9f639543b11b0';
+
+// Paddle price IDs — sandbox catalog created 2026-08-31 (see the
+// cerebro-do-kiko vault, sessions/inventory-tracker/2026-08-31-precos-e-paddle.md).
+const PADDLE_PRICES = {
+  starter:      { month: 'pri_01m1arr3br8tjjjxpj92pj55vv', year: 'pri_01m1arr3s6b7z40231nx85d16z' },
+  professional: { month: 'pri_01m1arrbfcg4pbdk2kr6r4v3zj', year: 'pri_01m1arrbq1c4csvz3b7x3xrgwy' },
+};
+
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+Paddle.Environment.set('sandbox'); // TODO: remove this line for production
+Paddle.Initialize({ token: PADDLE_CLIENT_TOKEN });
+
+let billingCycle = 'month';
+function setCycle(cycle) {
+  billingCycle = cycle;
+  document.querySelectorAll('.toggle-opt').forEach(b => {
+    const on = b.dataset.cycle === cycle;
+    b.classList.toggle('selected', on);
+    b.style.background = on ? 'var(--gold)' : 'none';
+    b.style.color = on ? 'var(--ink)' : 'var(--muted)';
+  });
+  document.querySelectorAll('.price-month').forEach(el => el.style.display = cycle === 'month' ? '' : 'none');
+  document.querySelectorAll('.price-year').forEach(el => el.style.display = cycle === 'year' ? '' : 'none');
+}
+
+document.querySelectorAll('.plan-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    card.querySelector('input').checked = true;
+  });
+});
+
+function generateSlug() {
+  const name = document.getElementById('company-name').value;
+  const slug = name.toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim().replace(/\s+/g, '-')
+    .replace(/-+/g, '-').slice(0, 40);
+  const preview = document.getElementById('slug-preview');
+  preview.textContent = slug ? `Identificador: ${slug}` : '';
+}
+
+async function startCheckout() {
+  const companyName = document.getElementById('company-name').value.trim();
+  const fullName    = document.getElementById('full-name').value.trim();
+  const email       = document.getElementById('email').value.trim();
+  const password    = document.getElementById('password').value;
+  const plan        = document.querySelector('input[name="plan"]:checked').value;
+  const btn         = document.getElementById('btn-start');
+
+  if (!companyName) return showMsg('Indica o nome da empresa.', 'error');
+  if (!fullName)    return showMsg('Indica o teu nome completo.', 'error');
+  if (!email)       return showMsg('Indica o teu email.', 'error');
+  if (password.length < 6) return showMsg('A password deve ter pelo menos 6 caracteres.', 'error');
+
+  const slug = companyName.toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '').trim()
+    .replace(/\s+/g, '-').replace(/-+/g, '-').slice(0, 40);
+
+  btn.disabled = true;
+  btn.textContent = 'A preparar pagamento...';
+  hideMsg();
+
+  try {
+    const { data: existing } = await sb.from('tenants').select('id').eq('slug', slug).single();
+    if (existing) return showMsg('Já existe uma empresa com este nome. Tenta uma variação.', 'error');
+
+    const { data: authData, error: authErr } = await sb.auth.signUp({
+      email, password,
+      options: { data: { full_name: fullName, role: 'admin' } }
+    });
+    if (authErr) return showMsg(authErr.message, 'error');
+
+    await new Promise(r => setTimeout(r, 800));
+
+    // Creates the tenant in a "pending payment" state — inactive until
+    // the Paddle webhook confirms payment (see create_pending_tenant
+    // RPC + supabase/functions/paddle-webhook).
+    const { data: result, error: fnErr } = await sb.rpc('create_pending_tenant', {
+      p_name: companyName, p_slug: slug, p_email: email,
+      p_user_id: authData.user.id, p_full_name: fullName, p_plan: plan
+    });
+    if (fnErr) return showMsg('Erro ao criar empresa: ' + fnErr.message, 'error');
+
+    const tenantId = result?.tenant_id || result?.[0]?.tenant_id;
+    if (!tenantId) return showMsg('Empresa criada mas não foi possível iniciar o pagamento. Contacta support@thetectus.com', 'error');
+
+    // Open Paddle's embedded checkout directly in the browser — no
+    // server round-trip needed to get a checkout URL (unlike the
+    // Flutterwave hosted-link model this replaced). custom_data flows
+    // through to the transaction.completed webhook event, which is
+    // how paddle-webhook knows which tenant/plan to activate.
+    const priceId = PADDLE_PRICES[plan][billingCycle];
+    Paddle.Checkout.open({
+      items: [{ priceId, quantity: 1 }],
+      customer: { email },
+      customData: { tenant_id: tenantId, plan },
+      settings: {
+        displayMode: 'overlay',
+        successUrl: `${window.location.origin}/subscribe-success?tenant=${tenantId}&slug=${slug}`,
+      },
+    });
+
+  } catch (err) {
+    showMsg('Erro inesperado. Tenta novamente ou contacta support@thetectus.com', 'error');
+    console.error(err);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Continuar para pagamento →';
+  }
+}
+
+function showMsg(text, type) {
+  const el = document.getElementById('msg');
+  el.textContent = text;
+  el.className = 'msg ' + type;
+}
+function hideMsg() {
+  document.getElementById('msg').className = 'msg';
+}
+</script>
+</body>
+</html>

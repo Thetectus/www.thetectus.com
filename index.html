@@ -247,9 +247,6 @@ section{padding:7rem clamp(1.25rem,5vw,3rem)}
 .ft-plan-tag{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--glow)}
 .ft-plan-name{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--ink)}
 .ft-plan-desc{font-size:.8rem;color:var(--ink-2);line-height:1.5}
-.ft-back{display:inline-flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:500;color:var(--ink-2);cursor:pointer;background:none;border:none;font-family:'Inter',sans-serif;margin-bottom:1rem;padding:0}
-.ft-back svg{width:12px;height:12px;stroke:var(--ink-2)}
-.ft-back:hover{color:var(--accent)}
 .ft-step{display:none}
 .ft-step.active{display:block}
 
@@ -729,44 +726,17 @@ footer{background:var(--ink);padding:3rem clamp(1.25rem,5vw,3rem);display:flex;a
       <h3 class="ft-modal-title" data-pt="Experimentar o FieldTrack" data-en="Try FieldTrack" data-fr="Essayer FieldTrack" data-es="Probar FieldTrack" data-af="Probeer FieldTrack" data-sw="Jaribu FieldTrack" data-ar="جرّب FieldTrack">Experimentar o FieldTrack</h3>
       <p class="ft-modal-sub" data-pt="Escolha como quer começar." data-en="Choose how you'd like to start." data-fr="Choisissez comment commencer." data-es="Elija cómo quiere empezar." data-af="Kies hoe u wil begin." data-sw="Chagua jinsi unavyotaka kuanza." data-ar="اختر كيف تريد البدء.">Escolha como quer começar.</p>
       <div class="ft-plan-options">
-        <button type="button" class="ft-plan-card" onclick="openFtForm('trial')">
+        <a href="/trial" class="ft-plan-card">
           <span class="ft-plan-tag" data-pt="14 dias grátis" data-en="14 days free" data-fr="14 jours gratuits" data-es="14 días gratis" data-af="14 dae gratis" data-sw="Siku 14 bila malipo" data-ar="14 يومًا مجانًا">14 dias grátis</span>
           <span class="ft-plan-name" data-pt="Trial gratuito" data-en="Free trial" data-fr="Essai gratuit" data-es="Prueba gratuita" data-af="Gratis proeflopie" data-sw="Jaribio bila malipo" data-ar="تجربة مجانية">Trial gratuito</span>
           <span class="ft-plan-desc" data-pt="Acesso completo ao FieldTrack durante 14 dias, sem custos. Sem necessidade de cartão de crédito." data-en="Full access to FieldTrack for 14 days, at no cost. No credit card required." data-fr="Accès complet à FieldTrack pendant 14 jours, sans frais. Aucune carte bancaire requise." data-es="Acceso completo a FieldTrack durante 14 días, sin costo. Sin necesidad de tarjeta de crédito." data-af="Volledige toegang tot FieldTrack vir 14 dae, gratis. Geen kredietkaart nodig nie." data-sw="Ufikiaji kamili wa FieldTrack kwa siku 14, bila gharama. Hakuna kadi ya mkopo inayohitajika." data-ar="وصول كامل إلى FieldTrack لمدة 14 يومًا، دون تكلفة. لا حاجة لبطاقة ائتمان.">Acesso completo ao FieldTrack durante 14 dias, sem custos. Sem necessidade de cartão de crédito.</span>
-        </button>
-        <button type="button" class="ft-plan-card" onclick="openFtForm('paid')">
-          <span class="ft-plan-tag" data-pt="Para equipas" data-en="For teams" data-fr="Pour les équipes" data-es="Para equipos" data-af="Vir spanne" data-sw="Kwa timu" data-ar="للفرق">Para equipas</span>
+        </a>
+        <a href="/subscribe" class="ft-plan-card">
+          <span class="ft-plan-tag" data-pt="Cartão ou transferência" data-en="Card or bank transfer" data-fr="Carte ou virement" data-es="Tarjeta o transferencia bancaria" data-af="Kaart of bankoorplasing" data-sw="Kadi au uhamisho wa benki" data-ar="بطاقة أو تحويل بنكي">Cartão ou transferência</span>
           <span class="ft-plan-name" data-pt="Plano pago" data-en="Paid plan" data-fr="Plan payant" data-es="Plan de pago" data-af="Betaalde plan" data-sw="Mpango wa malipo" data-ar="خطة مدفوعة">Plano pago</span>
-          <span class="ft-plan-desc" data-pt="Fale connosco para um plano adaptado ao número de utilizadores e países da sua operação." data-en="Talk to us about a plan tailored to your number of users and countries of operation." data-fr="Parlez-nous d'un plan adapté au nombre d'utilisateurs et de pays de votre opération." data-es="Hable con nosotros para un plan adaptado al número de usuarios y países de su operación." data-af="Praat met ons vir 'n plan aangepas by die aantal gebruikers en lande van u bedrywighede." data-sw="Ongea nasi kwa mpango unaolingana na idadi ya watumiaji na nchi za shughuli zako." data-ar="تواصل معنا للحصول على خطة مصممة حسب عدد المستخدمين ودول عملياتك.">Fale connosco para um plano adaptado ao número de utilizadores e países da sua operação.</span>
-        </button>
+          <span class="ft-plan-desc" data-pt="Escolhe o teu plano e activa a conta na hora. Para pagamento em moeda local, contacta o suporte." data-en="Pick your plan and activate instantly. For local-currency payment, contact support." data-fr="Choisissez votre plan et activez instantanément. Pour un paiement en devise locale, contactez le support." data-es="Elige tu plan y activa la cuenta al instante. Para pagos en moneda local, contacta con soporte." data-af="Kies u plan en aktiveer die rekening onmiddellik. Vir betaling in plaaslike geldeenheid, kontak ondersteuning." data-sw="Chagua mpango wako na uwezeshe akaunti mara moja. Kwa malipo ya sarafu ya ndani, wasiliana na msaada." data-ar="اختر خطتك وفعّل حسابك فورًا. للدفع بالعملة المحلية، تواصل مع الدعم.">Escolhe o teu plano e activa a conta na hora. Para pagamento em moeda local, contacta o suporte.</span>
+        </a>
       </div>
-    </div>
-
-    <!-- STEP 2: lead form -->
-    <div class="ft-step" id="ft-step-form">
-      <button type="button" class="ft-back" onclick="backToFtChoose()">
-        <svg viewBox="0 0 12 12" fill="none" stroke-width="1.6"><path d="M7.5 2L2.5 6l5 4"/></svg>
-        <span data-pt="Voltar" data-en="Back" data-fr="Retour" data-es="Volver" data-af="Terug" data-sw="Rudi" data-ar="رجوع">Voltar</span>
-      </button>
-      <h3 class="ft-modal-title" id="ft-form-title" data-pt="Pedir trial gratuito" data-en="Request free trial" data-fr="Demander un essai gratuit" data-es="Solicitar prueba gratuita" data-af="Vra gratis proeflopie" data-sw="Omba jaribio bila malipo" data-ar="طلب تجربة مجانية">Pedir trial gratuito</h3>
-      <p class="ft-modal-sub" id="ft-form-sub" data-pt="Preencha os seus dados e entraremos em contacto para activar o seu acesso." data-en="Fill in your details and we'll be in touch to activate your access." data-fr="Remplissez vos coordonnées et nous vous contacterons pour activer votre accès." data-es="Complete sus datos y nos pondremos en contacto para activar su acceso." data-af="Voltooi u besonderhede en ons sal u kontak om u toegang te aktiveer." data-sw="Jaza taarifa zako na tutawasiliana nawe kuwezesha ufikiaji wako." data-ar="املأ بياناتك وسنتواصل معك لتفعيل وصولك.">Preencha os seus dados e entraremos em contacto para activar o seu acesso.</p>
-
-      <form class="contact-form" id="ft-form" onsubmit="submitFtForm(event)">
-        <input type="hidden" name="_subject" id="ft-form-subject" value="Pedido de trial — FieldTrack">
-        <input type="hidden" name="plan" id="ft-form-plan" value="trial">
-        <div class="form-row">
-          <div class="form-field"><label data-pt="Nome" data-en="Name" data-fr="Nom" data-es="Nombre" data-af="Naam" data-sw="Jina" data-ar="الاسم">Nome</label><input type="text" name="name" required placeholder="Nome completo"></div>
-          <div class="form-field"><label data-pt="Empresa" data-en="Company" data-fr="Entreprise" data-es="Empresa" data-af="Maatskappy" data-sw="Kampuni" data-ar="الشركة">Empresa</label><input type="text" name="company" required placeholder="Nome da empresa"></div>
-        </div>
-        <div class="form-row">
-          <div class="form-field"><label>Email</label><input type="email" name="email" required placeholder="email@empresa.com"></div>
-          <div class="form-field"><label data-pt="Telefone" data-en="Phone" data-fr="Téléphone" data-es="Teléfono" data-af="Telefoon" data-sw="Simu" data-ar="الهاتف">Telefone</label><input type="tel" name="phone" placeholder="+244 900 000 000"></div>
-        </div>
-        <div class="form-field"><label data-pt="País de operação" data-en="Country of operation" data-fr="Pays d'opération" data-es="País de operación" data-af="Land van bedrywighede" data-sw="Nchi ya uendeshaji" data-ar="بلد التشغيل">País de operação</label><input type="text" name="country" placeholder="Angola, Nigéria, ..."></div>
-        <button type="submit" class="form-submit" id="ft-form-submit-btn" data-pt="Pedir acesso" data-en="Request access" data-fr="Demander l'accès" data-es="Solicitar acceso" data-af="Vra toegang" data-sw="Omba ufikiaji" data-ar="طلب الوصول">Pedir acesso</button>
-        <div class="form-success" id="ft-form-success" data-pt="Pedido enviado com sucesso. Entraremos em contacto em breve." data-en="Request sent successfully. We will be in touch shortly." data-fr="Demande envoyée avec succès. Nous vous contacterons bientôt." data-es="Solicitud enviada con éxito. Nos pondremos en contacto pronto." data-af="Versoek suksesvol gestuur. Ons sal binnekort kontak maak." data-sw="Ombi limetumwa kwa mafanikio. Tutawasiliana hivi karibuni." data-ar="تم إرسال الطلب بنجاح. سنتواصل معك قريبًا.">Pedido enviado com sucesso. Entraremos em contacto em breve.</div>
-        <div class="form-error" id="ft-form-error" style="display:none;background:#FEF2F2;border:1px solid #FCA5A5;border-radius:var(--radius);padding:1rem 1.25rem;color:#991B1B;font-size:.875rem;font-weight:500" data-pt="Não foi possível enviar o pedido. Tente novamente ou escreva para support@thetectus.com." data-en="Could not send the request. Please try again or email support@thetectus.com." data-fr="Impossible d'envoyer la demande. Réessayez ou écrivez à support@thetectus.com." data-es="No se pudo enviar la solicitud. Inténtelo de nuevo o escriba a support@thetectus.com." data-af="Kon nie die versoek stuur nie. Probeer weer of skryf na support@thetectus.com." data-sw="Imeshindikana kutuma ombi. Jaribu tena au andika kwa support@thetectus.com." data-ar="تعذّر إرسال الطلب. حاول مرة أخرى أو راسلنا على support@thetectus.com.">Não foi possível enviar o pedido. Tente novamente ou escreva para support@thetectus.com.</div>
-      </form>
     </div>
   </div>
 </div>
@@ -963,39 +933,8 @@ function submitForm(e) {
 }
 
 // ── FIELDTRACK MODAL ─────────────────────────────────────────
-const FT_COPY = {
-  trial: {
-    subject: 'Pedido de trial — FieldTrack',
-    title: { pt: 'Pedir trial gratuito', en: 'Request free trial', fr: "Demander un essai gratuit", es: 'Solicitar prueba gratuita', af: 'Vra gratis proeflopie', sw: 'Omba jaribio bila malipo', ar: 'طلب تجربة مجانية' },
-    sub: {
-      pt: 'Preencha os seus dados e entraremos em contacto para activar o seu acesso.',
-      en: "Fill in your details and we'll be in touch to activate your access.",
-      fr: 'Remplissez vos coordonnées et nous vous contacterons pour activer votre accès.',
-      es: 'Complete sus datos y nos pondremos en contacto para activar su acceso.',
-      af: 'Voltooi u besonderhede en ons sal u kontak om u toegang te aktiveer.',
-      sw: 'Jaza taarifa zako na tutawasiliana nawe kuwezesha ufikiaji wako.',
-      ar: 'املأ بياناتك وسنتواصل معك لتفعيل وصولك.'
-    }
-  },
-  paid: {
-    subject: 'Pedido de plano pago — FieldTrack',
-    title: { pt: 'Pedir plano pago', en: 'Request paid plan', fr: 'Demander un plan payant', es: 'Solicitar plan de pago', af: 'Vra betaalde plan', sw: 'Omba mpango wa malipo', ar: 'طلب خطة مدفوعة' },
-    sub: {
-      pt: 'Conte-nos sobre a sua operação e entraremos em contacto com uma proposta.',
-      en: "Tell us about your operation and we'll follow up with a proposal.",
-      fr: 'Parlez-nous de votre opération et nous vous enverrons une proposition.',
-      es: 'Cuéntenos sobre su operación y le enviaremos una propuesta.',
-      af: "Vertel ons van u bedrywighede en ons sal met 'n voorstel opvolg.",
-      sw: 'Tueleze kuhusu shughuli zako na tutafuatilia kwa pendekezo.',
-      ar: 'أخبرنا عن عملياتك وسنتابع معك بعرض.'
-    }
-  }
-};
-
 function openFtModal() {
   document.getElementById('ft-modal-overlay').classList.add('open');
-  document.getElementById('ft-step-choose').classList.add('active');
-  document.getElementById('ft-step-form').classList.remove('active');
   document.body.style.overflow = 'hidden';
 }
 
@@ -1004,62 +943,9 @@ function closeFtModal() {
   document.body.style.overflow = '';
 }
 
-function openFtForm(plan) {
-  const copy = FT_COPY[plan];
-  document.getElementById('ft-form-plan').value = plan;
-  document.getElementById('ft-form-subject').value = copy.subject;
-  document.getElementById('ft-form-title').textContent = copy.title[currentLang];
-  document.getElementById('ft-form-sub').textContent = copy.sub[currentLang];
-  document.getElementById('ft-step-choose').classList.remove('active');
-  document.getElementById('ft-step-form').classList.add('active');
-}
-
-function backToFtChoose() {
-  document.getElementById('ft-step-form').classList.remove('active');
-  document.getElementById('ft-step-choose').classList.add('active');
-}
-
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeFtModal();
 });
-
-function submitFtForm(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = document.getElementById('ft-form-submit-btn');
-  const success = document.getElementById('ft-form-success');
-  const error = document.getElementById('ft-form-error');
-
-  success.style.display = 'none';
-  error.style.display = 'none';
-  const originalBtnText = btn.textContent;
-  btn.disabled = true;
-  btn.style.opacity = '.65';
-  btn.textContent = SENDING_TEXT[currentLang] || SENDING_TEXT.en;
-
-  fetch(FORMSPREE_ENDPOINT, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(res => {
-    if (res.ok) {
-      success.style.display = 'block';
-      form.reset();
-      setTimeout(() => { closeFtModal(); success.style.display = 'none'; }, 2500);
-    } else {
-      error.style.display = 'block';
-    }
-  })
-  .catch(() => {
-    error.style.display = 'block';
-  })
-  .finally(() => {
-    btn.disabled = false;
-    btn.style.opacity = '';
-    btn.textContent = originalBtnText;
-  });
-}
 
 // ── HERO PROGRESS BAR ────────────────────────────────────────
 // Simulates live inventory-value movement instead of a static one-time fill.
