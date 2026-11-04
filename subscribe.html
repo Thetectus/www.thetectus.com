@@ -266,12 +266,17 @@ async function startCheckout() {
   hideMsg();
 
   try {
-    const { data: existing } = await sb.from('tenants').select('id').eq('slug', slug).single();
-    if (existing) return showMsg('Já existe uma empresa com este nome. Tenta uma variação.', 'error');
+    // Função dedicada — nunca select directo à tabela tenants, que
+    // exporia billing_email de todas as empresas activas.
+    const { data: slugAvailable } = await sb.rpc('is_slug_available', { p_slug: slug });
+    if (slugAvailable === false) return showMsg('Já existe uma empresa com este nome. Tenta uma variação.', 'error');
 
+    // role nunca vem do cliente — handle_new_user() cria sempre o
+    // perfil como 'viewer' sem tenant; create_pending_tenant() é que
+    // promove a sessão actual (auth.uid()) a admin do tenant novo.
     const { data: authData, error: authErr } = await sb.auth.signUp({
       email, password,
-      options: { data: { full_name: fullName, role: 'admin' } }
+      options: { data: { full_name: fullName } }
     });
     if (authErr) return showMsg(authErr.message, 'error');
 
@@ -279,10 +284,11 @@ async function startCheckout() {
 
     // Creates the tenant in a "pending payment" state — inactive until
     // the Paddle webhook confirms payment (see create_pending_tenant
-    // RPC + supabase/functions/paddle-webhook).
+    // RPC + supabase/functions/paddle-webhook). Associates the CURRENT
+    // session's user server-side (auth.uid()), never an id from the client.
     const { data: result, error: fnErr } = await sb.rpc('create_pending_tenant', {
       p_name: companyName, p_slug: slug, p_email: email,
-      p_user_id: authData.user.id, p_full_name: fullName, p_plan: plan
+      p_full_name: fullName, p_plan: plan
     });
     if (fnErr) return showMsg('Erro ao criar empresa: ' + fnErr.message, 'error');
 

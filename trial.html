@@ -282,30 +282,33 @@ async function startTrial() {
   hideMsg();
 
   try {
-    // 1. Check slug not taken
-    const { data: existing } = await sb
-      .from('tenants').select('id').eq('slug', slug).single();
-    if (existing) {
+    // 1. Check slug not taken (função dedicada — nunca select directo à
+    // tabela tenants, que exporia billing_email de todas as empresas)
+    const { data: slugAvailable } = await sb.rpc('is_slug_available', { p_slug: slug });
+    if (slugAvailable === false) {
       return showMsg('Já existe uma empresa com este nome. Tenta uma variação (ex: acrescenta o país).', 'error');
     }
 
     // 2. Create Supabase auth user
+    // role nunca vem do cliente — handle_new_user() cria sempre o
+    // perfil como 'viewer' sem tenant; create_trial_tenant() é que
+    // promove a sessão actual (auth.uid()) a admin do tenant novo.
     const { data: authData, error: authErr } = await sb.auth.signUp({
       email,
       password,
-      options: { data: { full_name: fullName, role: 'admin' } }
+      options: { data: { full_name: fullName } }
     });
     if (authErr) return showMsg(authErr.message, 'error');
 
     // 3. Wait a moment for the trigger to create the profile
     await new Promise(r => setTimeout(r, 800));
 
-    // 4. Create trial tenant and associate user via DB function
+    // 4. Create trial tenant and associate the CURRENT session's user
+    // (server-side, via auth.uid() — nunca um id vindo do cliente)
     const { data: result, error: fnErr } = await sb.rpc('create_trial_tenant', {
       p_name:       companyName,
       p_slug:       slug,
       p_email:      email,
-      p_user_id:    authData.user.id,
       p_full_name:  fullName,
       p_trial_days: TRIAL_DAYS
     });
@@ -316,8 +319,9 @@ async function startTrial() {
     const tenantId = result?.tenant_id || result?.[0]?.tenant_id;
     if (!tenantId) return showMsg('Empresa criada mas não foi possível obter o link. Contacta support@thetectus.com', 'error');
 
-    // 5. Build app URL — user is already authenticated, app will read tenant_id from profile
-    const appLink = `${APP_URL}?tenant=${tenantId}&slug=${slug}`;
+    // 5. Build app URL — user is already authenticated, app reads
+    // tenant_id from their own profile, nunca de um parâmetro da URL.
+    const appLink = APP_URL;
 
     // 6. Show success with countdown and redirect button
     const trialEnd = new Date(Date.now() + TRIAL_DAYS * 86400000);
